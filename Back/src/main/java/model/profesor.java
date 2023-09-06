@@ -1,19 +1,23 @@
+package model;
+
 public class profesor {
 
 private String nombre;
 private int edad;
 private int dni;
 private String codigo;
- 
+
 public profesor(){
-    
+
 }
+
 public profesor(String nombre, int edad, int dni, String codigo) {
     this.nombre = nombre;
     this.edad = edad;
     this.dni = dni;
     this.codigo = codigo;
 }
+
 public String getNombre() {
     return nombre;
 }
@@ -38,8 +42,6 @@ public String getCodigo() {
 public void setCodigo(String codigo) {
     this.codigo = codigo;
 }
-
-
 
 }
 
