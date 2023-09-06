@@ -4,7 +4,11 @@ private String nombre;
 private int edad;
 private int dni;
 private String codigo;
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> walter
 public profesor(){}
 public profesor(String nombre, int edad, int dni, String codigo) {
     this.nombre = nombre;
@@ -12,6 +16,10 @@ public profesor(String nombre, int edad, int dni, String codigo) {
     this.dni = dni;
     this.codigo = codigo;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> walter
 public String getNombre() {
     return nombre;
 }
