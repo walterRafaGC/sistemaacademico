@@ -16,17 +16,6 @@ public class ProfesorModel {
     private int dniprofesor;
     private String codigoprofesor;
 
-    public ProfesorModel() {
-
-    }
-
-    public ProfesorModel(String nombreprofesor, int fechanacimientoprofesor, int dniprofesor, String codigoprofesor) {
-        this.nombreprofesor = nombreprofesor;
-        this.fechanacimientoprofesor = fechanacimientoprofesor;
-        this.dniprofesor = dniprofesor;
-        this.codigoprofesor = codigoprofesor;
-    }
-
     public String getNombreprofesor() {
         return nombreprofesor;
     }
@@ -57,6 +46,14 @@ public class ProfesorModel {
 
     public void setCodigoprofesor(String codigoprofesor) {
         this.codigoprofesor = codigoprofesor;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
 }
