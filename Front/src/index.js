@@ -6,6 +6,7 @@ import CambiarContraseña from "./views/CambiarContraseña";
 import Menu from "./views/Menu";
 import RegistroAlumno from "./views/RegistroAlumno";
 import RegistroApoderado from "./views/RegistroApoderado";
+import RegistroProfesor from "./views/RegistroProfesor";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
   {
     path: "/registroApoderado",
     element: <RegistroApoderado />,
-  }
+  },
+  {
+    path: "/registroProfesor",
+    element: <RegistroProfesor />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
