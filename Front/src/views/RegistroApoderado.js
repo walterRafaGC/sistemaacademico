@@ -6,6 +6,13 @@ export default function RegistroApoderado() {
         <h1>Registro del Apoderado</h1>
         <h6>Rellenar todos los campos para un exitoso registro</h6>
         <hr></hr>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck1" />
+          <label class="form-check-label" for="gridCheck1">
+            El apoderado es diferente a los padres
+          </label>
+        </div>
+        <br />
         <h6>Informacion del Apoderado y familiar</h6>
         <div>
           <div class="mb-3">
@@ -39,6 +46,19 @@ export default function RegistroApoderado() {
               class="form-control"
               name="codigoDocumentoApoderado"
             />
+          </div >
+          <div class="mb-3">
+            <label for="telefonoApoderado" class="form-label">Numero de Telefono</label>
+            <input type="number" class="form-control" name="telefonoApoderado" />
+          </div>
+          <div class="mb-3">
+            <label for="direccionApoderado" class="form-label">Direccion de Domicilio</label>
+            <input type="text" class="form-control" name="direccionApoderado"/>
+          </div>
+          <div class="mb-3">
+            <label for="correoApoderado" class="form-label">Correo Electronico
+            </label>
+            <input type="text" class="form-control" name="correoApoderado" />
           </div>
         </div>
         <hr></hr>
@@ -55,6 +75,17 @@ export default function RegistroApoderado() {
               Grado Academico Anterior:
             </label>
             <input type="text" class="form-control" name="gradoAcademico" />
+          </div>
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">
+              Documentacion y/o Certificado de estudio
+            </label>
+            <input
+              class="form-control"
+              type="file"
+              id="formFileMultiple"
+              multiple
+            />
           </div>
         </div>
         <hr></hr>
@@ -133,6 +164,12 @@ export default function RegistroApoderado() {
               Historial de Enfermedades Cronicas
             </label>
             <textarea class="form-control" rows="2"></textarea>
+          </div>
+          <div class="mb-3">
+          <label for="contraseñaApoderado" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" name="contraseñaApoderado"/>
+          <label for="contraseñaApoderado" class="form-label">Repetir Contraseña</label>
+          <input type="password" class="form-control" name="contraseñaApoderado"/>
           </div>
           <button type="submit" class="btn btn-primary">
             Guardar la Informacion
