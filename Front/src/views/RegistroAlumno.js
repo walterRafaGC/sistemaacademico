@@ -6,30 +6,32 @@ export default function RegistroAlumno() {
         <h1>Registro del Alumno</h1>
         <h6>Rellenar todos los campos para un exitoso registro</h6>
         <div class="mb-3">
-          <label for="nombre" class="form-label">
+          <label for="nombreAlumno" class="form-label">
             Nombre Completo del Alumno:
           </label>
-          <input type="email" class="form-control" name="nombre" />
+          <input type="text" class="form-control" name="nombreAlumno" />
         </div>
         <div class="mb-3">
-          <label>Apellido Completo del Alumno:</label>
-          <input type="text" class="form-control" name="apellido" />
+          <label for="apellidoAlumno" class="form-label">
+            Apellido Completo del Alumno:
+          </label>
+          <input type="text" class="form-control" name="apellidoAlumno" />
         </div>
         <div class="mb-3">
-          <label>Tipo de documento</label>
-          <select class="form-select" name="tipoDocumento">
+          <label for="tipoDocumentoAlumno" class="form-label">Tipo de documento</label>
+          <select class="form-select" name="tipoDocumentoAlumno">
             <option selected>Seleccione una opción</option>
             <option value="1">DNI</option>
             <option value="3">Pasaporte</option>
           </select>
         </div>
         <div class="mb-3">
-          <label>Codigo de documento:</label>
-          <input type="number" class="form-control" name="codigoDocuemento" />
+          <label for="codigoDocumentoAlumno" class="form-label">Codigo de documento:</label>
+          <input type="number" class="form-control" name="codigoDocumentoAlumno" />
         </div>
         <div class="mb-3">
-          <label>Codigo de Estudiante(PUM):</label>
-          <input type="number" class="form-control" name="codigoEstudiante" />
+          <label for="codigoEstudianteAlumno" class="form-label">Codigo de Estudiante(PUM):</label>
+          <input type="number" class="form-control" name="codigoEstudianteAlumno" />
         </div>
         <button type="submit" class="btn btn-primary">
           Guardar la Informacion
