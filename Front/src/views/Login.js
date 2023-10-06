@@ -3,15 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function Login() {
   return (
     <form>
-      <div class="container login-form">
+      <div class="container">
         <h2 class="login-title">- Please Login -</h2>
+        <h6>Puedes hacer todo lo que necesitas en tu vida escolar. Revisa tus horarios, notas, eventos, trámites y más. De manera más fácil y sencilla.</h6>
         <div class="panel panel-default">
           <div class="panel-body">
             <form>
               <div class="input-group login-userinput">
-                <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-user"></span>
-                </span>
                 <input
                   id="txtUser"
                   type="text"
@@ -21,9 +19,6 @@ export default function Login() {
                 />
               </div>
               <div class="input-group">
-                <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-lock"></span>
-                </span>
                 <input
                   id="txtPassword"
                   type="password"
@@ -31,23 +26,23 @@ export default function Login() {
                   name="password"
                   placeholder="Contraseña"
                 />
-                <span id="showPassword" class="input-group-btn">
-                  <button class="btn btn-default reveal" type="button">
-                    <i class="glyphicon glyphicon-eye-open"></i>
-                  </button>
-                </span>
+
               </div>
               <button
                 class="btn btn-primary btn-block login-button"
                 type="submit"
+                href="http://localhost:3000/menu"
               >
-                <i class="fa fa-sign-in"></i> Ingresar
+                Ingresar
               </button>
               <div class="checkbox login-options">
                 <label>
                   <input type="checkbox" /> Recordarme
                 </label>
-                <a href="#" class="login-forgot">
+                <a
+                  href="http://localhost:3000/cambiarContraseña"
+                  class="login-forgot"
+                >
                   Cambiar de Contraseña
                 </a>
               </div>
