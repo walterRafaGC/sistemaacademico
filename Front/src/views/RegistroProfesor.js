@@ -86,12 +86,6 @@ export default function RegistroProfesor() {
           <input type="date" class="form-control" name="fecha_nacimiento" />
         </div>
         <div class="mb-3">
-          <label for="direccion" class="form-label">
-            Direccion de Domicilio:
-          </label>
-          <input type="text" class="form-control" name="direccion" />
-        </div>
-        <div class="mb-3">
           <label for="religion" class="form-label">
             Religion:
           </label>
