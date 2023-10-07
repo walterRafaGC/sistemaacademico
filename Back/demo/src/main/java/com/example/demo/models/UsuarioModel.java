@@ -13,33 +13,32 @@ import jakarta.persistence.Table;
 @Table(name = "usuario")
 public class UsuarioModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)    
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(unique = true, nullable = false)
 	private Long id;
 
 	private String ApellidosNombresApoderado;
-    private Double TipoDocumento;
-    private int CodigoDocumento;
-    private int NumTelefono;
-    private String DireccionApoderado;
-    private String CorreoElectronico;
-    private String InfoColegioProcedencia;
-    private String GradoAcadAnterior;
-    private String DocumenCertificadoEstu;
-    private double GeneroAlumno;
-    private String NacionalidadAlumno;
-    private int EdadAlumno;
-    private Time FechaNacimiento;
-    private String DomicilioAlumno;
-    private String ReligionAlumno;
-    private String TipoSangreal;
-    private String AlergiasAlumno;
-    private String AntecedenteEnferHereditaria;
-    private String AntecendenteEnferCronicas;
-    private String Password;
-    private String RepetirContraseña;
-
+	private Double TipoDocumento;
+	private int CodigoDocumento;
+	private int NumTelefono;
+	private String DireccionApoderado;
+	private String CorreoElectronico;
+	private String InfoColegioProcedencia;
+	private String GradoAcadAnterior;
+	private String DocumenCertificadoEstu;
+	private double GeneroAlumno;
+	private String NacionalidadAlumno;
+	private int EdadAlumno;
+	private Time FechaNacimiento;
+	private String DomicilioAlumno;
+	private String ReligionAlumno;
+	private String TipoSangreal;
+	private String AlergiasAlumno;
+	private String AntecedenteEnferHereditaria;
+	private String AntecendenteEnferCronicas;
+	private String Password;
+	private String RepetirContraseña;
 
 	public Long getId() {
 		return this.id;
@@ -216,13 +215,4 @@ public class UsuarioModel {
 	public void setRepetirContraseñA(String RepetirContraseña) {
 		this.RepetirContraseña = RepetirContraseña;
 	}
-
-	
-
-
-    }
-
-
-
-    
-
+}
