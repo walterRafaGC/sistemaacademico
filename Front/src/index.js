@@ -7,6 +7,7 @@ import Menu from "./views/Menu";
 import RegistroAlumno from "./views/RegistroAlumno";
 import RegistroApoderado from "./views/RegistroApoderado";
 import RegistroProfesor from "./views/RegistroProfesor";
+import Token from "./views/Token";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/registroProfesor",
     element: <RegistroProfesor />,
+  },
+  {
+    path: "/token",
+    element: <Token />,
   },
 ]);
 
