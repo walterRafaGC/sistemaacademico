@@ -99,13 +99,24 @@ export default function RegistroProfesor() {
         </div>
         <div class="mb-3">
           <label for="gradoAcademico" class="form-label">
-            Grado Academico Anterior:
+            Grado Academico Docente:
           </label>
           <input type="text" class="form-control" name="gradoAcademico" />
         </div>
         <div class="mb-3">
           <label for="formFileMultiple" class="form-label">
             Documentacion y/o Certificado de estudio
+          </label>
+          <input
+            class="form-control"
+            type="file"
+            id="formFileMultiple"
+            multiple
+          />
+        </div>
+        <div class="mb-3">
+          <label for="formFileMultiple" class="form-label">
+            CV
           </label>
           <input
             class="form-control"
