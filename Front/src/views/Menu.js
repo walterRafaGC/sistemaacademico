@@ -13,59 +13,34 @@ export default function Menu() {
             Registro de los alumnos
           </a>
         </div>
+        <br></br>
         <div>
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-toggle="modal"
-            data-target="#contenedor-modal"
+          <a
+            href="http://localhost:3000/registroAdministracion"
+            class="btn btn-secondary"
+            role="button"
           >
-            Resgistrate
-          </button>
+            Registro del Personal Administrativo
+          </a>
         </div>
-        <div
-          class="modal fade"
-          id="contenedor-modal"
-          data-bs-backdrop="static"
-          tabindex="-1"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                  Regitro de la plataforma
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <h6>Seleccione su rol para el comienzo del regitro</h6>
-                <div>
-                  <button type="button" class="btn btn-secondary">
-                    Apoderado
-                  </button>
-                </div>
-                <div>
-                  <button type="button" class="btn btn-primary">
-                    Profesor
-                  </button>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
+        <br></br>
+        <div>
+          <a
+            href="http://localhost:3000/listaProfesor"
+            class="btn btn-secondary"
+            role="button"
+          >
+            Lista de Profesores
+          </a>
+        </div> <br></br>
+        <div>
+          <a
+            href="http://localhost:3000/listaAdministracion"
+            class="btn btn-secondary"
+            role="button"
+          >
+            Lista del Personal Administrativo
+          </a>
         </div>
       </div>
     </form>

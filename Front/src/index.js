@@ -8,6 +8,9 @@ import RegistroAlumno from "./views/RegistroAlumno";
 import RegistroApoderado from "./views/RegistroApoderado";
 import RegistroProfesor from "./views/RegistroProfesor";
 import Token from "./views/Token";
+import RegistroAdministracion from "./views/RegistroAdministracion";
+import ListaAdministracion from "./views/ListaAdministracion";
+import ListaProfesor from "./views/ListaProfesor";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +40,18 @@ const router = createBrowserRouter([
   {
     path: "/token",
     element: <Token />,
+  },
+  {
+    path: "/registroAdministracion",
+    element: <RegistroAdministracion />,
+  },
+  {
+    path: "/listaProfesor",
+    element: <ListaProfesor />,
+  },
+  {
+    path: "/listaAdministracion",
+    element: <ListaAdministracion />,
   },
 ]);
 
