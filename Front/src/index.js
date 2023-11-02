@@ -12,7 +12,7 @@ import RegistroAdministracion from "./views/RegistroAdministracion";
 import ListaAdministracion from "./views/ListaAdministracion";
 import ListaProfesor from "./views/ListaProfesor";
 import RegistroNota from "./views/RegistroNotas";
-import Horario from "./views/CreacionHorario";
+import Horario from "./views/Horario";
 import Notas from "./views/RegistroNotas";
 
 const router = createBrowserRouter([

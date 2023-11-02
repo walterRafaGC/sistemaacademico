@@ -57,12 +57,12 @@ export default function RegistroNota() {
           </label>
           <table class="table table-borderless">
             <thead class="text-center">
-              <tr >
-                <th >Calificaciones</th>
+              <tr>
+                <th>Calificaciones</th>
                 <th>Nota</th>
               </tr>
             </thead>
-            <tbody >
+            <tbody>
               <tr>
                 <td>Examenes</td>
                 <td>
@@ -73,22 +73,30 @@ export default function RegistroNota() {
               </tr>
               <tr>
                 <td>Trabajos</td>
-                <td><div class="form-group col-md-2">
-                    <input type="number" class="form-control" id="notaTrabajo" />
-                  </div></td>
+                <td>
+                  <div class="form-group col-md-2">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="notaTrabajo"
+                    />
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>Exposiciones</td>
-                <td><div class="form-group col-md-2">
+                <td>
+                  <div class="form-group col-md-2">
                     <input type="number" class="form-control" id="notaExpo" />
-                  </div></td>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
-          <button type="submit" class="btn btn-primary">
+        </div>
+        <button type="submit" class="btn btn-primary">
           Guardar
         </button>
-        </div>
       </div>
     </from>
   );
