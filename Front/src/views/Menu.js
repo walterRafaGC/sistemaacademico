@@ -59,6 +59,24 @@ export default function Menu() {
           >
             Creacion de Horario
           </a>
+        </div> <br></br>
+        <div>
+          <a
+            href="http://localhost:3000/asistenciaAlumno"
+            class="btn btn-secondary"
+            role="button"
+          >
+            Asistencia Alumno
+          </a>
+        </div> <br></br>
+        <div>
+          <a
+            href="http://localhost:3000/asistenciaProfesor"
+            class="btn btn-secondary"
+            role="button"
+          >
+            Asistencia Docente
+          </a>
         </div>
       </div>
     </form>

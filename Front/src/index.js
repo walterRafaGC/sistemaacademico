@@ -14,6 +14,8 @@ import ListaProfesor from "./views/ListaProfesor";
 import RegistroNota from "./views/RegistroNotas";
 import Horario from "./views/Horario";
 import Notas from "./views/RegistroNotas";
+import AsistenciaAlumno from "./views/RegistroAsistenciaAlumno";
+import AsistenciaProfesor from './views/RegistroAsistenciaProfesor';
 
 const router = createBrowserRouter([
   {
@@ -67,6 +69,14 @@ const router = createBrowserRouter([
   {
     path: "/notas",
     element: <Notas />,
+  },
+  {
+    path: "/asistenciaAlumno",
+    element: <AsistenciaAlumno />,
+  },
+  {
+    path: "/asistenciaProfesor",
+    element: <AsistenciaProfesor />,
   },
 ]);
 
