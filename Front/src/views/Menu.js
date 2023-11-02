@@ -41,6 +41,24 @@ export default function Menu() {
           >
             Lista del Personal Administrativo
           </a>
+        </div> <br></br>
+        <div>
+          <a
+            href="http://localhost:3000/registroNota"
+            class="btn btn-secondary"
+            role="button"
+          >
+            Registro de Notas
+          </a>
+        </div> <br></br>
+        <div>
+          <a
+            href="http://localhost:3000/horario"
+            class="btn btn-secondary"
+            role="button"
+          >
+            Creacion de Horario
+          </a>
         </div>
       </div>
     </form>
