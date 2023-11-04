@@ -1,5 +1,24 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-export default function RegistroAlumno() {
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+const ApiConsumer = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get("URL")
+      .then((response) => {
+        setData(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log("Fallo en la coneccion de la API", error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <form>
       <div class="container">
@@ -18,7 +37,9 @@ export default function RegistroAlumno() {
           <input type="text" class="form-control" name="apellidoAlumno" />
         </div>
         <div class="mb-3">
-          <label for="tipoDocumentoAlumno" class="form-label">Tipo de documento</label>
+          <label for="tipoDocumentoAlumno" class="form-label">
+            Tipo de documento
+          </label>
           <select class="form-select" name="tipoDocumentoAlumno">
             <option selected>Seleccione una opción</option>
             <option value="1">DNI</option>
@@ -26,12 +47,24 @@ export default function RegistroAlumno() {
           </select>
         </div>
         <div class="mb-3">
-          <label for="codigoDocumentoAlumno" class="form-label">Codigo de documento:</label>
-          <input type="number" class="form-control" name="codigoDocumentoAlumno" />
+          <label for="codigoDocumentoAlumno" class="form-label">
+            Codigo de documento:
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            name="codigoDocumentoAlumno"
+          />
         </div>
         <div class="mb-3">
-          <label for="codigoEstudianteAlumno" class="form-label">Codigo de Estudiante(PUM):</label>
-          <input type="number" class="form-control" name="codigoEstudianteAlumno" />
+          <label for="codigoEstudianteAlumno" class="form-label">
+            Codigo de Estudiante(PUM):
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            name="codigoEstudianteAlumno"
+          />
         </div>
         <button type="submit" class="btn btn-primary">
           Guardar la Informacion
@@ -39,4 +72,6 @@ export default function RegistroAlumno() {
       </div>
     </form>
   );
-}
+};
+
+export default ApiConsumer;
