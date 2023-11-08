@@ -34,26 +34,22 @@ const ApiConsumer = () => {
               <th>Numero de Documento</th>
               <th>Correo</th>
               <th>Telefono</th>
-              <th>Asignatura</th>
-              <th>Horario de Clase</th>
-              <th>Fecha de Ingreso</th>
               <th>Titulo Academico</th>
               <th>Experiencia Laboral</th>
               <th>Calificaciones</th>
-              <th>Estado Laboral</th>
-              <th>Imagen del Profesor</th>
-              <th>Supervisor</th>
-              <th>Observaciones</th>
-              <th>Documentacion</th>
-              <th>Salario</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((item)=>(
+          {data.map((item)=>(
               <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.nombre_profesor}</td>
-                
+                <td>{item.dni_profesor}</td>
+                <td>{item.correo_profesor}</td>
+                <td>{item.telefono_profesor}</td>
+                <td>{item.grado_academico_profesor}</td>
+                <td>{item.cv_profesor}</td>
+                <td>{item.certificado_profesor}</td>
               </tr>
             ))}
           </tbody>
