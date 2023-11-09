@@ -21,7 +21,6 @@ const ApiConsumer = () => {
     return <p>Cargando........</p>;
   }
 
-
   return (
     <form>
       <div className="container">

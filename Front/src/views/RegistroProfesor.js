@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 export default function RegistroProfesor() {
   const [formData, setFormData] = useState({
-    nombreProfesor: "",
+    nombreprofesor: "",
     apellidoProfesor: "",
     tipoDocumentoProfesor: "",
     codigoDocumentoProfesor: "",
@@ -71,7 +71,7 @@ export default function RegistroProfesor() {
             type="text"
             class="form-control"
             name="nombreProfesor"
-            value={formData.nombreProfesor}
+            value={formData.nombre_profesor}
             onChange={handleInputChange}
           />
         </div>
@@ -98,8 +98,8 @@ export default function RegistroProfesor() {
             onChange={handleInputChange}
           >
             <option selected>Seleccione una opción</option>
-            <option value="1">DNI</option>
-            <option value="3">Pasaporte</option>
+            <option value="DNI">DNI</option>
+            <option value="Pasaporte">Pasaporte</option>
           </select>
         </div>
         <div class="mb-3">
@@ -161,8 +161,8 @@ export default function RegistroProfesor() {
             onChange={handleInputChange}
           >
             <option selected>Seleccione una opción</option>
-            <option value="1">Masculino</option>
-            <option value="3">Femenino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
           </select>
         </div>
         <div class="mb-3">
