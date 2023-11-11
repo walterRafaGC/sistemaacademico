@@ -6,9 +6,8 @@ export default function RegistroAdministracion() {
           
     nombrePersonalAdmninitrativo: "",
     apellidoPersonalAdministrativo: "",
-    fechaNacimientoPersonalAdministrativo "",
-    genero "",
-
+    fechaNacimientoPersonalAdministrativo: "",
+    genero: "",
 
 
   })
