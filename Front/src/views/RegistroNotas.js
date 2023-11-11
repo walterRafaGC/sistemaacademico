@@ -5,58 +5,58 @@ export default function RegistroNota() {
     <from>
       <div className="container">
         <h1>Registrar Notas</h1>
-        <div class="mb-3">
-          <label for="seccion" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="seccion" className="form-label">
             Escribir la Seccion
           </label>
           <div>
-            <form class="d-flex" role="search">
+            <form className="d-flex" role="search">
               <input
-                class="form-control me-2"
+                className="form-control me-2"
                 type="search"
                 placeholder="Seccion"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button className="btn btn-outline-success" type="submit">
                 Buscar
               </button>
             </form>
           </div>
         </div>
-        <div class="mb-3">
-          <label for="curso" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="curso" className="form-label">
             Seleccione el curso
           </label>
-          <select class="form-select" name="curso">
-            <option selected>Seleccione una opción</option>
-            <option value="1">Lengua</option>
-            <option value="2">Matematica</option>
+          <select className="form-select" name="curso">
+            <option defaultValue>Seleccione una opción</option>
+            <option value="Lengua">Lengua</option>
+            <option value="Matematica">Matematica</option>
           </select>
         </div>
-        <div class="mb-3">
-          <label for="seccion" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="seccion" className="form-label">
             Escribir el nombre completo del alumno
           </label>
           <div>
-            <form class="d-flex" role="search">
+            <form className="d-flex" role="search">
               <input
-                class="form-control me-2"
+                className="form-control me-2"
                 type="search"
                 placeholder="Alumno"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button className="btn btn-outline-success" type="submit">
                 Buscar
               </button>
             </form>
           </div>
         </div>
-        <div class="mb-3">
-          <label for="nota_final" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="nota_final" className="form-label">
             Rellenar todo los campos con las notas del alumno por bimestre
           </label>
-          <table class="table table-borderless">
-            <thead class="text-center">
+          <table className="table table-borderless">
+            <thead className="text-center">
               <tr>
                 <th>Calificaciones</th>
                 <th>Nota</th>
@@ -66,18 +66,18 @@ export default function RegistroNota() {
               <tr>
                 <td>Examenes</td>
                 <td>
-                  <div class="form-group col-md-2">
-                    <input type="number" class="form-control" id="notaExamen" />
+                  <div className="form-group col-md-2">
+                    <input type="number" className="form-control" id="notaExamen" />
                   </div>
                 </td>
               </tr>
               <tr>
                 <td>Trabajos</td>
                 <td>
-                  <div class="form-group col-md-2">
+                  <div className="form-group col-md-2">
                     <input
                       type="number"
-                      class="form-control"
+                      className="form-control"
                       id="notaTrabajo"
                     />
                   </div>
@@ -86,15 +86,15 @@ export default function RegistroNota() {
               <tr>
                 <td>Exposiciones</td>
                 <td>
-                  <div class="form-group col-md-2">
-                    <input type="number" class="form-control" id="notaExpo" />
+                  <div className="form-group col-md-2">
+                    <input type="number" className="form-control" id="notaExpo" />
                   </div>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Guardar
         </button>
       </div>

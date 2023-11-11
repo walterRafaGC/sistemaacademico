@@ -1,158 +1,171 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
+import axios from "axios";
+export default function RegistroAdministracion() {
+  const [formData, setFormData] = useState({
+          
+    nombrePersonalAdmninitrativo: "",
+    apellidoPersonalAdministrativo: "",
+    fechaNacimientoPersonalAdministrativo "",
+    genero "",
 
-export default function RegistroAlumno() {
+
+
+  })
   return (
     <form>
-      <div class="container">
+      <div className="container">
         <h1>Registro de Trabajadores de la Institucion</h1>
         <h6>Rellenar todos los campos para un exitoso registro</h6>
-        <div class="mb-3">
-          <label for="nombreAlumno" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="nombrePersonalAdministrativo" className="form-label">
             Nombre Completo:
           </label>
-          <input type="text" class="form-control" name="nombreAlumno" />
+          <input 
+          type="text" className="form-control" name="nombrePersonalAdmninitrativo" />
         </div>
-        <div class="mb-3">
-          <label for="apellidoAlumno" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="apellidoPersonalAdministrativo" className="form-label">
             Apellido Completo:
           </label>
-          <input type="text" class="form-control" name="apellidoAlumno" />
+          <input type="text" className="form-control" name="apellidoPersonalAdministrativo" />
         </div>
-        <div class="mb-3">
-          <label for="fechaNacimientoAdministrador" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="fechaNacimientoPersonalAdministrativo" 
+          className="form-label">
             Fecha de Nacimiento
           </label>
           <input
             type="date"
-            class="form-control"
-            name="fechaNacimientoAdministrador"
+            className="form-control"
+            name="fechaNacimientoPersonalAdministrativo"
           />
         </div>
-        <div class="mb-3">
-          <label for="genero" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="genero" className="form-label">
             Genero
           </label>
-          <select class="form-select" name="genero">
-            <option selected>Seleccione una opción</option>
-            <option value="1">Femenino</option>
-            <option value="2">Masculino</option>
+          <select className="form-select" name="genero">
+            <option defaultValue>Seleccione una opción</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
           </select>
         </div>
-        <div class="mb-3">
-          <label for="tipoDocumentoAlumno" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="tipoDocumentoPersonalAdministrativo" className="form-label">
             Tipo de documento
           </label>
-          <select class="form-select" name="tipoDocumentoAlumno">
-            <option selected>Seleccione una opción</option>
-            <option value="1">DNI</option>
-            <option value="2">Pasaporte</option>
+          <select className="form-select" name="tipoDocumentoPersonalAdministrativo">
+            <option defaultValue>Seleccione una opción</option>
+            <option value="DNI">DNI</option>
+            <option value="Pasaporte">Pasaporte</option>
           </select>
         </div>
-        <div class="mb-3">
-          <label for="codigoDocumentoAlumno" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="codigoDocumentoPersonalAdministrativo" className="form-label">
             Codigo de documento:
           </label>
-          <input type="number" class="form-control" name="codigoDocumentoAlumno" />
+          <input type="number" className="form-control" name="codigoDocumentoPersonalAdministrativo" />
         </div>
-        <div class="mb-3">
-          <label for="fotoAdministrador" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="fotoPersonalAdministrativo" className="form-label">
             Fotografia
           </label>
           <input
-              class="form-control"
+              className="form-control"
               type="file"
               id="formFileMultiple"
               multiple
             />
         </div>
-        <div class="mb-3">
-          <label for="direccionAdministrador" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="direccionPersonalAdministrativo" className="form-label">
             Direccion de Domicilio
           </label>
-          <input type="text" class="form-control" name="direccionAdministrador" />
+          <input type="text" className="form-control" name="direccionPersonalAdministrativo" />
         </div>
-        <div class="mb-3">
-          <label for="telefonoAdministrador" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="telefonoPersonalAdministrativo" className="form-label">
             Numero de Telefono
           </label>
-          <input type="number" class="form-control" name="telefonoAdministrador" />
+          <input type="number" className="form-control" name="telefonoPersonalAdministrativo" />
         </div>
-        <div class="mb-3">
-          <label for="correoAdministrador" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="correoPersonalAdministrativo" className="form-label">
             Correo Electronico
           </label>
-          <input type="text" class="form-control" name="correoAdministrador" />
+          <input type="text" className="form-control" name="correoPersonalAdministrativo" />
         </div>
-        <div class="mb-3">
-          <label for="cargoAdministrador" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="cargoPersonalAdministrativo "className="form-label">
             Puesto o Cargo
           </label>
-          <select class="form-select" name="cargoAdministrador">
-            <option selected>Seleccione una opción</option>
-            <option value="1">Supervisor</option>
-            <option value="2">Coordinador</option>
-            <option value="3">Director</option>
-            <option value="4">Sub-director</option>
+          <select className="form-select" name="cargoPersonalAdministrativo">
+            <option defaultValue>Seleccione una opción</option>
+            <option value="Supervisor">Supervisor</option>
+            <option value="Coordinador">Coordinador</option>
+            <option value="Director">Director</option>
+            <option value="Sub-director">Sub-director</option>
           </select>
         </div>
-        <div class="mb-3">
-          <label for="fechaInicioAdministrador" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="fechaInicioPersonalAdministrativo" className="form-label">
             Fecha de Inicio de Empleo
           </label>
           <input
             type="date"
-            class="form-control"
-            name="fechaInicioAdministrador"
+            className="form-control"
+            name="fechaInicioPersonalAdministrativo"
           />
         </div>
-        <div class="mb-3">
-          <label for="departamentoAdministrado" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="departamentoAdministrativo" className="form-label">
             Departamento o Area
           </label>
           <input
             type="text"
-            class="form-control"
-            name="departamentoAdministrado"
+            className="form-control"
+            name="departamentoAdministrativo"
           />
         </div>
-        <div class="mb-3">
-          <label for="salarioAdministrador" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="salarioPersonalAdministrativo" className="form-label">
             Salario
           </label>
           <input
             type="number"
-            class="form-control"
-            name="salarioAdministrador"
+            className="form-control"
+            name="salarioPersonalAdministrativo"
           />
         </div>
-        <div class="mb-3">
-          <label for="contratoAdministrador" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="contratoPersonalAdministrativo" className="form-label">
             Tipo de Contrato
           </label>
-          <select class="form-select" name="contratoAdministrador">
-            <option selected>Seleccione una opción</option>
-            <option value="1">Tiempo Completo</option>
-            <option value="2">Medio Tiempo</option>
+          <select className="form-select" name="contratoPersonalAdministrativo">
+            <option defaultValue>Seleccione una opción</option>
+            <option value="Tiempo Completo">Tiempo Completo</option>
+            <option value="Medio Tiempo">Medio Tiempo</option>
           </select>
         </div>
-        <div class="mb-3">
-          <label for="documentoAdministrador" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="documentoPersonalAdministrativo" className="form-label">
             Contrato Laboral
           </label>
           <input
-            class="form-control"
+            className="form-control"
             type="file"
             id="formFileMultiple"
             multiple
           />
         </div>
-        <div class="mb-3">
-          <label for="horarioAdministrador" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="horarioPersonalAdministrativo" className="form-label">
             Horario de Trabajo
           </label>
-          <input type="text" class="form-control" name="horarioAdministrador" />
+          <input type="text" className="form-control" name="horarioPersonalAdministrativo" />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Guardar la Informacion
         </button>
       </div>
