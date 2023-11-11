@@ -7,7 +7,7 @@ const ApiConsumer = () => {
 
   useEffect(() => {
     axios
-      .get("http://pietrogm.pythonanywhere.com/services/list-profesor/")
+      .get("http://localhost:8080/api/profesor/")
       .then((response) => {
         setData(response.data);
         setLoading(false);
@@ -42,7 +42,7 @@ const ApiConsumer = () => {
           <tbody>
           {data.map((item)=>(
               <tr key={item.id}>
-                <td>{item.id}</td>
+                <td>{item.id_profesor}</td>
                 <td>{item.nombre_profesor}</td>
                 <td>{item.dni_profesor}</td>
                 <td>{item.correo_profesor}</td>

@@ -45,7 +45,8 @@ export default function RegistroProfesor() {
 
     try {
       const response = await axios.post(
-        "http://pietrogm.pythonanywhere.com/services/create-profesor/",
+        "http://localhost:8080/api/profesor/save",
+        {mode:'cors'},
         formDataToSubmit
       );
       console.log("Respuesta del servidor:", response.data);
@@ -63,174 +64,174 @@ export default function RegistroProfesor() {
         <h6>Rellenar todos los campos para un exitoso registro</h6>
         <hr></hr>
         <h6>Informacion del Apoderado y familiar</h6>
-        <div class="mb-3">
-          <label for="nombreProfesor" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="nombreProfesor" className="form-label">
             Nombre Completo:
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             name="nombreProfesor"
             value={formData.nombre_profesor}
             onChange={handleInputChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="apellidoProfesor" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="apellidoProfesor" className="form-label">
             Apellido Completo:
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             name="apellidoProfesor"
             value={formData.apellidoProfesor}
             onChange={handleInputChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="tipoDocumentoProfesor" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="tipoDocumentoProfesor" className="form-label">
             Tipo de documento
           </label>
           <select
-            class="form-select"
+            className="form-select"
             name="tipoDocumentoProfesor"
             value={formData.tipoDocumentoProfesor}
             onChange={handleInputChange}
           >
-            <option selected>Seleccione una opción</option>
+            <option defaultValue>Seleccione una opción</option>
             <option value="DNI">DNI</option>
             <option value="Pasaporte">Pasaporte</option>
           </select>
         </div>
-        <div class="mb-3">
-          <label for="codigoDocumentoProfesor" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="codigoDocumentoProfesor" className="form-label">
             Codigo de documento:
           </label>
           <input
             type="number"
-            class="form-control"
+            className="form-control"
             name="codigoDocumentoProfesor"
             value={formData.codigoDocumentoProfesor}
             onChange={handleInputChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="telefonoProfesor" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="telefonoProfesor" className="form-label">
             Numero de Telefono
           </label>
           <input
             type="number"
-            class="form-control"
+            className="form-control"
             name="telefonoProfesor"
             value={formData.telefonoProfesor}
             onChange={handleInputChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="direccionProfesor" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="direccionProfesor" className="form-label">
             Direccion de Domicilio
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             name="direccionProfesor"
             value={formData.direccionProfesor}
             onChange={handleInputChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="correoProfesor" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="correoProfesor" className="form-label">
             Correo Electronico
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             name="correoProfesor"
             value={formData.correoProfesor}
             onChange={handleInputChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="genero" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="genero" className="form-label">
             Genero:
           </label>
           <select
-            class="form-select"
+            className="form-select"
             name="genero"
             value={formData.genero}
             onChange={handleInputChange}
           >
-            <option selected>Seleccione una opción</option>
+            <option defaultValue>Seleccione una opción</option>
             <option value="Masculino">Masculino</option>
             <option value="Femenino">Femenino</option>
           </select>
         </div>
-        <div class="mb-3">
-          <label for="nacionalidad" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="nacionalidad" className="form-label">
             Nacionalidad
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             name="nacionalidad"
             value={formData.nacionalidad}
             onChange={handleInputChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="edad" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="edad" className="form-label">
             Edad:
           </label>
           <input
             type="number"
-            class="form-control"
+            className="form-control"
             name="edad"
             value={formData.edad}
             onChange={handleInputChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="fecha_nacimiento" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="fecha_nacimiento" className="form-label">
             Fecha de Nacimiento:
           </label>
           <input
             type="date"
-            class="form-control"
+            className="form-control"
             name="fecha_nacimiento"
             value={formData.fecha_nacimiento}
             onChange={handleInputChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="religion" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="religion" className="form-label">
             Religion:
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             name="religion"
             value={formData.religion}
             onChange={handleInputChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="gradoAcademico" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="gradoAcademico" className="form-label">
             Grado Academico Docente:
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             name="gradoAcademico"
             value={formData.gradoAcademico}
             onChange={handleInputChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="formFileMultiple" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="formFileMultiple" className="form-label">
             Documentacion y/o Certificado de estudio
           </label>
           <input
-            class="form-control"
+            className="form-control"
             type="file"
             id="formFileMultiple"
             multiple
@@ -238,12 +239,12 @@ export default function RegistroProfesor() {
             name="documentacion"
           />
         </div>
-        <div class="mb-3">
-          <label for="formFileMultiple" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="formFileMultiple" className="form-label">
             CV
           </label>
           <input
-            class="form-control"
+            className="form-control"
             type="file"
             id="formFileMultiple"
             multiple
@@ -251,32 +252,32 @@ export default function RegistroProfesor() {
             name="cv"
           />
         </div>
-        <div class="mb-3">
-          <label for="contrasenaApoderado" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="contrasenaApoderado" className="form-label">
             Contraseña
           </label>
           <input
             type="password"
-            class="form-control"
+            className="form-control"
             name="contrasenaApoderado"
             value={contrasenaApoderado}
             onChange={(e) => setContrasenaApoderado(e.target.value)}
           />
         </div>
-        <div class="mb-3">
-          <label for="confirmContrasena" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="confirmContrasena" className="form-label">
             Repetir Contraseña
           </label>
           <input
             type="password"
-            class="form-control"
+            className="form-control"
             name="confirmContrasena"
             value={confirmContrasena}
             onChange={(e) => setConfirmContrasena(e.target.value)}
           />
         </div>
 
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Guardar la Informacion
         </button>
       </div>

@@ -6,10 +6,11 @@ const ApiConsumer = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
-      .get("http://pietrogm.pythonanywhere.com/services/list-personal-administrativo/")
+      .get("http://localhost:8080/api/personalAdministrativo/")
       .then((response) => {
         setData(response.data);
         setLoading(false);
+        console.log("API Data",response.data);
       })
       .catch((error) => {
         console.log("Fallo en la coneccion de la API", error);
@@ -25,7 +26,7 @@ const ApiConsumer = () => {
     <form>
       <div className="container">
         <h1>Lista del Personal Administrativo</h1>
-        <table class="table table-hover">
+        <table className="table table-hover">
           <thead>
             <tr>
               <th>ID</th>
@@ -41,13 +42,13 @@ const ApiConsumer = () => {
           <tbody>
           {data.map((item)=>(
             <tr key={item.id}>
-            <td>{item.id}</td>
-            <td>{item.nombre}</td>
-            <td>{item.tipo_cargo}</td>
-            <td>{item.departamento_area}</td>
-            <td>{item.numero_telefono}</td>
+            <td>{item.id_PersonalAdministrativo}</td>
+            <td>{item.nombres_PersonalAdminis}</td>
+            <td>{item.puesto_Cargo}</td>
+            <td>{item.departamento_Area}</td>
+            <td>{item.numero_Telefono}</td>
             <td>{item.email}</td>
-            <td>{item.fecha_inicio_empleo}</td>
+            <td>{item.fecha_Inicio_Empleo}</td>
             <td>{item.salario}</td>
           </tr>
         ))}
