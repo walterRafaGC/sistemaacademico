@@ -12,7 +12,7 @@ export default function Login() {
         </h6>
         <div className="panel panel-default">
           <div className="panel-body">
-            <div className="container"> </div>
+            <div className="container"></div>
             <div className="input-group login-userinput">
               <input
                 id="txtUser"
@@ -45,21 +45,15 @@ export default function Login() {
             </button>
             <div>
               <p>
-                No tienes una cuenta, entonces 
-                <button
-                  type="text"
+                No tienes una cuenta, entonces
+                <butto
+                  type="button"
                   className="btn btn-primary"
                   data-bs-toggle="modal"
-                  data-bs-target="#registro"
+                  data-bs-target="#staticBackdrop"
                 >
-                   Resgistrate
-                </button><br />
-                <a href="http://localhost:3000/registroApoderado">
-                  Registrate aqui Apoderado
-                </a><br />
-                <a href="http://localhost:3000/registroProfesor">
-                  Registrate aqui Profesor
-                </a>
+                  Registrate
+                </butto>
               </p>
               <a
                 href="http://localhost:3000/cambiarContraseña"
@@ -68,40 +62,45 @@ export default function Login() {
                 Cambiar de Contraseña
               </a>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className="modal fade"
-        id="registro"
-        tabindex="-1"
-        aria-labelledby="registro"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                Regitro de la plataforma
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-              <div className="modal-body">
-                <h6>Seleccione su rol para el comienzo del regitro</h6>
-                <div>
-                  <button type="button" className="btn btn-secondary">
-                    Apoderado
-                  </button>
-                </div>
-                <div>
-                  <button type="button" className="btn btn-primary">
-                    Profesor
-                  </button>
+            <div
+              className="modal fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="staticBackdropLabel">
+                      Registro
+                    </h1>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    <h6>- Si eres un apoderado <a href="src/main/js/registroApoderado.html">
+                      Seleccione Aqui</a
+                    ></h6>
+                    <h6>- Si eres un profesor<a href="src/main/js/registroProfesor.html">
+                      Seleccione Aqui
+                    </a></h6>
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
