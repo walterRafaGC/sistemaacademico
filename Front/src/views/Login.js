@@ -3,17 +3,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function Login() {
   return (
     <form>
-      <div className="container">
-        <h2 className="login-title">- Inicia Sesion -</h2>
-        <h6>
+      <div className="container mt-5">
+        <h2 className="text-center">- Inicia Sesión -</h2>
+        <p className="text-center">
           Puedes hacer todo lo que necesitas en tu vida escolar. Revisa tus
           horarios, notas, eventos, trámites y más. De manera más fácil y
           sencilla.
-        </h6>
+        </p>
         <div className="panel panel-default">
           <div className="panel-body">
-            <div className="container"></div>
-            <div className="input-group login-userinput">
+            <div className="input-group mb-3">
               <input
                 id="txtUser"
                 type="text"
@@ -22,7 +21,7 @@ export default function Login() {
                 placeholder="DNI"
               />
             </div>
-            <div className="input-group">
+            <div className="input-group mb-3">
               <input
                 id="txtPassword"
                 type="password"
@@ -31,78 +30,78 @@ export default function Login() {
                 placeholder="Contraseña"
               />
             </div>
-            <div>
-              <label className="checkbox login-options">
-                <input type="checkbox" /> Recordarme
-              </label>
+            <div className="mb-3 form-check">
+              <input type="checkbox" className="form-check-input" />
+              <label className="form-check-label">Recordarme</label>
             </div>
             <button
-              className="btn btn-primary btn-block login-button"
+              className="btn btn-primary btn-block"
               type="submit"
-              href="http://localhost:3000/menu"
+              onClick={() => window.location.href = "http://localhost:3000/menu"}
             >
               Ingresar
             </button>
-            <div>
-              <p>
-                No tienes una cuenta, entonces
-                <butto
-                  type="button"
-                  className="btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
-                >
-                  Registrate
-                </butto>
-              </p>
-              <a
-                href="http://localhost:3000/cambiarContraseña"
-                className="login-forgot"
+            <p className="mt-3">
+              No tienes una cuenta, entonces
+              <button
+                type="button"
+                className="btn btn-link"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
               >
-                Cambiar de Contraseña
-              </a>
-            </div>
-            <div
-              className="modal fade"
-              id="staticBackdrop"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false"
-              tabindex="-1"
-              aria-labelledby="staticBackdropLabel"
-              aria-hidden="true"
+                Regístrate
+              </button>
+            </p>
+            <a
+              href="http://localhost:3000/cambiarContraseña"
+              className="d-block text-center mt-3"
             >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                      Registro
-                    </h1>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div className="modal-body">
-                    <h6>- Si eres un apoderado <a href="src/main/js/registroApoderado.html">
-                      Seleccione Aqui</a
-                    ></h6>
-                    <h6>- Si eres un profesor<a href="src/main/js/registroProfesor.html">
-                      Seleccione Aqui
-                    </a></h6>
-                  </div>
-                  <div className="modal-footer">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                  </div>
-                </div>
-              </div>
+              Cambiar Contraseña
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabIndex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="staticBackdropLabel">
+                Registro
+              </h1>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              <h6>
+                - Si eres un apoderado{" "}
+                <a href="http://localhost:3000/registroApoderado ">Seleccione Aquí</a>
+              </h6>
+              <h6>
+                - Si eres un profesor
+                <a href="http://localhost:3000/registroProfesor ">Seleccione Aquí</a>
+              </h6>
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
