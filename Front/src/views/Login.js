@@ -44,6 +44,12 @@ export default function Login() {
               Ingresar
             </button>
             <div>
+            <h6>- Si eres un profesor<a href="http://localhost:3000/registroProfesor">
+                      Seleccione Aqui
+                    </a></h6>
+
+            </div>
+            <div>
               <p>
                 No tienes una cuenta, entonces
                 <butto
@@ -85,10 +91,10 @@ export default function Login() {
                     ></button>
                   </div>
                   <div className="modal-body">
-                    <h6>- Si eres un apoderado <a href="src/main/js/registroApoderado.html">
+                    <h6>- Si eres un apoderado <a href="http://localhost:3000/registroApoderado">
                       Seleccione Aqui</a
                     ></h6>
-                    <h6>- Si eres un profesor<a href="src/main/js/registroProfesor.html">
+                    <h6>- Si eres un profesor<a href="http://localhost:3000/registroProfesor">
                       Seleccione Aqui
                     </a></h6>
                   </div>

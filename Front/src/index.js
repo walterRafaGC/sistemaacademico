@@ -16,7 +16,7 @@ import Horario from "./views/Horario";
 import Notas from "./views/RegistroNotas";
 import AsistenciaAlumno from "./views/RegistroAsistenciaAlumno";
 import AsistenciaProfesor from './views/RegistroAsistenciaProfesor';
-
+import Prueba from './views/prueba';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -77,6 +77,10 @@ const router = createBrowserRouter([
   {
     path: "/asistenciaProfesor",
     element: <AsistenciaProfesor />,
+  },
+  {
+    path: "/prueba",
+    element: <Prueba/>,
   },
 ]);
 

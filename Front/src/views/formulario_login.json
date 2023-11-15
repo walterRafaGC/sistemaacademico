@@ -1,0 +1,18 @@
+{
+    "campos": [
+      {
+        "id": "nombre_usuario",
+        "label": "Nombre de usuario",
+        "tipo": "text",
+        "placeholder": "Ingresa tu nombre de usuario"
+      },
+      {
+        "id": "contrasena",
+        "label": "Contraseña",
+        "tipo": "password",
+        "placeholder": "Ingresa tu contraseña"
+      }
+    ],
+    "boton_submit": "Iniciar sesión"
+  }
+  
