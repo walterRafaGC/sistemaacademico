@@ -8,8 +8,7 @@ export default function Login() {
         <p className="text-center">
           Puedes hacer todo lo que necesitas en tu vida escolar. Revisa tus
           horarios, notas, eventos, trámites y más. De manera más fácil y
-          sencilla.
-        </p>
+         </p>
         <div className="panel panel-default">
           <div className="panel-body">
             <div className="input-group mb-3">

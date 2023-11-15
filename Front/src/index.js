@@ -16,6 +16,7 @@ import Horario from "./views/Horario";
 import Notas from "./views/RegistroNotas";
 import AsistenciaAlumno from "./views/RegistroAsistenciaAlumno";
 import AsistenciaProfesor from './views/RegistroAsistenciaProfesor';
+import Paga from "./views/Paga";
 
 const router = createBrowserRouter([
   {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
     path: "/asistenciaProfesor",
     element: <AsistenciaProfesor />,
   },
+  {
+    path:"/paga",
+    element:<Paga />,
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

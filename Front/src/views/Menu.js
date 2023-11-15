@@ -77,6 +77,15 @@ export default function Menu() {
           >
             Asistencia Docente
           </a>
+        </div><br></br>
+        <div>
+          <a
+            href="http://localhost:3000/paga"
+            className="btn btn-secondary"
+            role="button"
+          >
+            Paga
+          </a>
         </div>
       </div>
     </form>
