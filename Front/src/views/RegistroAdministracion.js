@@ -1,16 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react";
-import axios from "axios";
-export default function RegistroAdministracion() {
-  const [formData, setFormData] = useState({
-          
-    nombrePersonalAdmninitrativo: "",
-    apellidoPersonalAdministrativo: "",
-    fechaNacimientoPersonalAdministrativo: "",
-    genero: "",
-
-
-  })
+export default function RegistroAdministracion(){
   return (
     <form>
       <div className="container">

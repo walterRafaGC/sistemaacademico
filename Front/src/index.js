@@ -17,6 +17,7 @@ import Notas from "./views/RegistroNotas";
 import AsistenciaAlumno from "./views/RegistroAsistenciaAlumno";
 import AsistenciaProfesor from './views/RegistroAsistenciaProfesor';
 import Paga from "./views/Paga";
+import Prueba from './views/prueba';
 
 const router = createBrowserRouter([
   {
@@ -82,7 +83,11 @@ const router = createBrowserRouter([
   {
     path:"/paga",
     element:<Paga />,
-  }
+  },
+  {
+    path: "/prueba",
+    element: <Prueba/>,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
