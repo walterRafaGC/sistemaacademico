@@ -30,12 +30,29 @@ const Paga = () => {
     }
   };
 
-  const enviarTokenAlServidor = (token) => {
-    // Aquí debes enviar el token al servidor para procesar el pago
-    // Puedes usar fetch u otra librería para hacer la solicitud al servidor
-    // Ejemplo: fetch("/ruta-del-servidor", { method: "POST", body: { token: token.id } });
-    console.log("Token enviado al servidor:", token);
-  };
+  const enviarTokenAlServidor = async (token) => {
+    try {
+      // Aquí debes enviar el token al servidor para procesar el pago
+      // Puedes usar fetch u otra librería para hacer la solicitud al servidor
+      // Ejemplo: 
+      const response = await fetch("/ruta-del-servidor", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token: token.id }),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Error al procesar el pago en el servidor");
+      }
+  
+      console.log("Pago procesado correctamente");
+    } catch (error) {
+      console.error(error);
+      setPaymentError("Error al procesar el pago. Por favor, inténtalo de nuevo.");
+    }
+  };  
 
   return (
     <form onSubmit={handleSubmit}>
