@@ -3,6 +3,8 @@
     "@stripe/react-stripe-js": "^2.3.2",
     "@stripe/stripe-js": "^2.1.11",
     "axios": "^1.6.0",
+    "bootstrap": "^5.3.2",
+    "popper.js": "^1.16.1",
     "react-router-dom": "^6.18.0",
     "stripe": "^14.4.0"
   }
