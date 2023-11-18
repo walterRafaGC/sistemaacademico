@@ -20,7 +20,7 @@ const styles = {
     borderRadius: "3px",
   },
   submitButton: {
-    padding: '60px',
+    padding: '9px',
     backgroundColor: '#007bff',
     color: '#fff',
     border: 'none',
@@ -142,11 +142,11 @@ const LoginForm = () => {
             <div className="modal-body">
               <h6>
                 - Si eres un apoderado{" "}
-                <Link to="/registroApoderado">Selecciona Aquí</Link>
+                <Link to="/registroApoderado" onClick="closeModal()">Selecciona Aquí</Link>
               </h6>
               <h6>
                 - Si eres un profesor
-                <Link to="/registroProfesor">Selecciona Aquí</Link>
+                <Link to="/registroProfesor" onClick="closeModal()">Selecciona Aquí</Link>
               </h6>
             </div>
             <div className="modal-footer">
