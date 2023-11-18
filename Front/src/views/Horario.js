@@ -10,9 +10,10 @@ export default function Horario() {
   };
   return (
     <div>
-      <button onClick={toggleMenu} className="btn btn-secondary">
+       <button onClick={toggleMenu} className="btn btn-secondary">
         {isMenuOpen ? "Close Menu" : "Open Menu"}
       </button>
+      {isMenuOpen && <SlidingMenu onClose={toggleMenu} />}
       <from>
         <div className="container">
           <h1>Horario de clase</h1>

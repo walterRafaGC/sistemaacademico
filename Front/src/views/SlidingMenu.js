@@ -14,7 +14,8 @@ export default function SlidingMenu({ onClose }) {
                 <li><a href="http://localhost:3000/registroNota"><span>Registro de Notas</span></a></li>
                 <li><a href="http://localhost:3000/historialNotas"><span>Historial de Notas</span></a></li>
                 <li><a href="http://localhost:3000/horario"><span>Creacion de Horario</span></a></li>
-                <li><a href="http://localhost:3000/paga"><span>Paga</span></a></li>
+                <li><a href="http://localhost:3000/paga"><span>paga</span></a></li>
+
         </ul>
         <button onClick={onClose} className="close-btn">
         Close Menu
