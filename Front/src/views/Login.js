@@ -20,7 +20,7 @@ const styles = {
     borderRadius: "3px",
   },
   submitButton: {
-    padding: '10px',
+    padding: '60px',
     backgroundColor: '#007bff',
     color: '#fff',
     border: 'none',
