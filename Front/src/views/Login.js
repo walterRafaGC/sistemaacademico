@@ -136,11 +136,11 @@ const LoginForm = () => {
             <div className="modal-body">
               <h6>
                 - Si eres un apoderado{" "}
-                <a href="http://localhost:3000/registroApoderado">Seleccione Aqui</a>
+                <Link to="/registroApoderado">Selecciona Aquí</Link>
               </h6>
               <h6>
                 - Si eres un profesor
-                <a href="http://localhost:3000/registroProfesor">Seleccione Aqui</a>
+                <Link to="/registroProfesor">Selecciona Aquí</Link>
               </h6>
             </div>
             <div className="modal-footer">
