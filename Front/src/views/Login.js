@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 const styles = {
   container: {
@@ -14,13 +13,8 @@ const styles = {
     borderRadius: "5px",
     boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
   },
-  input: {
-    padding: "8px",
-    border: "1px solid #ccc",
-    borderRadius: "3px",
-  },
   submitButton: {
-    padding: '60px',
+    padding: '9px',
     backgroundColor: '#007bff',
     color: '#fff',
     border: 'none',
@@ -106,12 +100,12 @@ const LoginForm = () => {
                   Registrate
                 </button>
               </p>
-              <Link
+              <a href="http://localhost:3000/cambiarContrasena"
                 to="/cambiarContraseña"
                 className="d-block text-center mt-3"
               >
                 Cambiar Contraseña
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -142,11 +136,11 @@ const LoginForm = () => {
             <div className="modal-body">
               <h6>
                 - Si eres un apoderado{" "}
-                <Link to="/registroApoderado">Selecciona Aquí</Link>
+                <a href="http://localhost:3000/registroApoderado">Seleccione Aqui</a>
               </h6>
               <h6>
                 - Si eres un profesor
-                <Link to="/registroProfesor">Selecciona Aquí</Link>
+                <a href="http://localhost:3000/registroProfesor">Seleccione Aqui</a>
               </h6>
             </div>
             <div className="modal-footer">
