@@ -3,6 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+
+// Aquí puedes usar el componente Link para crear enlaces a diferentes rutas en tu aplicación
 
 const styles = {
   container: {

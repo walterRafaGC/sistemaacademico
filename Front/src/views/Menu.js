@@ -1,6 +1,19 @@
+import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import SlidingMenu from './SlidingMenu';
+
 export default function Menu() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
   return (
+    <div>
+       <button onClick={toggleMenu} className="btn btn-secondary">
+        {isMenuOpen ? 'Close Menu' : 'Open Menu'}
+      </button>
+      {isMenuOpen && <SlidingMenu onClose={toggleMenu} />}
     <form>
       <div className="container">
         <h1>Menu Principal</h1>
@@ -89,5 +102,6 @@ export default function Menu() {
         </div>
       </div>
     </form>
+    </div>
   );
 }

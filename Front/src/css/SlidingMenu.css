@@ -1,0 +1,15 @@
+.sliding-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #98FB98;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 1000;
+}
+
+.close-btn {
+  margin-top: 20px;
+}

@@ -18,6 +18,7 @@ import AsistenciaAlumno from "./views/RegistroAsistenciaAlumno";
 import AsistenciaProfesor from './views/RegistroAsistenciaProfesor';
 import Paga from "./views/Paga";
 import Prueba from './views/prueba';
+import HistorialNotas from './views/HistorialNotas';
 
 const router = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
   {
     path: "/prueba",
     element: <Prueba/>,
+  },
+  {
+    path: "/historialNotas",
+    element: <HistorialNotas />,
   },
 ]);
 
