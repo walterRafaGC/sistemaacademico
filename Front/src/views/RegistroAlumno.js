@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import SlidingMenu from "./SlidingMenu";
 
+
 const RegistroAlumno = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [alumno, setAlumno] = useState({
@@ -28,8 +29,8 @@ const RegistroAlumno = () => {
     setErrorMessages({});
 
     axios
-    .post("http://localhost:3000/api/alumno/save",{
-      ...alumno
+    .post("http://localhost:8080/api/alumno/save",{
+      ...alumno,
     })
     .then((response) =>{
       console.log(response.data);

@@ -50,7 +50,7 @@ const RegistroAdministracion = () => {
     setErrorMessages({});
 
     axios
-      .post("http://localhost:3000/api/personalAdministrativo/save", {
+      .post("http://localhost:8080/api/personalAdministrativo/save", {
         ...personal,
         repetir_contrasena_personal: undefined,
       })
