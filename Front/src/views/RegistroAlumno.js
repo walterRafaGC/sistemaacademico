@@ -3,45 +3,41 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import SlidingMenu from "./SlidingMenu";
 
-export default function RegistroAlumno() {
+const RegistroAlumno = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    nombreAlumn: "",
-    apellidoAlumno: "",
-    tipoDocumentoAlumno: "",
-    codigoDocumentoAlumno: "",
-    codigoEstudianteAlumno: "",
+  const [alumno, setAlumno] = useState({
+    nombre_alumno: "",
+    apellido_alumno: "",
+    tipo_documento_alumno: "",
+    numero_documento_alumno: "",
+    codigo_alumno: "",
   });
 
+  const [errorMessages, setErrorMessages] = useState({});
+
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
+    setAlumno({
+      ...alumno,
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      // Make a POST request to your API endpoint
-      const response = await axios.post("http://localhost:3000/api/alumno/save", formData);
+    setErrorMessages({});
 
-      // Handle the response as needed
-      console.log("Response from API:", response.data);
-
-      // Optionally, you can reset the form after successful submission
-      setFormData({
-        nombreAlumn: "",
-        apellidoAlumno: "",
-        tipoDocumentoAlumno: "",
-        codigoDocumentoAlumno: "",
-        codigoEstudianteAlumno: "",
-      });
-    } catch (error) {
-      console.error("Error submitting data:", error);
-    }
+    axios
+    .post("http://localhost:3000/api/alumno/save",{
+      ...alumno
+    })
+    .then((response) =>{
+      console.log(response.data);
+    })
+    .catch((error)=>{
+      console.error("Error:", error.response.data);
+      setErrorMessages(error.response.data.errorMessages);
+    });
   };
 
   const toggleMenu = () => {
@@ -54,6 +50,7 @@ export default function RegistroAlumno() {
         {isMenuOpen ? "Close Menu" : "Open Menu"}
       </button>
       {isMenuOpen && <SlidingMenu onClose={toggleMenu} />}
+      <div className="container mt-5">
       <form onSubmit={handleSubmit}>
         <div className="container">
           <h1>Registro del Alumno</h1>
@@ -62,21 +59,21 @@ export default function RegistroAlumno() {
             <label htmlFor="nombreAlumno" className="form-label">
               Nombre Completo del Alumno:
             </label>
-            <input type="text" className="form-control" name="nombreAlumn" value={formData.nombreAlumn}
+            <input type="text" className="form-control" name="nombre_alumno" value={alumno.nombre_alumno}
               onChange={handleChange}/>
           </div>
           <div className="mb-3">
             <label htmlFor="apellidoAlumno" className="form-label">
               Apellido Completo del Alumno:
             </label>
-            <input type="text" className="form-control" name="apellidoAlumno" value={formData.apellidoAlumno}
+            <input type="text" className="form-control" name="apellidoAlumno" value={alumno.apellido_alumno}
               onChange={handleChange}/>
           </div>
           <div className="mb-3">
             <label htmlFor="tipoDocumentoAlumno" className="form-label">
               Tipo de documento
             </label>
-            <select className="form-select" name="tipoDocumentoAlumno" value={formData.tipoDocumentoAlumno}
+            <select className="form-select" name="tipoDocumentoAlumno" value={alumno.tipo_documento_alumno}
               onChange={handleChange}>
               <option defaultValue value="" disabled>
                 Seleccione una opción
@@ -93,7 +90,7 @@ export default function RegistroAlumno() {
               type="number"
               className="form-control"
               name="codigoDocumentoAlumno"
-              value={formData.codigoDocumentoAlumno}
+              value={alumno.numero_documento_alumno}
               onChange={handleChange}
             />
           </div>
@@ -105,7 +102,7 @@ export default function RegistroAlumno() {
               type="number"
               className="form-control"
               name="codigoEstudianteAlumno"
-              value={formData.codigoEstudianteAlumno}
+              value={alumno.codigo_alumno}
               onChange={handleChange}
             />
           </div>
@@ -114,6 +111,9 @@ export default function RegistroAlumno() {
           </button>
         </div>
       </form>
+      </div>
     </div>
   );
-}
+};
+
+export default RegistroAlumno;

@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function RegistroApoderado() {
+const RegistroApoderado = () => {
   const [apoderadoData, setApoderadoData] = useState({
     nombreApoderado: "",
     apellidoApoderado: "",
@@ -429,7 +429,9 @@ export default function RegistroApoderado() {
               type="password"
               className="form-control"
               name="contrasenaApoderado"
-            /></div><div className="mb-3">
+            />
+          </div>
+          <div className="mb-3">
             <label htmlFor="repetirContrasenaApoderado" className="form-label">
               Repetir Contraseña
             </label>
@@ -447,4 +449,6 @@ export default function RegistroApoderado() {
       </div>
     </form>
   );
-}
+};
+
+export default RegistroApoderado;
