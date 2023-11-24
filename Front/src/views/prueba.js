@@ -1,81 +1,115 @@
+// Importa las bibliotecas necesarias de React
+import React from 'react';
+import "../css/sidebar.css" // Asegúrate de tener la versión de boxicons.min.css que necesitas
 
-import React, { useState } from 'react';
-import formularioLogin from './formulario_login.json';
-const styles = {
-    container: {
-      width: '300px',
-      margin: 'auto',
-      padding: '20px',
-      border: '1px solid #ccc',
-      borderRadius: '5px',
-      boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-    },
-    form: {
-      display: 'flex',
-      flexDirection: 'column',
-    },
-    inputGroup: {
-      marginBottom: '15px',
-    },
-    label: {
-      marginBottom: '5px',
-      fontWeight: 'bold',
-    },
-    input: {
-      padding: '8px',
-      border: '1px solid #ccc',
-      borderRadius: '3px',
-    },
-    submitButton: {
-      padding: '10px',
-      backgroundColor: '#007bff',
-      color: '#fff',
-      border: 'none',
-      borderRadius: '3px',
-      cursor: 'pointer',
-    },
-  };
-  
-const LoginForm = () => {
-  const [credenciales, setCredenciales] = useState({
-    nombre_usuario: '',
-    contrasena: ''
-  });
-
-  const handleInputChange = (event) => {
-    const { id, value } = event.target;
-    setCredenciales({ ...credenciales, [id]: value });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Aquí puedes realizar la lógica para manejar el envío del formulario (por ejemplo, enviar los datos al backend)
-    console.log('Datos de inicio de sesión:', credenciales);
-  };
-
+// Componente de la barra lateral
+const Sidebar = () => {
   return (
-    <div style={styles.container}>
-      <h2>Inicio de Sesión</h2>
-      <form style={styles.form} onSubmit={handleSubmit}>
-        {formularioLogin.campos.map((campo) => (
-          <div key={campo.id} style={styles.inputGroup}>
-            <label style={styles.label} htmlFor={campo.id}>{campo.label}</label>
-            <input
-              style={styles.input}
-              type={campo.tipo}
-              id={campo.id}
-              placeholder={campo.placeholder}
-              value={credenciales[campo.id]}
-              onChange={handleInputChange}
-            />
-          </div>
-        ))}
-        <button type="submit" style={styles.submitButton}>
-          {formularioLogin.boton_submit}
-        </button>
-      </form>
+    <nav className="sidebar locked">
+      <div className="logo_items flex">
+        <span className="nav_image">
+          <img src="images/logo.png" alt="logo_img" />
+        </span>
+        <span className="logo_name">CodingNepal</span>
+      </div>
+
+      <div className="menu_container">
+        <div className="menu_items">
+          <ul className="menu_item">
+            <div className="menu_title flex">
+              <span className="title">Dashboard</span>
+              <span className="line"></span>
+            </div>
+            <li className="item">
+              <a href="#" className="link flex">
+                <i className="bx bx-home-alt"></i>
+                <span>Overview</span>
+              </a>
+            </li>
+            <li className="item">
+              <a href="#" className="link flex">
+                <i className="bx bx-grid-alt"></i>
+                <span>All Projects</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul className="menu_item">
+            <div className="menu_title flex">
+              <span className="title">Editor</span>
+              <span className="line"></span>
+            </div>
+            <li className="item">
+              <a href="#" className="link flex">
+                <i className="bx bxs-magic-wand"></i>
+                <span>Magic Build</span>
+              </a>
+            </li>
+            <li className="item">
+              <a href="#" className="link flex">
+                <i className="bx bx-folder"></i>
+                <span>New Projects</span>
+              </a>
+            </li>
+            <li className="item">
+              <a href="#" className="link flex">
+                <i className="bx bx-cloud-upload"></i>
+                <span>Upload New</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul className="menu_item">
+            <div className="menu_title flex">
+              <span className="title">Setting</span>
+              <span className="line"></span>
+            </div>
+            <li className="item">
+              <a href="#" className="link flex">
+                <i className="bx bx-flag"></i>
+                <span>Notice Board</span>
+              </a>
+            </li>
+            <li className="item">
+              <a href="#" className="link flex">
+                <i className="bx bx-award"></i>
+                <span>Award</span>
+              </a>
+            </li>
+            <li className="item">
+              <a href="#" className="link flex">
+                <i className="bx bx-cog"></i>
+                <span>Setting</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+// Componente de la barra de navegación superior
+const Navbar = () => {
+  return (
+    <nav className="navbar flex">
+      <i className="bx bx-menu" id="sidebar-open"></i>
+      <input type="text" placeholder="Search..." className="search_box" />
+      <span className="nav_image">
+        <img src="images/profile.jpg" alt="logo_img" />
+      </span>
+    </nav>
+  );
+};
+
+// Componente principal que renderiza la barra lateral y la barra de navegación
+const App = () => {
+  return (
+    <div>
+      <Sidebar />
+      <Navbar />
     </div>
   );
 };
 
-export default LoginForm;
+export default App;

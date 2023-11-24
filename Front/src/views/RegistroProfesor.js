@@ -74,36 +74,36 @@ const RegistroProfesor = () => {
           <h6>Rellenar todos los campos para un exitoso registro</h6>
           <hr></hr>
           <h6>Informacion del Apoderado y familiar</h6>
-          <div class="mb-3">
-            <label for="nombreProfesor" class="form-label">
+          <div className="mb-3">
+            <label for="nombreProfesor" className="form-label">
               Nombre Completo:
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               name="nombreProfesor"
               value={profesor.nombre_profesor}
               onChange={handleChange}
             />
           </div>
-          <div class="mb-3">
-            <label for="apellidoProfesor" class="form-label">
+          <div className="mb-3">
+            <label for="apellidoProfesor" className="form-label">
               Apellido Completo:
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               name="apellidoProfesor"
               value={profesor.apellido_profesor}
               onChange={handleChange}
             />
           </div>
-          <div class="mb-3">
-            <label for="tipoDocumentoProfesor" class="form-label">
+          <div className="mb-3">
+            <label for="tipoDocumentoProfesor" className="form-label">
               Tipo de documento
             </label>
             <select
-              class="form-select"
+              className="form-select"
               name="tipoDocumentoProfesor"
               value={profesor.tipo_documento_profesor}
               onChange={handleChange}
@@ -113,60 +113,60 @@ const RegistroProfesor = () => {
               <option value="Pasaporte">Pasaporte</option>
             </select>
           </div>
-          <div class="mb-3">
-            <label for="codigoDocumentoProfesor" class="form-label">
+          <div className="mb-3">
+            <label for="codigoDocumentoProfesor" className="form-label">
               Codigo de documento:
             </label>
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               name="codigoDocumentoProfesor"
               value={profesor.dni_profesor}
               onChange={handleChange}
             />
           </div>
-          <div class="mb-3">
-            <label for="telefonoProfesor" class="form-label">
+          <div className="mb-3">
+            <label for="telefonoProfesor" className="form-label">
               Numero de Telefono
             </label>
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               name="telefonoProfesor"
               value={profesor.telefono_profesor}
               onChange={handleChange}
             />
           </div>
-          <div class="mb-3">
-            <label for="direccionProfesor" class="form-label">
+          <div className="mb-3">
+            <label for="direccionProfesor" className="form-label">
               Direccion de Domicilio
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               name="direccionProfesor"
               value={profesor.direccion_profesor}
               onChange={handleChange}
             />
           </div>
-          <div class="mb-3">
-            <label for="correoProfesor" class="form-label">
+          <div className="mb-3">
+            <label for="correoProfesor" className="form-label">
               Correo Electronico
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               name="correoProfesor"
               value={profesor.correo_profesor}
               onChange={handleChange}
             />
           </div>
-          <div class="mb-3">
-            <label for="genero" class="form-label">
+          <div className="mb-3">
+            <label for="genero" className="form-label">
               Genero:
             </label>
             <select
-              class="form-select"
+              className="form-select"
               name="genero"
               value={profesor.genero_profesor}
               onChange={handleChange}
@@ -176,72 +176,72 @@ const RegistroProfesor = () => {
               <option value="Femenino">Femenino</option>
             </select>
           </div>
-          <div class="mb-3">
-            <label for="nacionalidad" class="form-label">
+          <div className="mb-3">
+            <label for="nacionalidad" className="form-label">
               Nacionalidad
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               name="nacionalidad"
               value={profesor.nacionalidad_profesor}
               onChange={handleChange}
             />
           </div>
-          <div class="mb-3">
-          <label for="edad" class="form-label">
+          <div className="mb-3">
+          <label for="edad" className="form-label">
             Edad:
           </label>
           <input
             type="number"
-            class="form-control"
+            className="form-control"
             name="edad"
             value={profesor.edad_profesor}
             onChange={handleChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="fecha_nacimiento" class="form-label">
+        <div className="mb-3">
+          <label for="fecha_nacimiento" className="form-label">
             Fecha de Nacimiento:
           </label>
           <input
             type="date"
-            class="form-control"
+            className="form-control"
             name="fecha_nacimiento"
             value={profesor.fecha_nacimiento_profesor}
             onChange={handleChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="religion" class="form-label">
+        <div className="mb-3">
+          <label for="religion" className="form-label">
             Religion:
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             name="religion"
             value={profesor.religion_profesor}
             onChange={handleChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="gradoAcademico" class="form-label">
+        <div className="mb-3">
+          <label for="gradoAcademico" className="form-label">
             Grado Academico Docente:
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             name="gradoAcademico"
             value={profesor.grado_academico_profesor}
             onChange={handleChange}
           />
         </div>
-        <div class="mb-3">
-          <label for="formFileMultiple" class="form-label">
+        <div className="mb-3">
+          <label for="formFileMultiple" className="form-label">
             Documentacion y/o Certificado de estudio
           </label>
           <input
-            class="form-control"
+            className="form-control"
             type="file"
             id="formFileMultiple"
             multiple
@@ -249,12 +249,12 @@ const RegistroProfesor = () => {
             name="documentacion"
           />
         </div>
-        <div class="mb-3">
-          <label for="formFileMultiple" class="form-label">
+        <div className="mb-3">
+          <label for="formFileMultiple" className="form-label">
             CV
           </label>
           <input
-            class="form-control"
+            className="form-control"
             type="file"
             id="formFileMultiple"
             multiple
