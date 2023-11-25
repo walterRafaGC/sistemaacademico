@@ -1,0 +1,5 @@
+sistemacademico\back\repositories\Rps_profesor.class
+sistemacademico\back\controllers\Ctl_profesor.class
+sistemacademico\back\entities\Profesor.class
+sistemacademico\back\services\Srv_profesor.class
+sistemacademico\back\BackApplication.class
