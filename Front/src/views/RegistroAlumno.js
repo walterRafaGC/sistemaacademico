@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import SlidingMenu from "./SlidingMenu";
+import { useNavigate } from 'react-router-dom';
 
 
 const RegistroAlumno = () => {
@@ -15,6 +16,7 @@ const RegistroAlumno = () => {
   });
 
   const [errorMessages, setErrorMessages] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setAlumno({
@@ -34,6 +36,7 @@ const RegistroAlumno = () => {
     })
     .then((response) =>{
       console.log(response.data);
+      navigate("/menu");
     })
     .catch((error)=>{
       console.error("Error:", error.response.data);
@@ -107,7 +110,7 @@ const RegistroAlumno = () => {
               onChange={handleChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" >
             Guardar la Informacion
           </button>
         </div>

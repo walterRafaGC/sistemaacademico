@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const RegistroApoderado = () => {
   const [apoderado, setApoderado] = useState({
@@ -17,7 +18,7 @@ const RegistroApoderado = () => {
     id_hijo_apoderado:"",
   });
 
-  const [padre, setPadre] = useState({
+  const [alumno, setAlumno] = useState({
     nombrePadre: "",
     tipoDocumentoPadre: "",
     codigoDocumentoPadre: "",
@@ -33,6 +34,7 @@ const RegistroApoderado = () => {
   
 
   const [errorMessages, setErrorMessages] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setApoderado({
@@ -73,6 +75,7 @@ const RegistroApoderado = () => {
     })
     .then((response)=>{
       console.log(response.data);
+      navigate("/");
     })
     .catch((error)=>{
       console.error("Error:", error.response.data);

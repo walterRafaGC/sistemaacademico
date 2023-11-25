@@ -22,7 +22,7 @@ const RegistroAdministracion = () => {
     Salario: "",
     Tipo_Contrato: "",
     Turno_Horario: "",
-    contrasena_personal: "",
+    Contrasena_Personal: "",
     repetir_contrasena_personal: "",
   });
 
@@ -42,7 +42,7 @@ const RegistroAdministracion = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (personal.contrasena_personal !== personal.repetir_contrasena_personal) {
+    if (personal.Contrasena_Personal !== personal.repetir_contrasena_personal) {
       setErrorMessages({ contrasena: "Las contraseñas no coinciden" });
       return;
     }
@@ -83,6 +83,7 @@ const RegistroAdministracion = () => {
             <input
               type="text"
               className="form-control"
+              id="Nombres_Personal_adminis"
               name="Nombres_Personal_adminis"
               value={personal.Nombres_Personal_adminis}
               onChange={handleChange}
@@ -98,6 +99,7 @@ const RegistroAdministracion = () => {
             <input
               type="text"
               className="form-control"
+              id="Apellidos"
               name="Apellidos"
               value={personal.Apellidos}
               onChange={handleChange}
@@ -113,6 +115,7 @@ const RegistroAdministracion = () => {
             <input
               type="date"
               className="form-control"
+              id="Fecha_Nacimiento"
               name="Fecha_Nacimiento"
               value={personal.Fecha_Nacimiento}
               onChange={handleChange}
@@ -124,6 +127,7 @@ const RegistroAdministracion = () => {
             </label>
             <select
               className="form-select"
+              id="Genero"
               name="Genero"
               value={personal.Genero}
               onChange={handleChange}
@@ -142,6 +146,7 @@ const RegistroAdministracion = () => {
             </label>
             <select
               className="form-select"
+              id="tipo_documento_personal_administrativo"
               name="tipo_documento_personal_administrativo"
               value={personal.tipo_documento_personal_administrativo}
               onChange={handleChange}
@@ -161,6 +166,7 @@ const RegistroAdministracion = () => {
             <input
               type="number"
               className="form-control"
+              id="Numero_Identificacion"
               name="Numero_Identificacion"
               value={personal.Numero_Identificacion}
               onChange={handleChange}
@@ -187,6 +193,7 @@ const RegistroAdministracion = () => {
             <input
               type="text"
               className="form-control"
+              id="Direccion_Domicilio"
               name="Direccion_Domicilio"
               value={personal.Direccion_Domicilio}
               onChange={handleChange}
@@ -202,6 +209,7 @@ const RegistroAdministracion = () => {
             <input
               type="number"
               className="form-control"
+              id="Numero_Telefono"
               name="Numero_Telefono"
               value={personal.Numero_Telefono}
               onChange={handleChange}
@@ -217,6 +225,7 @@ const RegistroAdministracion = () => {
             <input
               type="text"
               className="form-control"
+              id=""
               name="Email"
               value={personal.Email}
               onChange={handleChange}
@@ -231,6 +240,7 @@ const RegistroAdministracion = () => {
             </label>
             <select
               className="form-select"
+              id="Puesto_Cargo"
               name="Puesto_Cargo"
               value={personal.Puesto_Cargo}
               onChange={handleChange}
@@ -252,6 +262,7 @@ const RegistroAdministracion = () => {
             <input
               type="date"
               className="form-control"
+              id="Fecha_Inicio_Empleo"
               name="Fecha_Inicio_Empleo"  
               value={personal.Fecha_Inicio_Empleo}
               onChange={handleChange}
@@ -264,6 +275,7 @@ const RegistroAdministracion = () => {
             <input
               type="text"
               className="form-control"
+              id="Departamento_Area"
               name="Departamento_Area"
               value={personal.Departamento_Area}
               onChange={handleChange}
@@ -279,6 +291,7 @@ const RegistroAdministracion = () => {
             <input
               type="number"
               className="form-control"
+              id="Salario"
               name="Salario"
               value={personal.Salario}
               onChange={handleChange}
@@ -293,6 +306,7 @@ const RegistroAdministracion = () => {
             </label>
             <select
               className="form-select"
+              id="Tipo_Contrato"
               name="Tipo_Contrato"
               value={personal.Tipo_Contrato}
               onChange={handleChange}
@@ -312,6 +326,7 @@ const RegistroAdministracion = () => {
             <input
               type="text"
               className="form-control"
+              id="Turno_Horario"
               name="Turno_Horario" 
               value={personal.Turno_Horario}
               onChange={handleChange}
@@ -324,9 +339,9 @@ const RegistroAdministracion = () => {
             <input
               type="password"
               className="form-control"
-              id="contrasena_personal"
-              name="contrasena_personal"
-              value={personal.contrasena_personal}
+              id="Contrasena_Personal"
+              name="Contrasena_Personal"
+              value={personal.Contrasena_Personal}
               onChange={handleChange}
             />
           </div>
