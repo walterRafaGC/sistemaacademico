@@ -23,13 +23,19 @@ const styles = {
     cursor: 'pointer',
   },
 };
-
+//Estado para los datos de inicio de sesión
 const LoginForm = () => {
   const [credenciales, setCredenciales] = useState({
     nombre_usuario: "",
     contrasena: "",
   });
 
+  //Estado para los datos del nuevo usuario a registrar
+  //const [nuevoUsuario; setNuevoUsuario] = useState({
+   //dni: "",
+   //nuevaContraseña: "" ,
+  //})
+  
   const handleInputChange = (event) => {
     const { id, value } = event.target;
     setCredenciales({ ...credenciales, [id]: value });
