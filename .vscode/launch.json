@@ -2,20 +2,21 @@
     "configurations": [
         {
             "type": "java",
-            "name": "DemoApplication",
+            "name": "DatabaseTestApplication",
             "request": "launch",
-            "mainClass": "DemoApplication",
-            "projectName": "sistemaacademico"
+            "mainClass": "sistemacademico.back.DatabaseTestApplication",
+            "projectName": "back"
         },
         {
             "type": "java",
-            "name": "Spring Boot-DemoApplication<sistemaacademico>",
+            "name": "Spring Boot-BackApplication<back>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.example.demo.DemoApplication",
-            "projectName": "sistemaacademico",
+            "mainClass": "sistemacademico.back.BackApplication",
+            "projectName": "back",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=54849 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=back"
         }
     ]
 }
