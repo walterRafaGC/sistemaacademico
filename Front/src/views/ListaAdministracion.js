@@ -1,12 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import SlidingMenu from './SlidingMenu';
+import SlidingMenu from './sidebar';
 
 const ApiConsumer = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [isMenuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     axios
@@ -26,15 +25,9 @@ const ApiConsumer = () => {
     return <p>Cargando........</p>;
   }
   
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
   return (
     <div>
-      <button onClick={toggleMenu} className="btn btn-secondary">
-        {isMenuOpen ? 'Close Menu' : 'Open Menu'}
-      </button>
-      {isMenuOpen && <SlidingMenu onClose={toggleMenu} />}
+      <SlidingMenu />
     <form>
       <div className="container">
         <h1>Lista del Personal Administrativo</h1>

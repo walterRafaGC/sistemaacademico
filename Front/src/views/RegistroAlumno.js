@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import SlidingMenu from "./SlidingMenu";
+import SlidingMenu from "./sidebar";
 import { useNavigate } from 'react-router-dom';
 
-
 const RegistroAlumno = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const [alumno, setAlumno] = useState({
     nombre_alumno: "",
     apellido_alumno: "",
@@ -15,7 +13,6 @@ const RegistroAlumno = () => {
     codigo_alumno: "",
   });
 
-  const [errorMessages, setErrorMessages] = useState({});
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -28,8 +25,6 @@ const RegistroAlumno = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setErrorMessages({});
-
     axios
     .post("http://localhost:8080/api/alumno/save",{
       ...alumno,
@@ -40,20 +35,12 @@ const RegistroAlumno = () => {
     })
     .catch((error)=>{
       console.error("Error:", error.response.data);
-      setErrorMessages(error.response.data.errorMessages);
     });
-  };
-
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
   };
 
   return (
     <div>
-      <button onClick={toggleMenu} className="btn btn-secondary">
-        {isMenuOpen ? "Close Menu" : "Open Menu"}
-      </button>
-      {isMenuOpen && <SlidingMenu onClose={toggleMenu} />}
+      <SlidingMenu />
       <div className="container mt-5">
       <form onSubmit={handleSubmit}>
         <div className="container">

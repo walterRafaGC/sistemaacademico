@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SlidingMenu from "./SlidingMenu";
+import SlidingMenu from "./sidebar";
 
 const HistorialNotas = () => {
   const [alumnos, setAlumnos] = useState([]);
   const [filtroNombre, setFiltroNombre] = useState("");
   const [alumnosFiltrados, setAlumnosFiltrados] = useState([]);
-  const [isMenuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     // Realizar la solicitud a la API para obtener los datos de la tabla de alumnos
@@ -34,16 +33,9 @@ const HistorialNotas = () => {
     setAlumnosFiltrados(alumnosFiltrados);
   };
 
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
-
   return (
     <div>
-      <button onClick={toggleMenu} className="btn btn-secondary">
-        {isMenuOpen ? "Close Menu" : "Open Menu"}
-      </button>
-      {isMenuOpen && <SlidingMenu onClose={toggleMenu} />}
+      <SlidingMenu />
       <div className="container mt-5">
         <h1>Historial de Notas</h1>
         <div className="mb-3">

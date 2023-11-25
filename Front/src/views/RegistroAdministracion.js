@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
-import SlidingMenu from "./SlidingMenu";
+import SlidingMenu from "./sidebar";
 
 const RegistroAdministracion = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const [personal, setPersonal] = useState({
     Nombres_Personal_adminis: "",
     Apellidos: "",
@@ -27,10 +26,6 @@ const RegistroAdministracion = () => {
   });
 
   const [errorMessages, setErrorMessages] = useState({});
-
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
 
   const handleChange = (e) => {
     setPersonal({
@@ -65,10 +60,7 @@ const RegistroAdministracion = () => {
 
   return (
     <div>
-      <button onClick={toggleMenu} className="btn btn-secondary">
-        {isMenuOpen ? "Close Menu" : "Open Menu"}
-      </button>
-      {isMenuOpen && <SlidingMenu onClose={toggleMenu} />}
+      <SlidingMenu />
       <form onSubmit={handleSubmit}>
         <div className="container">
           <h1>Registro de Trabajadores de la Institucion</h1>

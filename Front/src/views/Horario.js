@@ -1,19 +1,11 @@
-import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SlidingMenu from "./SlidingMenu";
+import SlidingMenu from "./sidebar";
 
-export default function Horario() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+const Horario = () => {
 
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
   return (
     <div>
-       <button onClick={toggleMenu} className="btn btn-secondary">
-        {isMenuOpen ? "Close Menu" : "Open Menu"}
-      </button>
-      {isMenuOpen && <SlidingMenu onClose={toggleMenu} />}
+       <SlidingMenu />
       <from>
         <div className="container">
           <h1>Horario de clase</h1>
@@ -291,3 +283,5 @@ export default function Horario() {
     </div>
   );
 }
+
+export default Horario;

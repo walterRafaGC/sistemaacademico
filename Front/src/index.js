@@ -11,13 +11,11 @@ import Token from "./views/Token";
 import RegistroAdministracion from "./views/RegistroAdministracion";
 import ListaAdministracion from "./views/ListaAdministracion";
 import ListaProfesor from "./views/ListaProfesor";
-import RegistroNota from "./views/RegistroNotas";
 import Horario from "./views/Horario";
-import Notas from "./views/RegistroNotas";
+import RegistroNotas from "./views/RegistroNotas";
 import AsistenciaAlumno from "./views/RegistroAsistenciaAlumno";
 import AsistenciaProfesor from './views/RegistroAsistenciaProfesor';
 import Paga from "./views/Paga";
-import Prueba from './views/prueba';
 import HistorialNotas from './views/HistorialNotas';
 
 const router = createBrowserRouter([
@@ -63,7 +61,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/registroNota",
-    element: <RegistroNota />,
+    element: <RegistroNotas />,
   },
   {
     path: "/horario",
@@ -71,7 +69,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/notas",
-    element: <Notas />,
+    element: <RegistroNotas />,
   },
   {
     path: "/asistenciaAlumno",
@@ -84,10 +82,6 @@ const router = createBrowserRouter([
   {
     path:"/paga",
     element:<Paga />,
-  },
-  {
-    path: "/prueba",
-    element: <Prueba/>,
   },
   {
     path: "/historialNotas",

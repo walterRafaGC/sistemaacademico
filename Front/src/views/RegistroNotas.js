@@ -1,20 +1,11 @@
-import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SlidingMenu from "./SlidingMenu";
+import SlidingMenu from "./sidebar";
 
-export default function RegistroNota() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
+const RegistroNota = () => {
 
   return (
     <div>
-      <button onClick={toggleMenu} className="btn btn-secondary">
-        {isMenuOpen ? "Close Menu" : "Open Menu"}
-      </button>
-      {isMenuOpen && <SlidingMenu onClose={toggleMenu} />}
+      <SlidingMenu />
       <from>
         <div className="container">
           <h1>Registrar Notas</h1>
@@ -123,3 +114,5 @@ export default function RegistroNota() {
     </div>
   );
 }
+
+export default RegistroNota;
