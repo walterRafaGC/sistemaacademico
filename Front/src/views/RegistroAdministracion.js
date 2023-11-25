@@ -83,7 +83,7 @@ const RegistroAdministracion = () => {
             <input
               type="text"
               className="form-control"
-              name="nombrePersonalAdmninitrativo"
+              name="Nombres_Personal_adminis"
               value={personal.Nombres_Personal_adminis}
               onChange={handleChange}
             />
@@ -98,7 +98,7 @@ const RegistroAdministracion = () => {
             <input
               type="text"
               className="form-control"
-              name="apellidoPersonalAdministrativo"
+              name="Apellidos"
               value={personal.Apellidos}
               onChange={handleChange}
             />
@@ -113,7 +113,7 @@ const RegistroAdministracion = () => {
             <input
               type="date"
               className="form-control"
-              name="fechaNacimientoPersonalAdministrativo"
+              name="Fecha_Nacimiento"
               value={personal.Fecha_Nacimiento}
               onChange={handleChange}
             />
@@ -124,7 +124,7 @@ const RegistroAdministracion = () => {
             </label>
             <select
               className="form-select"
-              name="genero"
+              name="Genero"
               value={personal.Genero}
               onChange={handleChange}
             >
@@ -142,7 +142,7 @@ const RegistroAdministracion = () => {
             </label>
             <select
               className="form-select"
-              name="tipoDocumentoPersonalAdministrativo"
+              name="tipo_documento_personal_administrativo"
               value={personal.tipo_documento_personal_administrativo}
               onChange={handleChange}
             >
@@ -161,7 +161,7 @@ const RegistroAdministracion = () => {
             <input
               type="number"
               className="form-control"
-              name="codigoDocumentoPersonalAdministrativo"
+              name="Numero_Identificacion"
               value={personal.Numero_Identificacion}
               onChange={handleChange}
             />
@@ -187,7 +187,7 @@ const RegistroAdministracion = () => {
             <input
               type="text"
               className="form-control"
-              name="direccionPersonalAdministrativo"
+              name="Direccion_Domicilio"
               value={personal.Direccion_Domicilio}
               onChange={handleChange}
             />
@@ -202,7 +202,7 @@ const RegistroAdministracion = () => {
             <input
               type="number"
               className="form-control"
-              name="telefonoPersonalAdministrativo"
+              name="Numero_Telefono"
               value={personal.Numero_Telefono}
               onChange={handleChange}
             />
@@ -217,7 +217,7 @@ const RegistroAdministracion = () => {
             <input
               type="text"
               className="form-control"
-              name="correoPersonalAdministrativo"
+              name="Email"
               value={personal.Email}
               onChange={handleChange}
             />
@@ -231,7 +231,7 @@ const RegistroAdministracion = () => {
             </label>
             <select
               className="form-select"
-              name="cargoPersonalAdministrativo"
+              name="Puesto_Cargo"
               value={personal.Puesto_Cargo}
               onChange={handleChange}
             >
@@ -252,7 +252,7 @@ const RegistroAdministracion = () => {
             <input
               type="date"
               className="form-control"
-              name="fechaInicioPersonalAdministrativo"  
+              name="Fecha_Inicio_Empleo"  
               value={personal.Fecha_Inicio_Empleo}
               onChange={handleChange}
             />
@@ -264,7 +264,7 @@ const RegistroAdministracion = () => {
             <input
               type="text"
               className="form-control"
-              name="departamentoAdministrativo"
+              name="Departamento_Area"
               value={personal.Departamento_Area}
               onChange={handleChange}
             />
@@ -279,7 +279,7 @@ const RegistroAdministracion = () => {
             <input
               type="number"
               className="form-control"
-              name="salarioPersonalAdministrativo"
+              name="Salario"
               value={personal.Salario}
               onChange={handleChange}
             />
@@ -293,7 +293,7 @@ const RegistroAdministracion = () => {
             </label>
             <select
               className="form-select"
-              name="contratoPersonalAdministrativo"
+              name="Tipo_Contrato"
               value={personal.Tipo_Contrato}
               onChange={handleChange}
             >
@@ -312,7 +312,7 @@ const RegistroAdministracion = () => {
             <input
               type="text"
               className="form-control"
-              name="horarioPersonalAdministrativo" 
+              name="Turno_Horario" 
               value={personal.Turno_Horario}
               onChange={handleChange}
             />
@@ -324,8 +324,8 @@ const RegistroAdministracion = () => {
             <input
               type="password"
               className="form-control"
-              id="contrasena_profesor"
-              name="contrasena_profesor"
+              id="contrasena_personal"
+              name="contrasena_personal"
               value={personal.contrasena_personal}
               onChange={handleChange}
             />
@@ -337,8 +337,8 @@ const RegistroAdministracion = () => {
             <input
               type="password"
               className="form-control"
-              id="repetir_contrasena_profesor"
-              name="repetir_contrasena_profesor"
+              id="repetir_contrasena_personal"
+              name="repetir_contrasena_personal"
               value={personal.repetir_contrasena_personal}
               onChange={handleChange}
             />

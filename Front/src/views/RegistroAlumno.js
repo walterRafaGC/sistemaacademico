@@ -67,14 +67,14 @@ const RegistroAlumno = () => {
             <label htmlFor="apellidoAlumno" className="form-label">
               Apellido Completo del Alumno:
             </label>
-            <input type="text" className="form-control" name="apellidoAlumno" value={alumno.apellido_alumno}
+            <input type="text" className="form-control" name="apellido_alumno" value={alumno.apellido_alumno}
               onChange={handleChange}/>
           </div>
           <div className="mb-3">
             <label htmlFor="tipoDocumentoAlumno" className="form-label">
               Tipo de documento
             </label>
-            <select className="form-select" name="tipoDocumentoAlumno" value={alumno.tipo_documento_alumno}
+            <select className="form-select" name="tipo_documento_alumno" value={alumno.tipo_documento_alumno}
               onChange={handleChange}>
               <option defaultValue value="" disabled>
                 Seleccione una opción
@@ -90,7 +90,7 @@ const RegistroAlumno = () => {
             <input
               type="number"
               className="form-control"
-              name="codigoDocumentoAlumno"
+              name="numero_documento_alumno"
               value={alumno.numero_documento_alumno}
               onChange={handleChange}
             />
@@ -102,7 +102,7 @@ const RegistroAlumno = () => {
             <input
               type="number"
               className="form-control"
-              name="codigoEstudianteAlumno"
+              name="codigo_alumno"
               value={alumno.codigo_alumno}
               onChange={handleChange}
             />

@@ -17,7 +17,7 @@ const RegistroApoderado = () => {
     id_hijo_apoderado:"",
   });
 
-  const [alumno, setAlumno] = useState({
+  const [padre, setPadre] = useState({
     nombrePadre: "",
     tipoDocumentoPadre: "",
     codigoDocumentoPadre: "",
@@ -29,6 +29,8 @@ const RegistroApoderado = () => {
     telefonoMadre: "",
     correoMadre: "",
   });
+
+  
 
   const [errorMessages, setErrorMessages] = useState({});
 

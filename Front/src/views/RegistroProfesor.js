@@ -1,27 +1,25 @@
-// RegistroProfesor.js
-import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const RegistroProfesor = () => {
   const [profesor, setProfesor] = useState({
-    nombre_profesor: "",
-    apellido_profesor: "",
-    tipo_documento_profesor: "",
-    dni_profesor: "",
-    telefono_profesor: "",
-    direccion_profesor: "",
-    correo_profesor: "",
-    genero_profesor: "",
-    nacionalidad_profesor: "",
-    edad_profesor: "",
-    fecha_nacimiento_profesor: "",
-    religion_profesor: "",
-    grado_academico_profesor: "",
-    certificado_profesor: "",
-    cv_profesor: "",
-    contrasena_profesor: "",
-    repetir_contrasena_profesor: "",
+    nombre_profesor: '',
+    apellido_profesor: '',
+    tipo_documento_profesor: '',
+    dni_profesor: '',
+    telefono_profesor: '',
+    direccion_profesor: '',
+    correo_profesor: '',
+    genero_profesor: '',
+    nacionalidad_profesor: '',
+    edad_profesor: '',
+    fecha_nacimiento_profesor: '',
+    religion_profesor: '',
+    grado_academico_profesor: '',
+    certificado_profesor: '',
+    cv_profesor: '',
+    contrasena_profesor: '',
+    repetir_contrasena_profesor: '',
   });
 
   const [errorMessages, setErrorMessages] = useState({});
@@ -38,7 +36,7 @@ const RegistroProfesor = () => {
 
     // Frontend validation: Check if passwords match
     if (profesor.contrasena_profesor !== profesor.repetir_contrasena_profesor) {
-      setErrorMessages({ contrasena: "Las contraseñas no coinciden" });
+      console.error("no concide");
       return;
     }
 
@@ -47,11 +45,10 @@ const RegistroProfesor = () => {
 
     // Make the API call
     // Only include one 'contrasena_profesor' in the data
-    axios
-      .post("http://localhost:8080/api/profesor/save", {
-        ...profesor,
-        repetir_contrasena_profesor: undefined, // Exclude the repeated password
-      })
+    axios.post('http://localhost:8080/api/profesor/save', {
+      ...profesor,
+      repetir_contrasena_profesor: undefined, // Exclude the repeated password
+    })
       .then((response) => {
         // Handle success
         console.log(response.data);
@@ -59,7 +56,7 @@ const RegistroProfesor = () => {
       })
       .catch((error) => {
         // Handle error
-        console.error("Error:", error.response.data);
+        console.error('Error:', error.response.data);
         // Set error messages from the backend
         setErrorMessages(error.response.data.errorMessages);
       });
@@ -68,233 +65,213 @@ const RegistroProfesor = () => {
   return (
     <div className="container mt-5">
       <form onSubmit={handleSubmit}>
-        {/* Other input fields... */}
-        <div className="container">
-          <h1>Registro del Profesor</h1>
-          <h6>Rellenar todos los campos para un exitoso registro</h6>
-          <hr></hr>
-          <h6>Informacion del Apoderado y familiar</h6>
-          <div className="mb-3">
-            <label for="nombreProfesor" className="form-label">
-              Nombre Completo:
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="nombreProfesor"
-              value={profesor.nombre_profesor}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label for="apellidoProfesor" className="form-label">
-              Apellido Completo:
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="apellidoProfesor"
-              value={profesor.apellido_profesor}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label for="tipoDocumentoProfesor" className="form-label">
-              Tipo de documento
-            </label>
-            <select
-              className="form-select"
-              name="tipoDocumentoProfesor"
-              value={profesor.tipo_documento_profesor}
-              onChange={handleChange}
-            >
-              <option defaultValue>Seleccione una opción</option>
-              <option value="DNI">DNI</option>
-              <option value="Pasaporte">Pasaporte</option>
-            </select>
-          </div>
-          <div className="mb-3">
-            <label for="codigoDocumentoProfesor" className="form-label">
-              Codigo de documento:
-            </label>
-            <input
-              type="number"
-              className="form-control"
-              name="codigoDocumentoProfesor"
-              value={profesor.dni_profesor}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label for="telefonoProfesor" className="form-label">
-              Numero de Telefono
-            </label>
-            <input
-              type="number"
-              className="form-control"
-              name="telefonoProfesor"
-              value={profesor.telefono_profesor}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label for="direccionProfesor" className="form-label">
-              Direccion de Domicilio
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="direccionProfesor"
-              value={profesor.direccion_profesor}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label for="correoProfesor" className="form-label">
-              Correo Electronico
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="correoProfesor"
-              value={profesor.correo_profesor}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label for="genero" className="form-label">
-              Genero:
-            </label>
-            <select
-              className="form-select"
-              name="genero"
-              value={profesor.genero_profesor}
-              onChange={handleChange}
-            >
-              <option defaultValue>Seleccione una opción</option>
-              <option value="Masculino">Masculino</option>
-              <option value="Femenino">Femenino</option>
-            </select>
-          </div>
-          <div className="mb-3">
-            <label for="nacionalidad" className="form-label">
-              Nacionalidad
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="nacionalidad"
-              value={profesor.nacionalidad_profesor}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-          <label for="edad" className="form-label">
-            Edad:
-          </label>
-          <input
-            type="number"
-            className="form-control"
-            name="edad"
-            value={profesor.edad_profesor}
-            onChange={handleChange}
-          />
-        </div>
         <div className="mb-3">
-          <label for="fecha_nacimiento" className="form-label">
-            Fecha de Nacimiento:
-          </label>
-          <input
-            type="date"
-            className="form-control"
-            name="fecha_nacimiento"
-            value={profesor.fecha_nacimiento_profesor}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mb-3">
-          <label for="religion" className="form-label">
-            Religion:
-          </label>
+          <label htmlFor="nombre_profesor" className="form-label">Nombre</label>
           <input
             type="text"
             className="form-control"
-            name="religion"
-            value={profesor.religion_profesor}
+            id="nombre_profesor"
+            name="nombre_profesor"
+            value={profesor.nombre_profesor}
             onChange={handleChange}
           />
         </div>
+
         <div className="mb-3">
-          <label for="gradoAcademico" className="form-label">
-            Grado Academico Docente:
-          </label>
+          <label htmlFor="apellido_profesor" className="form-label">Apellido</label>
           <input
             type="text"
             className="form-control"
-            name="gradoAcademico"
-            value={profesor.grado_academico_profesor}
+            id="apellido_profesor"
+            name="apellido_profesor"
+            value={profesor.apellido_profesor}
             onChange={handleChange}
           />
         </div>
+
+<div className="mb-3">
+  <label htmlFor="tipo_documento_profesor" className="form-label">Tipo de Documento</label>
+  <input
+    type="text"
+    className="form-control"
+    id="tipo_documento_profesor"
+    name="tipo_documento_profesor"
+    value={profesor.tipo_documento_profesor}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="dni_profesor" className="form-label">DNI</label>
+  <input
+    type="text"
+    className="form-control"
+    id="dni_profesor"
+    name="dni_profesor"
+    value={profesor.dni_profesor}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="telefono_profesor" className="form-label">Teléfono</label>
+  <input
+    type="text"
+    className="form-control"
+    id="telefono_profesor"
+    name="telefono_profesor"
+    value={profesor.telefono_profesor}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="direccion_profesor" className="form-label">Dirección</label>
+  <input
+    type="text"
+    className="form-control"
+    id="direccion_profesor"
+    name="direccion_profesor"
+    value={profesor.direccion_profesor}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="correo_profesor" className="form-label">Correo</label>
+  <input
+    type="text"
+    className="form-control"
+    id="correo_profesor"
+    name="correo_profesor"
+    value={profesor.correo_profesor}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="genero_profesor" className="form-label">Género</label>
+  <input
+    type="text"
+    className="form-control"
+    id="genero_profesor"
+    name="genero_profesor"
+    value={profesor.genero_profesor}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="nacionalidad_profesor" className="form-label">Nacionalidad</label>
+  <input
+    type="text"
+    className="form-control"
+    id="nacionalidad_profesor"
+    name="nacionalidad_profesor"
+    value={profesor.nacionalidad_profesor}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="edad_profesor" className="form-label">Edad</label>
+  <input
+    type="text"
+    className="form-control"
+    id="edad_profesor"
+    name="edad_profesor"
+    value={profesor.edad_profesor}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="fecha_nacimiento_profesor" className="form-label">Fecha de Nacimiento</label>
+  <input
+    type="text"
+    className="form-control"
+    id="fecha_nacimiento_profesor"
+    name="fecha_nacimiento_profesor"
+    value={profesor.fecha_nacimiento_profesor}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="religion_profesor" className="form-label">Religión</label>
+  <input
+    type="text"
+    className="form-control"
+    id="religion_profesor"
+    name="religion_profesor"
+    value={profesor.religion_profesor}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="grado_academico_profesor" className="form-label">Grado Académico</label>
+  <input
+    type="text"
+    className="form-control"
+    id="grado_academico_profesor"
+    name="grado_academico_profesor"
+    value={profesor.grado_academico_profesor}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="certificado_profesor" className="form-label">Certificado</label>
+  <input
+    type="text"
+    className="form-control"
+    id="certificado_profesor"
+    name="certificado_profesor"
+    value={profesor.certificado_profesor}
+    onChange={handleChange}
+  />
+</div>
+
+<div className="mb-3">
+  <label htmlFor="cv_profesor" className="form-label">CV</label>
+  <input
+    type="text"
+    className="form-control"
+    id="cv_profesor"
+    name="cv_profesor"
+    value={profesor.cv_profesor}
+    onChange={handleChange}
+  />
+</div>
         <div className="mb-3">
-          <label for="formFileMultiple" className="form-label">
-            Documentacion y/o Certificado de estudio
-          </label>
+          <label htmlFor="contrasena_profesor" className="form-label">Contraseña</label>
           <input
+            type="password"
             className="form-control"
-            type="file"
-            id="formFileMultiple"
-            multiple
+            id="contrasena_profesor"
+            name="contrasena_profesor"
+            value={profesor.contrasena_profesor}
             onChange={handleChange}
-            name="documentacion"
           />
         </div>
+
         <div className="mb-3">
-          <label for="formFileMultiple" className="form-label">
-            CV
-          </label>
+          <label htmlFor="repetir_contrasena_profesor" className="form-label">Repetir Contraseña</label>
           <input
+            type="password"
             className="form-control"
-            type="file"
-            id="formFileMultiple"
-            multiple
+            id="repetir_contrasena_profesor"
+            name="repetir_contrasena_profesor"
+            value={profesor.repetir_contrasena_profesor}
             onChange={handleChange}
-            name="cv"
           />
+          {errorMessages.contrasena && (
+            <div className="text-danger">{errorMessages.contrasena}</div>
+          )}
         </div>
-          <div className="mb-3">
-            <label htmlFor="contrasena_profesor" className="form-label">
-              Contraseña
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="contrasena_profesor"
-              name="contrasena_profesor"
-              value={profesor.contrasena_profesor}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="repetir_contrasena_profesor" className="form-label">
-              Repetir Contraseña
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="repetir_contrasena_profesor"
-              name="repetir_contrasena_profesor"
-              value={profesor.repetir_contrasena_profesor}
-              onChange={handleChange}
-            />
-            {errorMessages.contrasena && (
-              <div className="text-danger">{errorMessages.contrasena}</div>
-            )}
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Registrar
-          </button>
-        </div>
+
+        <button type="submit" className="btn btn-primary">Registrar</button>
       </form>
     </div>
   );
