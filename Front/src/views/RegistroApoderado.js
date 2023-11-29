@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const RegistroApoderado = () => {
   const [apoderado, setApoderado] = useState({
@@ -13,47 +13,61 @@ const RegistroApoderado = () => {
     direccion_apoderado: "",
     correo_apoderado: "",
     diferentePadres: false,
-    contrasena:"",
-    repetir_contrasena_apoderado:"",
-    id_hijo_apoderado:"",
+    contrasena: "",
+    repetir_contrasena_apoderado: "",
+    id_hijo_apoderado: "",
+  });
+
+  const [padre, setPadre] = useState({
+    nombre_padre: "",
+    tipo_documento_padre: "",
+    numero_documento_padre: "",
+    telefono_padre: "",
+    correo_padre: "",
+    nombre_madre: "",
+    tipo_documento_madre: "",
+    numero_documento_madre: "",
+    telefono_madre: "",
+    correo_madre: "",
   });
 
   const [alumno, setAlumno] = useState({
-    nombrePadre: "",
-    tipoDocumentoPadre: "",
-    codigoDocumentoPadre: "",
-    telefonoPadre: "",
-    correoPadre: "",
-    nombreMadre: "",
-    tipoDocumentoMadre: "",
-    codigoDocumentoMadre: "",
-    telefonoMadre: "",
-    correoMadre: "",
+    colegio_procedencia: "",
+    grado_academico_alumno: "",
+    certificaciones_alumno: "",
+    genero_alumno: "",
+    nacionalidad_alumno: "",
+    edad_alumno: "",
+    fecha_nacimiento_alumno: "",
+    direccion_alumno: "",
+    religion_alumno: "",
+    habilidades_alumno: "",
+    sangre_alumno: "",
+    alergias_alumno: "",
+    enfermedades_hereditarias: "",
+    enfermedades_cronicas: "",
   });
-
-  
 
   const [errorMessages, setErrorMessages] = useState({});
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setApoderado({
-      ...apoderado,
-      [e.target.name]: e.target.value,
-    });
-    setAlumno({
-      ...alumno,
-      [e.target.name]: e.target.value,
-    })
-  };
-
-  const handleInputChange = (e) => {
     const { name, value, checked } = e.target;
-    // Check which part of the form is being updated
+    // Utiliza un solo estado y actualiza según el nombre del campo
     if (name in apoderado) {
       setApoderado({
         ...apoderado,
         [name]: name === "diferentePadres" ? checked : value,
+      });
+    } else if (name in padre) {
+      setPadre({
+        ...padre,
+        [name]: value,
+      });
+    } else if (name in alumno) {
+      setAlumno({
+        ...alumno,
+        [name]: value,
       });
     }
   };
@@ -69,18 +83,44 @@ const RegistroApoderado = () => {
     setErrorMessages({});
 
     axios
-    .post("http://localhost:8080/api/apoderado/save",{
-      ...apoderado,
-      repetir_contrasena_apoderado: undefined,
-    })
-    .then((response)=>{
-      console.log(response.data);
-      navigate("/");
-    })
-    .catch((error)=>{
-      console.error("Error:", error.response.data);
-      setErrorMessages(error.response.data.errorMessages);
-    })
+      .post("http://localhost:8080/api/apoderado/save", {
+        ...apoderado,
+        repetir_contrasena_apoderado: undefined,
+      })
+      .then((response) => {
+        console.log(response.data);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error("Error:", error.response.data);
+        setErrorMessages(error.response.data.errorMessages);
+      });
+
+    axios
+      .post("http://localhost:8080/api/padre/save", {
+        ...padre,
+      })
+      .then((response) => {
+        console.log(response.data);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error("Error:", error.response.data);
+        setErrorMessages(error.response.data.errorMessages);
+      });
+
+    axios
+      .post("http://localhost:8080/api/alumno/save", {
+        ...alumno,
+      })
+      .then((response) => {
+        console.log(response.data);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error("Error:", error.response.data);
+        setErrorMessages(error.response.data.errorMessages);
+      });
   };
 
   return (
@@ -97,7 +137,7 @@ const RegistroApoderado = () => {
               id="gridCheck1"
               name="diferentePadres"
               checked={apoderado.diferentePadres}
-              onChange={handleInputChange}
+              onChange={handleChange}
             />
             <label className="form-check-label" htmlFor="gridCheck1">
               El apoderado es diferente a los padres
@@ -113,9 +153,10 @@ const RegistroApoderado = () => {
               <input
                 type="text"
                 className="form-control"
-                name="nombreApoderado"
+                id="nombre_apoderado"
+                name="nombre_apoderado"
                 value={apoderado.nombre_apoderado}
-                onChange={handleInputChange}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
@@ -125,7 +166,8 @@ const RegistroApoderado = () => {
               <input
                 type="text"
                 className="form-control"
-                name="apellidoApoderado"
+                id="apellido_apoderado"
+                name="apellido_apoderado"
                 value={apoderado.apellido_apoderado}
                 onChange={handleChange}
               />
@@ -134,8 +176,13 @@ const RegistroApoderado = () => {
               <label htmlFor="tipoDocumentoApoderado" className="form-label">
                 Tipo de documento
               </label>
-              <select className="form-select" name="tipoDocumentoApoderado"
-              value={apoderado.tipo_documento_apoderado} onChange={handleChange}>
+              <select
+                className="form-select"
+                id="tipo_documento_apoderado"
+                name="tipo_documento_apoderado"
+                value={apoderado.tipo_documento_apoderado}
+                onChange={handleChange}
+              >
                 <option defaultValue>Seleccione una opción</option>
                 <option value="DNI">DNI</option>
                 <option value="Pasaporte">Pasaporte</option>
@@ -148,9 +195,10 @@ const RegistroApoderado = () => {
               <input
                 type="number"
                 className="form-control"
-                name="codigoDocumentoApoderado"
+                id="dni_apoderado"
+                name="dni_apoderado"
                 value={apoderado.dni_apoderado}
-                onChange={handleInputChange}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
@@ -160,9 +208,10 @@ const RegistroApoderado = () => {
               <input
                 type="number"
                 className="form-control"
-                name="telefonoApoderado"
+                id="telefono_apoderado"
+                name="telefono_apoderado"
                 value={apoderado.telefono_apoderado}
-                onChange={handleInputChange}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
@@ -172,9 +221,10 @@ const RegistroApoderado = () => {
               <input
                 type="text"
                 className="form-control"
-                name="direccionApoderado"
+                id="direccion_apoderado"
+                name="direccion_apoderado"
                 value={apoderado.direccion_apoderado}
-                onChange={handleInputChange}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
@@ -184,9 +234,10 @@ const RegistroApoderado = () => {
               <input
                 type="text"
                 className="form-control"
-                name="correoApoderado"
+                id="correo_apoderado"
+                name="correo_apoderado"
                 value={apoderado.correo_apoderado}
-                onChange={handleInputChange}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -204,7 +255,10 @@ const RegistroApoderado = () => {
                       <input
                         type="text"
                         className="form-control"
-                        name="nombreApoderado"
+                        id="nombre_padre"
+                        name="nombre_padre"
+                        value={padre.nombre_padre}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-3">
@@ -216,7 +270,10 @@ const RegistroApoderado = () => {
                       </label>
                       <select
                         className="form-select"
-                        name="tipoDocumentoPadre"
+                        id="tipo_documento_padre"
+                        name="tipo_documento_padre"
+                        value={padre.tipo_documento_padre}
+                        onChange={handleChange}
                       >
                         <option defaultValue>Seleccione una opción</option>
                         <option value="DNI">DNI</option>
@@ -233,7 +290,10 @@ const RegistroApoderado = () => {
                       <input
                         type="number"
                         className="form-control"
-                        name="codigoDocumentoApoderado"
+                        id="numero_documento_padre"
+                        name="numero_documento_padre"
+                        value={padre.numero_documento_padre}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-3">
@@ -243,7 +303,10 @@ const RegistroApoderado = () => {
                       <input
                         type="number"
                         className="form-control"
-                        name="telefonoApoderado"
+                        id="telefono_padre"
+                        name="telefono_padre"
+                        value={padre.telefono_padre}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-3">
@@ -253,7 +316,10 @@ const RegistroApoderado = () => {
                       <input
                         type="text"
                         className="form-control"
-                        name="correoApoderado"
+                        id="correo_padre"
+                        name="correo_padre"
+                        value={padre.correo_padre}
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
@@ -265,7 +331,10 @@ const RegistroApoderado = () => {
                       <input
                         type="text"
                         className="form-control"
-                        name="apellidoApoderado"
+                        id="nombre_madre"
+                        name="nombre_madre"
+                        value={padre.nombre_madre}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-3">
@@ -277,7 +346,10 @@ const RegistroApoderado = () => {
                       </label>
                       <select
                         className="form-select"
-                        name="tipoDocumentoMadre"
+                        id="tipo_documento_madre"
+                        name="tipo_documento_madre"
+                        value={padre.tipo_documento_madre}
+                        onChange={handleChange}
                       >
                         <option defaultValue>Seleccione una opción</option>
                         <option value="DNI">DNI</option>
@@ -294,7 +366,10 @@ const RegistroApoderado = () => {
                       <input
                         type="number"
                         className="form-control"
-                        name="codigoDocumentoApoderado"
+                        id="numero_documento_madre"
+                        name="numero_documento_madre"
+                        value={padre.numero_documento_madre}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-3">
@@ -304,7 +379,10 @@ const RegistroApoderado = () => {
                       <input
                         type="number"
                         className="form-control"
-                        name="telefonoApoderado"
+                        id="telefono_madre"
+                        name="telefono_madre"
+                        value={padre.telefono_madre}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-3">
@@ -314,7 +392,10 @@ const RegistroApoderado = () => {
                       <input
                         type="text"
                         className="form-control"
-                        name="correoApoderado"
+                        id="correo_madre"
+                        name="correo_madre"
+                        value={padre.correo_madre}
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
@@ -329,7 +410,13 @@ const RegistroApoderado = () => {
               <label htmlFor="genero" className="form-label">
                 Genero:
               </label>
-              <select className="form-select" name="genero">
+              <select
+                className="form-select"
+                id="genero_alumno"
+                name="genero_alumno"
+                value={alumno.genero_alumno}
+                onChange={handleChange}
+              >
                 <option defaultValue>Seleccione una opción</option>
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
@@ -339,13 +426,27 @@ const RegistroApoderado = () => {
               <label htmlFor="nacionalidad" className="form-label">
                 Nacionalidad
               </label>
-              <input type="text" className="form-control" name="nacionalidad" />
+              <input
+                type="text"
+                className="form-control"
+                id="nacionalidad_alumno"
+                name="nacionalidad_alumno"
+                value={alumno.nacionalidad_alumno}
+                onChange={handleChange}
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="edad" className="form-label">
                 Edad:
               </label>
-              <input type="number" className="form-control" name="edad" />
+              <input
+                type="number"
+                className="form-control"
+                id="edad_alumno"
+                name="edad_alumno"
+                value={alumno.edad_alumno}
+                onChange={handleChange}
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="fecha_nacimiento" className="form-label">
@@ -354,20 +455,37 @@ const RegistroApoderado = () => {
               <input
                 type="date"
                 className="form-control"
-                name="fecha_nacimiento"
+                id="fecha_nacimiento_alumno"
+                name="fecha_nacimiento_alumno"
+                value={alumno.fecha_nacimiento_alumno}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
               <label htmlFor="direccion" className="form-label">
                 Direccion de Domicilio:
               </label>
-              <input type="text" className="form-control" name="direccion" />
+              <input
+                type="text"
+                className="form-control"
+                id="direccion_alumno"
+                name="direccion_alumno"
+                value={alumno.direccion_alumno}
+                onChange={handleChange}
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="religion" className="form-label">
                 Religion:
               </label>
-              <input type="text" className="form-control" name="religion" />
+              <input
+                type="text"
+                className="form-control"
+                id="religion_alumno"
+                name="religion_alumno"
+                value={alumno.religion_alumno}
+                onChange={handleChange}
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="habilidadesCompetitivas" className="form-label">
@@ -376,32 +494,63 @@ const RegistroApoderado = () => {
               <input
                 type="text"
                 className="form-control"
-                name="habilidadesCompetitivas"
+                id="habilidades_alumno"
+                name="habilidades_alumno"
+                value={alumno.habilidades_alumno}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
               <label htmlFor="sangre" className="form-label">
                 Tipo de Sangre:
               </label>
-              <input type="text" className="form-control" name="tipoSangre" />
+              <input
+                type="text"
+                className="form-control"
+                id="sangre_alumno"
+                name="sangre_alumno"
+                value={alumno.sangre_alumno}
+                onChange={handleChange}
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="alergias" className="form-label">
                 Alergias:
               </label>
-              <textarea className="form-control" rows="2"></textarea>
+              <textarea
+                className="form-control"
+                rows="2"
+                id="alergias_alumno"
+                name="alergias_alumno"
+                value={alumno.alergias_alumno}
+                onChange={handleChange}
+              ></textarea>
             </div>
             <div className="mb-3">
               <label htmlFor="enfermedadesHereditarias" className="form-label">
                 Antecedentes de Enfermedades Hereditarias
               </label>
-              <textarea className="form-control" rows="2"></textarea>
+              <textarea
+                className="form-control"
+                rows="2"
+                id="enfermedades_hereditarias"
+                name="enfermedades_hereditarias"
+                value={alumno.enfermedades_hereditarias}
+                onChange={handleChange}
+              ></textarea>
             </div>
             <div className="mb-3">
               <label htmlFor="enfermedadesCronicas" className="form-label">
                 Historial de Enfermedades Cronicas
               </label>
-              <textarea className="form-control" rows="2"></textarea>
+              <textarea
+                className="form-control"
+                rows="2"
+                id="enfermedades_cronicas"
+                name="enfermedades_cronicas"
+                value={alumno.enfermedades_cronicas}
+                onChange={handleChange}
+              ></textarea>
             </div>
             <div className="mb-3">
               <label htmlFor="contrasenaApoderado" className="form-label">
@@ -410,7 +559,8 @@ const RegistroApoderado = () => {
               <input
                 type="password"
                 className="form-control"
-                name="contrasenaApoderado"
+                id="contrasena"
+                name="contrasena"
                 value={apoderado.contrasena}
                 onChange={handleChange}
               />
@@ -425,7 +575,8 @@ const RegistroApoderado = () => {
               <input
                 type="password"
                 className="form-control"
-                name="repetirContrasenaApoderado"
+                id="repetir_contrasena_apoderado"
+                name="repetir_contrasena_apoderado"
                 value={apoderado.repetir_contrasena_apoderado}
                 onChange={handleChange}
               />
