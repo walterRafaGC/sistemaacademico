@@ -97,7 +97,7 @@ const RegistroApoderado = () => {
       });
 
     axios
-      .post("http://localhost:8080/api/padre/save", {
+      .post("http://localhost:8080/api/padres/save", {
         ...padre,
       })
       .then((response) => {
