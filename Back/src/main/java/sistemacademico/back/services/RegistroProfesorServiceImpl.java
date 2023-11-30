@@ -31,6 +31,5 @@ public class RegistroProfesorServiceImpl implements RegistroProfesorService {
                 certificado_profesor, cv_profesor, contrasena_profesor);
         rps_profesor.save(profesor);
         return errorMessages;
-
     }
 }
