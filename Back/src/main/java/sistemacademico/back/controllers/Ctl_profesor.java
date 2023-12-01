@@ -69,4 +69,9 @@ public class Ctl_profesor {
     public Optional<Profesor> obtenerProfesorPorId(@PathVariable("id_profesor") Long id_profesor) {
         return this.srv_profesor.obtetenerProfesorPorID(id_profesor);
     }
+
+    @GetMapping(path = "/login/{dni_profesor}")
+    public Optional<Profesor> obtenerProfesorPorDNI(@PathVariable("dni_profesor") int dni_profesor) {
+        return this.srv_profesor.obtenerProfesorPorDNI(dni_profesor);
+    }
 }

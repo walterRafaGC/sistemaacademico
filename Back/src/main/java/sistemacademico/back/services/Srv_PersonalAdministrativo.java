@@ -29,4 +29,8 @@ public class Srv_PersonalAdministrativo {
     public Optional<PersonalAdministrativo> obtenerPersonalPorID(Long id_PersonalAdministrativo){
         return rps_PersonalAdministrativo.findById(id_PersonalAdministrativo);
     }
+
+    public Optional<PersonalAdministrativo> obtenerPersonalPorDNI(int Numero_Identificacion){
+        return rps_PersonalAdministrativo.findByNumero_Identificacion(Numero_Identificacion);
+    }
 }

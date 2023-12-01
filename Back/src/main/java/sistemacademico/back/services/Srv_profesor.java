@@ -29,4 +29,8 @@ public class Srv_profesor {
     public Optional<Profesor> obtetenerProfesorPorID(Long id_profesor){
         return rps_profesor.findById(id_profesor);
     }
+
+    public Optional<Profesor> obtenerProfesorPorDNI(int dni_profesor) {
+        return rps_profesor.findByDniProfesor(dni_profesor);
+    }
 }
