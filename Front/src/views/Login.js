@@ -2,7 +2,7 @@ import "../css/login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 const styles = {
@@ -30,21 +30,35 @@ const LoginForm = () => {
     contrasena: "",
   });
 
-  //Estado para los datos del nuevo usuario a registrar
-  //const [nuevoUsuario; setNuevoUsuario] = useState({
-   //dni: "",
-   //nuevaContraseña: "" ,
-  //})
+  const [usuarioEncontrado, setUsuarioEncontrado] = useState(null);
+  const [errorLogin, setErrorLogin] = useState(null);
   
   const handleInputChange = (event) => {
     const { id, value } = event.target;
     setCredenciales({ ...credenciales, [id]: value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Aquí puedes realizar la lógica para manejar el envío del formulario (por ejemplo, enviar los datos al backend)
-    console.log("Datos de inicio de sesión:", credenciales);
+
+    try {
+      const response = await fetch(`http://localhost:8080/api/profesor/login/${credenciales.nombre_usuario}`);
+      const data = await response.json();
+
+      if (response.ok) {
+        setUsuarioEncontrado(data);
+        setErrorLogin(null);
+        // Aquí puedes redirigir o realizar otras acciones después de un inicio de sesión exitoso
+        console.log("Inicio de sesión exitoso. Datos del profesor:", data);
+      } else {
+        setErrorLogin("Usuario o contraseña incorrectos");
+        setUsuarioEncontrado(null);
+      }
+    } catch (error) {
+      console.error("Error al realizar la solicitud:", error);
+      setErrorLogin("Error al realizar la solicitud");
+      setUsuarioEncontrado(null);
+    }
   };
 
   return (
@@ -96,6 +110,7 @@ const LoginForm = () => {
               >
                 Ingresar
               </button>
+              <div className="mb-3 text-danger">{errorLogin}</div>
               <p className="mt-3">
                 No tienes una cuenta, entonces
                 <button
