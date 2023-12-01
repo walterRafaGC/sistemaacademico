@@ -26,7 +26,7 @@ const styles = {
 //Estado para los datos de inicio de sesión
 const LoginForm = () => {
   const [credenciales, setCredenciales] = useState({
-    nombre_usuario: "",
+    dni_usuario: "",
     contrasena: "",
   });
 
@@ -42,7 +42,7 @@ const LoginForm = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:8080/api/profesor/login/${credenciales.nombre_usuario}`);
+      const response = await fetch(`http://localhost:8080/api/profesor/login/${credenciales.dni_usuario}`);
       const data = await response.json();
 
       if (response.ok) {
@@ -80,7 +80,7 @@ const LoginForm = () => {
                   className="form-control"
                   name="username"
                   placeholder="DNI"
-                  value={credenciales.nombre_usuario}
+                  value={credenciales.dni_usuario}
                   onChange={handleInputChange}
                 />
               </div>
