@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import SlidingMenu from "./sidebar";
 import { useNavigate } from 'react-router-dom';
+import "../css/margen-alumno.css";
 
 const RegistroAlumno = () => {
   const [alumno, setAlumno] = useState({
@@ -39,10 +40,13 @@ const RegistroAlumno = () => {
   };
 
   return (
-    <div>
-      <SlidingMenu />
-      <div className="container mt-5">
-      <form onSubmit={handleSubmit}>
+    <div className="container-fluid">
+    <div className="row">
+      <div className="col-md-3">
+        <SlidingMenu />
+      </div>
+      <div className="col-md-9">
+      <form onSubmit={handleSubmit} className="custom-form3">
         <div className="container">
           <h1>Registro del Alumno</h1>
           <h6>Rellenar todos los campos para un exitoso registro</h6>
@@ -103,6 +107,7 @@ const RegistroAlumno = () => {
         </div>
       </form>
       </div>
+    </div>
     </div>
   );
 };

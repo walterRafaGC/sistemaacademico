@@ -10,7 +10,7 @@ const Sidebar = () => {
         <ul className="menu_items">
           <div className="menu_title menu_dahsboard"></div>
           <li className="item">
-            <a href="http://localhost:3000/registroAlumno" className="nav_link">
+            <a href="http://localhost:3000/menu" className="nav_link">
               <span className="navlink_icon">
                 <i className="bx bxs-magic-wand"></i>
               </span>

@@ -60,9 +60,7 @@ const RegistroProfesor = () => {
         navigate("/");
       })
       .catch((error) => {
-        // Handle error
         console.error("Error:", error.response.data);
-        // Set error messages from the backend
         setErrorMessages(error.response.data.errorMessages);
       });
   };
@@ -101,17 +99,20 @@ const RegistroProfesor = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="tipo_documento_profesor" className="form-label">
-              Tipo de Documento
+            <label htmlFor="tipoDocumentoApoderado" className="form-label">
+              Tipo de documento
             </label>
-            <input
-              type="text"
-              className="form-control"
+            <select
+              className="form-select"
               id="tipo_documento_profesor"
               name="tipo_documento_profesor"
               value={profesor.tipo_documento_profesor}
               onChange={handleChange}
-            />
+            >
+              <option defaultValue>Seleccione una opción</option>
+              <option value="DNI">DNI</option>
+              <option value="Pasaporte">Pasaporte</option>
+            </select>
           </div>
           <div className="mb-3">
             <label htmlFor="dni_profesor" className="form-label">
@@ -278,7 +279,7 @@ const RegistroProfesor = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="contrasena_profesor" className="form-label">
+            <label htmlFor="contrasena" className="form-label">
               Contraseña
             </label>
             <input
@@ -292,7 +293,7 @@ const RegistroProfesor = () => {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="repetir_contrasena_profesor" className="form-label">
+            <label htmlFor="repetir_contrasena" className="form-label">
               Repetir Contraseña
             </label>
             <input
@@ -303,9 +304,6 @@ const RegistroProfesor = () => {
               value={profesor.repetir_contrasena_profesor}
               onChange={handleChange}
             />
-            {errorMessages.contrasena && (
-              <div className="text-danger">{errorMessages.contrasena}</div>
-            )}
           </div>
 
           <button type="submit" className="btn btn-primary">

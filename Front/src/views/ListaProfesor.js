@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SlidingMenu from "./sidebar";
+import "../css/margen-profesor.css";
 
 const ApiConsumer = () => {
   const [data, setData] = useState([]);
@@ -25,9 +26,13 @@ const ApiConsumer = () => {
   }
 
   return (
-    <div>
-      <SlidingMenu />
-      <form>
+    <div className="container-fluid">
+    <div className="row">
+      <div className="col-md-3">
+        <SlidingMenu />
+      </div>
+      <div className="col-md-9">
+      <form className="custom-form5">
         <div className="container">
           <h1>Lista de Profesores</h1>
           <table className="table table-hover">
@@ -61,7 +66,10 @@ const ApiConsumer = () => {
         </div>
       </form>
     </div>
+    </div>
+    </div>
   );
+
 };
 
 export default ApiConsumer;
