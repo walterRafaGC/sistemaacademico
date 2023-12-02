@@ -2,8 +2,8 @@ import "../css/login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 const styles = {
   container: {
@@ -15,12 +15,12 @@ const styles = {
     boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
   },
   submitButton: {
-    padding: '9px',
-    backgroundColor: '#007bff',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '3px',
-    cursor: 'pointer',
+    padding: "9px",
+    backgroundColor: "#007bff",
+    color: "#fff",
+    border: "none",
+    borderRadius: "3px",
+    cursor: "pointer",
   },
 };
 //Estado para los datos de inicio de sesión
@@ -30,9 +30,9 @@ const LoginForm = () => {
     contrasena: "",
   });
 
-  const [usuarioEncontrado, setUsuarioEncontrado] = useState(null);
   const [errorLogin, setErrorLogin] = useState(null);
-  
+  const history = useHistory();
+
   const handleInputChange = (event) => {
     const { id, value } = event.target;
     setCredenciales({ ...credenciales, [id]: value });
@@ -42,22 +42,24 @@ const LoginForm = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:8080/api/profesor/login/${credenciales.dni_usuario}`);
+      const response = await fetch(
+        `http://localhost:8080/api/profesor/login/${credenciales.dni_usuario}`
+      );
       const data = await response.json();
 
       if (response.ok) {
-        setUsuarioEncontrado(data);
-        setErrorLogin(null);
-        // Aquí puedes redirigir o realizar otras acciones después de un inicio de sesión exitoso
-        console.log("Inicio de sesión exitoso. Datos del profesor:", data);
+        if (data.contrasena === credenciales.contrasena) {
+          setErrorLogin(null);
+          history.push("/menu");
+        } else {
+          setErrorLogin("Contraseña incorrecta");
+        }
       } else {
-        setErrorLogin("Usuario o contraseña incorrectos");
-        setUsuarioEncontrado(null);
+        setErrorLogin("Usuario no encontrado");
       }
     } catch (error) {
       console.error("Error al realizar la solicitud:", error);
       setErrorLogin("Error al realizar la solicitud");
-      setUsuarioEncontrado(null);
     }
   };
 
@@ -104,9 +106,6 @@ const LoginForm = () => {
                 style={styles.submitButton}
                 className="btn btn-primary btn-block"
                 type="submit"
-                onClick={() =>
-                  (window.location.href = "http://localhost:3000/menu")
-                }
               >
                 Ingresar
               </button>
@@ -122,7 +121,8 @@ const LoginForm = () => {
                   Registrate
                 </button>
               </p>
-              <a href="http://localhost:3000/cambiarContrasena"
+              <a
+                href="http://localhost:3000/cambiarContrasena"
                 to="/cambiarContraseña"
                 className="d-block text-center mt-3"
               >
@@ -158,11 +158,15 @@ const LoginForm = () => {
             <div className="modal-body">
               <h6>
                 - Si eres un apoderado{" "}
-                <Link to="/registroApoderado" onClick={CloseEvent}>Selecciona Aquí</Link>
+                <Link to="/registroApoderado" onClick={CloseEvent}>
+                  Selecciona Aquí
+                </Link>
               </h6>
               <h6>
                 - Si eres un profesor
-                <Link to="/registroProfesor" onClick={CloseEvent}>Selecciona Aquí</Link>
+                <Link to="/registroProfesor" onClick={CloseEvent}>
+                  Selecciona Aquí
+                </Link>
               </h6>
             </div>
             <div className="modal-footer">
