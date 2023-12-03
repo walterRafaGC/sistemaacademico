@@ -62,4 +62,9 @@ public class Ctl_Apoderado {
     public Optional<Apoderado> obtenerApoderadoPorID(@PathVariable("id_apoderado") Long id_apoderado) {
         return this.srv_Apoderado.obtenerApoderadoPorID(id_apoderado);
     }
+
+    @GetMapping(path = "/login/{dni_apoderado}")
+    public Optional<Apoderado> obtenerApoderadoPorDNI(@PathVariable("dni_apoderado") int dni_apoderado){
+        return this.srv_Apoderado.obtenerApoderadoPorDNI(dni_apoderado);
+    }
 }

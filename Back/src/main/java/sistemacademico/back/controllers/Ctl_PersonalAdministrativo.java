@@ -71,4 +71,9 @@ public class Ctl_PersonalAdministrativo {
             @PathVariable("id_PersonalAdministrativo") Long id_PersonalAdministrativo) {
         return this.srv_PersonalAdministrativo.obtenerPersonalPorID(id_PersonalAdministrativo);
     }
+
+    @GetMapping(path = "/login/{Numero_Identificacion}")
+    public Optional<PersonalAdministrativo> obtenerPersonalPorDNI (@PathVariable("Numero_Identificacion") int Numero_Identificacion){
+        return this.srv_PersonalAdministrativo.obtenerPersonalPorDNI(Numero_Identificacion);
+    }
 }
