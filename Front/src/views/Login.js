@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const styles = {
   container: {
@@ -30,6 +30,9 @@ const LoginForm = () => {
     contrasena: "",
   });
 
+  const [errorLogin, setErrorLogin] = useState(null);
+  const history = useHistory();
+
   const handleInputChange = (event) => {
     const { id, value } = event.target;
     setCredenciales({ ...credenciales, [id]: value });
@@ -37,6 +40,27 @@ const LoginForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    try {
+      const response = await fetch(
+        `http://localhost:8080/api/profesor/login/${credenciales.dni_usuario}`
+      );
+      const data = await response.json();
+
+      if (response.ok) {
+        if (data.contrasena === credenciales.contrasena) {
+          setErrorLogin(null);
+          history.push("/menu");
+        } else {
+          setErrorLogin("Contraseña incorrecta");
+        }
+      } else {
+        setErrorLogin("Usuario no encontrado");
+      }
+    } catch (error) {
+      console.error("Error al realizar la solicitud:", error);
+      setErrorLogin("Error al realizar la solicitud");
+    }
   };
 
   return (
@@ -82,12 +106,10 @@ const LoginForm = () => {
                 style={styles.submitButton}
                 className="btn btn-primary btn-block"
                 type="submit"
-                onClick={() =>
-                  (window.location.href = "http://localhost:3000/menu")
-                }
               >
                 Ingresar
               </button>
+              <div className="mb-3 text-danger">{errorLogin}</div>
               <p className="mt-3">
                 No tienes una cuenta, entonces
                 <button
