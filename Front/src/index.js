@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./views/Login";
-import CambiarContraseña from "./views/CambiarContraseña";
+import CambiarContrasena from "./views/CambiarContraseña";
 import Menu from "./views/Menu";
 import RegistroAlumno from "./views/RegistroAlumno";
 import RegistroApoderado from "./views/RegistroApoderado";
@@ -17,6 +17,8 @@ import AsistenciaAlumno from "./views/RegistroAsistenciaAlumno";
 import AsistenciaProfesor from './views/RegistroAsistenciaProfesor';
 import Paga from "./views/Paga";
 import HistorialNotas from './views/HistorialNotas';
+import Chat from './views/pruebaChat';
+import Prueba from './views/prueba';
 
 const router = createBrowserRouter([
   {
@@ -24,8 +26,12 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
+    path: "/prueba",
+    element: <Prueba />,
+    },
+  {
     path: "/cambiarContraseña",
-    element: <CambiarContraseña />,
+    element: <CambiarContrasena />,
   },
   {
     path: "/menu",
@@ -86,6 +92,10 @@ const router = createBrowserRouter([
   {
     path: "/historialNotas",
     element: <HistorialNotas />,
+  },
+  {
+    path: "/chat",
+    element: <Chat />,
   },
 ]);
 

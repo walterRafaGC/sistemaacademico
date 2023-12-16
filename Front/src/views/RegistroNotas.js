@@ -10,7 +10,7 @@ const RegistroNota = () => {
           <SlidingMenu />
         </div>
         <div className="col-md-9">
-          <from className="custom-form7">
+          <form className="custom-form7">
             <div className="container">
               <h1>Registrar Notas</h1>
               <div className="mb-3">
@@ -114,7 +114,7 @@ const RegistroNota = () => {
                 Guardar
               </button>
             </div>
-          </from>
+          </form>
         </div>
       </div>
     </div>

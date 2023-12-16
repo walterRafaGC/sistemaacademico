@@ -1,8 +1,8 @@
 // Importa las bibliotecas necesarias de React
 import React from "react";
 import "../css/sidebar.css"; // Asegúrate de tener la versión de boxicons.min.css que necesitas
-
 // Componente de la barra lateral
+
 const Sidebar = () => {
   return (
     <nav className="sidebar">
@@ -41,9 +41,11 @@ const Sidebar = () => {
             <a
               href="http://localhost:3000/registroAdministracion"
               className="nav_link"
-            ><span className="navlink_icon">
-              <i className="bx bxs-magic-wand"></i></span>
-              <span class="navlink">Registro del Personal Administrativo</span>
+            >
+              <span className="navlink_icon">
+                <i className="bx bxs-magic-wand"></i>
+              </span>
+              <span className="navlink">Registro del Personal Administrativo</span>
             </a>
           </li>
         </ul>
@@ -51,8 +53,10 @@ const Sidebar = () => {
           <div className="menu_title menu_setting"></div>
           <li className="item">
             <a href="http://localhost:3000/listaProfesor" className="nav_link">
-              <i className="bx bxs-magic-wand"></i>
-              <span class="navlink">Lista de Profesores</span>
+              <span className="navlink_icon">
+                <i className="bx bxs-magic-wand"></i>
+              </span>
+              <span className="navlink">Lista de Profesores</span>
             </a>
           </li>
           <li className="item">
@@ -60,8 +64,10 @@ const Sidebar = () => {
               href="http://localhost:3000/listaAdministracion"
               className="nav_link"
             >
-              <i className="bx bxs-magic-wand"></i>
-              <span class="navlink">Lista del Personal Administrativo</span>
+              <span className="navlink_icon">
+                <i className="bx bxs-magic-wand"></i>
+              </span>
+              <span className="navlink">Lista del Personal Administrativo</span>
             </a>
           </li>
         </ul>
@@ -69,8 +75,10 @@ const Sidebar = () => {
           <div className="menu_title menu_notas"></div>
           <li className="item">
             <a href="http://localhost:3000/registroNota" className="nav_link">
-              <i className="bx bxs-magic-wand"></i>
-              <span class="navlink">Registro de Notas</span>
+              <span className="navlink_icon">
+                <i className="bx bxs-magic-wand"></i>
+              </span>
+              <span className="navlink">Registro de Notas</span>
             </a>
           </li>
           <li className="item">
@@ -78,8 +86,10 @@ const Sidebar = () => {
               href="http://localhost:3000//historialNotas"
               className="nav_link"
             >
-              <i className="bx bxs-magic-wand"></i>
-              <span class="navlink">Historial de Notas</span>
+              <span className="navlink_icon">
+                <i className="bx bxs-magic-wand"></i>
+              </span>
+              <span className="navlink">Historial de Notas</span>
             </a>
           </li>
         </ul>
@@ -97,7 +107,7 @@ const Navbar = () => {
         <img src="images/logo.png" alt=""></img>High School Junior
       </div>
 
-      <div class="search_bar">
+      <div className="search_bar">
         <input type="text" placeholder="Search" />
       </div>
 
@@ -115,8 +125,10 @@ const Navbar = () => {
 const App = () => {
   return (
     <div>
-      <Sidebar />
-      <Navbar />
+      <div>
+        <Sidebar />
+        <Navbar />
+      </div>
     </div>
   );
 };

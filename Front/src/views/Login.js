@@ -2,8 +2,9 @@ import "../css/login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import axios from "axios";
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const styles = {
   container: {
@@ -26,12 +27,11 @@ const styles = {
 //Estado para los datos de inicio de sesión
 const LoginForm = () => {
   const [credenciales, setCredenciales] = useState({
-    dni_usuario: "",
+    dni: "",
     contrasena: "",
   });
 
-  const [errorLogin, setErrorLogin] = useState(null);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const { id, value } = event.target;
@@ -40,29 +40,23 @@ const LoginForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      const response = await fetch(
-        `http://localhost:8080/api/profesor/login/${credenciales.dni_usuario}`
-      );
-      const data = await response.json();
+      const response = await axios.post("http://localhost:8080/api/login", {
+        dni: credenciales.dni,
+        contrasena: credenciales.contrasena,
+      });
 
-      if (response.ok) {
-        if (data.contrasena === credenciales.contrasena) {
-          setErrorLogin(null);
-          history.push("/menu");
-        } else {
-          setErrorLogin("Contraseña incorrecta");
-        }
+      if (response.status === 200) {
+        // Assuming the server sends back a success status
+        // You may need to adjust this based on your actual server response
+        navigate("/menu"); // Redirect to the dashboard or any desired route
       } else {
-        setErrorLogin("Usuario no encontrado");
+        console.error("Contraseña incorrecta");
       }
     } catch (error) {
-      console.error("Error al realizar la solicitud:", error);
-      setErrorLogin("Error al realizar la solicitud");
+      console.error("Error al iniciar sesión:", error);
     }
   };
-
   return (
     <form onSubmit={handleSubmit}>
       <div style={styles.container}>
@@ -77,22 +71,22 @@ const LoginForm = () => {
               <div className="input-group mb-3">
                 <input
                   style={styles.input}
-                  id="txtUser"
+                  id="dni"
                   type="text"
                   className="form-control"
-                  name="username"
+                  name="dni"
                   placeholder="DNI"
-                  value={credenciales.dni_usuario}
+                  value={credenciales.dni}
                   onChange={handleInputChange}
                 />
               </div>
               <div className="input-group mb-3">
                 <input
                   style={styles.input}
-                  id="txtPassword"
+                  id="contrasena"
                   type="password"
                   className="form-control"
-                  name="password"
+                  name="contrasena"
                   placeholder="Contraseña"
                   value={credenciales.contrasena}
                   onChange={handleInputChange}
@@ -109,7 +103,7 @@ const LoginForm = () => {
               >
                 Ingresar
               </button>
-              <div className="mb-3 text-danger">{errorLogin}</div>
+
               <p className="mt-3">
                 No tienes una cuenta, entonces
                 <button
@@ -158,15 +152,11 @@ const LoginForm = () => {
             <div className="modal-body">
               <h6>
                 - Si eres un apoderado{" "}
-                <Link to="/registroApoderado" onClick={CloseEvent}>
-                  Selecciona Aquí
-                </Link>
+                <button onClick={() => navigate("/registroApoderado")}></button>
               </h6>
               <h6>
-                - Si eres un profesor
-                <Link to="/registroProfesor" onClick={CloseEvent}>
-                  Selecciona Aquí
-                </Link>
+                - Si eres un profesor{" "}
+                <button onClick={() => navigate("/registroProfesor")}></button>
               </h6>
             </div>
             <div className="modal-footer">
