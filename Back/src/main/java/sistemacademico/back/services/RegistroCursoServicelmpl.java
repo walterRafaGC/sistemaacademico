@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sistemacademico.back.entities.Curso;
-import sistemacademico.back.repositories.Rps_Curso;
+import sistemacademico.back.repositories.CursoRepository;
 
 @Service
 public class RegistroCursoServicelmpl implements RegistroCursoService {
     @Autowired
-    private final Rps_Curso rps_Curso;
+    private final CursoRepository rps_Curso;
 
-    public RegistroCursoServicelmpl(Rps_Curso rps_Curso) {
+    public RegistroCursoServicelmpl(CursoRepository rps_Curso) {
         this.rps_Curso = rps_Curso;
     }
 

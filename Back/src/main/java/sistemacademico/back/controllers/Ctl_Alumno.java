@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +28,6 @@ public class Ctl_Alumno {
     Srv_alumno srv_alumno;
     private final RegistroAlumnoService registroAlumnoService;
 
-    @Autowired
     public Ctl_Alumno(Srv_alumno srv_alumno, RegistroAlumnoService registroAlumnoService) {
         this.srv_alumno = srv_alumno;
         this.registroAlumnoService = registroAlumnoService;

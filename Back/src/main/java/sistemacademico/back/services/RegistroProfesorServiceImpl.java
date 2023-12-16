@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sistemacademico.back.entities.Profesor;
-import sistemacademico.back.repositories.Rps_profesor;
+import sistemacademico.back.repositories.ProfesorRepository;
 
 @Service
 public class RegistroProfesorServiceImpl implements RegistroProfesorService {
     @Autowired
-    private final Rps_profesor rps_profesor;
+    private final ProfesorRepository rps_profesor;
 
-    public RegistroProfesorServiceImpl(Rps_profesor rps_profesor) {
+    public RegistroProfesorServiceImpl(ProfesorRepository rps_profesor) {
         this.rps_profesor = rps_profesor;
     }
 

@@ -3,18 +3,16 @@ package sistemacademico.back.services;
 import java.util.ArrayList;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sistemacademico.back.entities.Apoderado;
-import sistemacademico.back.repositories.Rps_Apoderado;
+import sistemacademico.back.repositories.ApoderadoRepository;
 
 @Service
 public class Srv_Apoderado {
-    Rps_Apoderado rps_Apoderado;
+    ApoderadoRepository rps_Apoderado;
 
-    @Autowired
-    public Srv_Apoderado(Rps_Apoderado rps_Apoderado) {
+    public Srv_Apoderado(ApoderadoRepository rps_Apoderado) {
         this.rps_Apoderado = rps_Apoderado;
     }
 
@@ -30,7 +28,7 @@ public class Srv_Apoderado {
         return rps_Apoderado.findById(id_apoderado);
     }
 
-    public Optional<Apoderado> obtenerApoderadoPorDNI(int dni_apoderado) {
-        return rps_Apoderado.findByDni_apoderado(dni_apoderado);
-    }
+    //public Optional<Apoderado> obtenerApoderadoPorDNI(int dni_apoderado) {
+    //    return rps_Apoderado.findByDni_apoderado(dni_apoderado);
+    //}
 }

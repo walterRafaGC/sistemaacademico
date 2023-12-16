@@ -12,127 +12,128 @@ import javax.persistence.Table;
 public class Apoderado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_apoderado")
-    private Long id_apoderado;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name = "nombre_apoderado")
-    private String nombre_apoderado;
+    @Column(name = "nombre")
+    private String nombre;
 
-    @Column(name = "apellido_apoderado")
-    private String apellido_apoderado;
+    @Column(name = "apellido")
+    private String apellido;
 
-    @Column(name = "tipo_documento_apoderado")
-    private String tipo_documento_apoderado;
+    @Column(name = "tipo_documento")
+    private String tipo_documento;
 
-    @Column(name = "dni_apoderado")
-    private Integer dni_apoderado;
+    @Column(name = "dni")
+    private Integer dni;
 
-    @Column(name = "telefono_apoderado")
-    private Integer telefono_apoderado;
+    @Column(name = "telefono")
+    private Integer telefono;
 
-    @Column(name = "direccion_apoderado")
-    private String direccion_apoderado;
+    @Column(name = "direccion")
+    private String direccion;
 
-    @Column(name = "correo_apoderado")
-    private String correo_apoderado;
+    @Column(name = "correo")
+    private String correo;
 
     @Column(name = "contrasena")
     private String contrasena;
 
-    @Column(name = "id_hijo_apoderado")
-    private String id_hijo_apoderado;
+    @Column(name = "id_hijos")
+    private String id_hijos;
 
     public Apoderado() {
     }
 
-    public Apoderado(Long id_apoderado, String nombre_apoderado, String apellido_apoderado, String tipo_documento_apoderado, Integer dni_apoderado, Integer telefono_apoderado, String direccion_apoderado, String correo_apoderado, String contrasena, String id_hijo_apoderado) {
-        this.id_apoderado = id_apoderado;
-        this.nombre_apoderado = nombre_apoderado;
-        this.apellido_apoderado = apellido_apoderado;
-        this.tipo_documento_apoderado = tipo_documento_apoderado;
-        this.dni_apoderado = dni_apoderado;
-        this.telefono_apoderado = telefono_apoderado;
-        this.direccion_apoderado = direccion_apoderado;
-        this.correo_apoderado = correo_apoderado;
+    public Apoderado(Long id, String nombre, String apellido, String tipo_documento, Integer dni, Integer telefono,
+            String direccion, String correo, String contrasena, String id_hijos) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.tipo_documento = tipo_documento;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.correo = correo;
         this.contrasena = contrasena;
-        this.id_hijo_apoderado = id_hijo_apoderado;
+        this.id_hijos = id_hijos;
     }
-   
-     public Apoderado(String nombre_apoderado, String apellido_apoderado, String tipo_documento_apoderado, Integer dni_apoderado, Integer telefono_apoderado, String direccion_apoderado, String correo_apoderado, String contrasena, String id_hijo_apoderado) {
-        
-        this.nombre_apoderado = nombre_apoderado;
-        this.apellido_apoderado = apellido_apoderado;
-        this.tipo_documento_apoderado = tipo_documento_apoderado;
-        this.dni_apoderado = dni_apoderado;
-        this.telefono_apoderado = telefono_apoderado;
-        this.direccion_apoderado = direccion_apoderado;
-        this.correo_apoderado = correo_apoderado;
+
+    public Apoderado(String nombre, String apellido, String tipo_documento, Integer dni, Integer telefono,
+            String direccion, String correo, String contrasena, String id_hijos) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.tipo_documento = tipo_documento;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.correo = correo;
         this.contrasena = contrasena;
-        this.id_hijo_apoderado = id_hijo_apoderado;
+        this.id_hijos = id_hijos;
     }
 
-    public Long getId_apoderado() {
-        return this.id_apoderado;
+    public Long getId() {
+        return this.id;
     }
 
-    public void setId_apoderado(Long id_apoderado) {
-        this.id_apoderado = id_apoderado;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNombre_apoderado() {
-        return this.nombre_apoderado;
+    public String getNombre() {
+        return this.nombre;
     }
 
-    public void setNombre_apoderado(String nombre_apoderado) {
-        this.nombre_apoderado = nombre_apoderado;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellido_apoderado() {
-        return this.apellido_apoderado;
+    public String getApellido() {
+        return this.apellido;
     }
 
-    public void setApellido_apoderado(String apellido_apoderado) {
-        this.apellido_apoderado = apellido_apoderado;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getTipo_documento_apoderado() {
-        return this.tipo_documento_apoderado;
+    public String getTipo_documento() {
+        return this.tipo_documento;
     }
 
-    public void setTipo_documento_apoderado(String tipo_documento_apoderado) {
-        this.tipo_documento_apoderado = tipo_documento_apoderado;
+    public void setTipo_documento(String tipo_documento) {
+        this.tipo_documento = tipo_documento;
     }
 
-    public Integer getDni_apoderado() {
-        return this.dni_apoderado;
+    public Integer getDni() {
+        return this.dni;
     }
 
-    public void setDni_apoderado(Integer dni_apoderado) {
-        this.dni_apoderado = dni_apoderado;
+    public void setDni(Integer dni) {
+        this.dni = dni;
     }
 
-    public Integer getTelefono_apoderado() {
-        return this.telefono_apoderado;
+    public Integer getTelefono() {
+        return this.telefono;
     }
 
-    public void setTelefono_apoderado(Integer telefono_apoderado) {
-        this.telefono_apoderado = telefono_apoderado;
+    public void setTelefono(Integer telefono) {
+        this.telefono = telefono;
     }
 
-    public String getDireccion_apoderado() {
-        return this.direccion_apoderado;
+    public String getDireccion() {
+        return this.direccion;
     }
 
-    public void setDireccion_apoderado(String direccion_apoderado) {
-        this.direccion_apoderado = direccion_apoderado;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getCorreo_apoderado() {
-        return this.correo_apoderado;
+    public String getCorreo() {
+        return this.correo;
     }
 
-    public void setCorreo_apoderado(String correo_apoderado) {
-        this.correo_apoderado = correo_apoderado;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getContrasena() {
@@ -143,11 +144,12 @@ public class Apoderado {
         this.contrasena = contrasena;
     }
 
-    public String getId_hijo_apoderado() {
-        return this.id_hijo_apoderado;
+    public String getId_hijos() {
+        return this.id_hijos;
     }
 
-    public void setId_hijo_apoderado(String id_hijo_apoderado) {
-        this.id_hijo_apoderado = id_hijo_apoderado;
+    public void setId_hijos(String id_hijos) {
+        this.id_hijos = id_hijos;
     }
+
 }

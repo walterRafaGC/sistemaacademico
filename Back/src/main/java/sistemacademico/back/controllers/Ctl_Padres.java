@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +27,6 @@ public class Ctl_Padres {
     Srv_Padres srv_Padres;
     private final RegistroPadreService registroPadreService;
 
-    @Autowired
     public Ctl_Padres(Srv_Padres srv_Padres, RegistroPadreService registroPadreService) {
         this.registroPadreService = registroPadreService;
         this.srv_Padres = srv_Padres;

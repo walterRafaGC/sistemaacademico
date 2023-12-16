@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +28,6 @@ public class Ctl_profesor {
     Srv_profesor srv_profesor;
     private final RegistroProfesorService registroProfesorService;
 
-    @Autowired
     public Ctl_profesor(Srv_profesor srv_profesor, RegistroProfesorService registroProfesorService) {
         this.srv_profesor = srv_profesor;
         this.registroProfesorService = registroProfesorService;
@@ -70,8 +68,8 @@ public class Ctl_profesor {
         return this.srv_profesor.obtetenerProfesorPorID(id_profesor);
     }
 
-    @GetMapping(path = "/login/{dni_profesor}")
-    public Optional<Profesor> obtenerProfesorPorDNI(@PathVariable("dni_profesor") int dni_profesor) {
-        return this.srv_profesor.obtenerProfesorPorDNI(dni_profesor);
-    }
+    //@GetMapping(path = "/login/{dni_profesor}")
+    //public Optional<Profesor> obtenerProfesorPorDNI(@PathVariable("dni_profesor") int dni_profesor) {
+   //     return this.srv_profesor.obtenerProfesorPorDNI(dni_profesor);
+    //}
 }

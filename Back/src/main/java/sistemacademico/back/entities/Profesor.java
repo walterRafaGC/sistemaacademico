@@ -12,241 +12,238 @@ import javax.persistence.Table;
 public class Profesor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_profesor")
-    private Long id_profesor;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name = "nombre_profesor")
-    private String nombre_profesor;
+    @Column(name = "nombre")
+    private String nombre;
 
-    @Column(name = "apellido_profesor")
-    private String apellido_profesor;
+    @Column(name = "apellido")
+    private String apellido;
 
-    @Column(name = "tipo_documento_profesor")
-    private String tipo_documento_profesor;
+    @Column(name = "tipo_documento")
+    private String tipo_documento;
 
-    @Column(name = "dni_profesor")
-    private Integer dni_profesor;
+    @Column(name = "dni")
+    private Integer dni;
 
-    @Column(name = "telefono_profesor")
-    private Integer telefono_profesor;
+    @Column(name = "telefono")
+    private Integer telefono;
 
-    @Column(name = "direccion_profesor")
-    private String direccion_profesor;
+    @Column(name = "direccion")
+    private String direccion;
 
-    @Column(name = "correo_profesor")
-    private String correo_profesor;
+    @Column(name = "correo")
+    private String correo;
 
-    @Column(name = "genero_profesor")
-    private String genero_profesor;
+    @Column(name = "genero")
+    private String genero;
 
-    @Column(name = "nacionalidad_profesor")
-    private String nacionalidad_profesor;
+    @Column(name = "nacionalidad")
+    private String nacionalidad;
 
-    @Column(name = "edad_profesor")
-    private Integer edad_profesor;
+    @Column(name = "edad")
+    private Integer edad;
 
-    @Column(name = "fecha_nacimiento_profesor")
-    private String fecha_nacimiento_profesor;
+    @Column(name = "fecha_nacimiento")
+    private String fecha_nacimiento;
 
-    @Column(name = "religion_profesor")
-    private String religion_profesor;
+    @Column(name = "religion")
+    private String religion;
 
-    @Column(name = "grado_academico_profesor")
-    private String grado_academico_profesor;
+    @Column(name = "grado_academico")
+    private String grado_academico;
 
-    @Column(name = "certificado_profesor")
-    private String certificado_profesor;
+    @Column(name = "certificado")
+    private String certificado;
 
-    @Column(name = "cv_profesor")
-    private String cv_profesor;
+    @Column(name = "cv")
+    private String cv;
 
-    @Column(name = "contrasena_profesor")
-    private String contrasena_profesor;
+    @Column(name = "contrasena")
+    private String contrasena;
 
     public Profesor() {
     }
 
-    public Profesor(String nombre_profesor, String apellido_profesor, String tipo_documento_profesor,
-            Integer dni_profesor, Integer telefono_profesor, String direccion_profesor, String correo_profesor,
-            String genero_profesor, String nacionalidad_profesor, Integer edad_profesor,
-            String fecha_nacimiento_profesor, String religion_profesor, String grado_academico_profesor,
-            String certificado_profesor, String cv_profesor, String contrasena_profesor) {
-
-        this.nombre_profesor = nombre_profesor;
-        this.apellido_profesor = apellido_profesor;
-        this.tipo_documento_profesor = tipo_documento_profesor;
-        this.dni_profesor = dni_profesor;
-        this.telefono_profesor = telefono_profesor;
-        this.direccion_profesor = direccion_profesor;
-        this.correo_profesor = correo_profesor;
-        this.genero_profesor = genero_profesor;
-        this.nacionalidad_profesor = nacionalidad_profesor;
-        this.edad_profesor = edad_profesor;
-        this.fecha_nacimiento_profesor = fecha_nacimiento_profesor;
-        this.religion_profesor = religion_profesor;
-        this.grado_academico_profesor = grado_academico_profesor;
-        this.certificado_profesor = certificado_profesor;
-        this.cv_profesor = cv_profesor;
-        this.contrasena_profesor = contrasena_profesor;
+    public Profesor(Long id, String nombre, String apellido, String tipo_documento, Integer dni, Integer telefono,
+            String direccion, String correo, String genero, String nacionalidad, Integer edad, String fecha_nacimiento,
+            String religion, String grado_academico, String certificado, String cv, String contrasena) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.tipo_documento = tipo_documento;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.correo = correo;
+        this.genero = genero;
+        this.nacionalidad = nacionalidad;
+        this.edad = edad;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.religion = religion;
+        this.grado_academico = grado_academico;
+        this.certificado = certificado;
+        this.cv = cv;
+        this.contrasena = contrasena;
     }
 
-    public Profesor(Long id_profesor, String nombre_profesor, String apellido_profesor, String tipo_documento_profesor,
-            Integer dni_profesor, Integer telefono_profesor, String direccion_profesor, String correo_profesor,
-            String genero_profesor, String nacionalidad_profesor, Integer edad_profesor,
-            String fecha_nacimiento_profesor, String religion_profesor, String grado_academico_profesor,
-            String certificado_profesor, String cv_profesor, String contrasena_profesor) {
-        this.id_profesor = id_profesor;
-        this.nombre_profesor = nombre_profesor;
-        this.apellido_profesor = apellido_profesor;
-        this.tipo_documento_profesor = tipo_documento_profesor;
-        this.dni_profesor = dni_profesor;
-        this.telefono_profesor = telefono_profesor;
-        this.direccion_profesor = direccion_profesor;
-        this.correo_profesor = correo_profesor;
-        this.genero_profesor = genero_profesor;
-        this.nacionalidad_profesor = nacionalidad_profesor;
-        this.edad_profesor = edad_profesor;
-        this.fecha_nacimiento_profesor = fecha_nacimiento_profesor;
-        this.religion_profesor = religion_profesor;
-        this.grado_academico_profesor = grado_academico_profesor;
-        this.certificado_profesor = certificado_profesor;
-        this.cv_profesor = cv_profesor;
-        this.contrasena_profesor = contrasena_profesor;
+    public Profesor(String nombre, String apellido, String tipo_documento, Integer dni, Integer telefono,
+            String direccion, String correo, String genero, String nacionalidad, Integer edad, String fecha_nacimiento,
+            String religion, String grado_academico, String certificado, String cv, String contrasena) {
+
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.tipo_documento = tipo_documento;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.correo = correo;
+        this.genero = genero;
+        this.nacionalidad = nacionalidad;
+        this.edad = edad;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.religion = religion;
+        this.grado_academico = grado_academico;
+        this.certificado = certificado;
+        this.cv = cv;
+        this.contrasena = contrasena;
     }
 
-    public Long getId_profesor() {
-        return this.id_profesor;
+    public Long getId() {
+        return this.id;
     }
 
-    public void setId_profesor(Long id_profesor) {
-        this.id_profesor = id_profesor;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNombre_profesor() {
-        return this.nombre_profesor;
+    public String getNombre() {
+        return this.nombre;
     }
 
-    public void setNombre_profesor(String nombre_profesor) {
-        this.nombre_profesor = nombre_profesor;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellido_profesor() {
-        return this.apellido_profesor;
+    public String getApellido() {
+        return this.apellido;
     }
 
-    public void setApellido_profesor(String apellido_profesor) {
-        this.apellido_profesor = apellido_profesor;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getTipo_documento_profesor() {
-        return this.tipo_documento_profesor;
+    public String getTipo_documento() {
+        return this.tipo_documento;
     }
 
-    public void setTipo_documento_profesor(String tipo_documento_profesor) {
-        this.tipo_documento_profesor = tipo_documento_profesor;
+    public void setTipo_documento(String tipo_documento) {
+        this.tipo_documento = tipo_documento;
     }
 
-    public Integer getDni_profesor() {
-        return this.dni_profesor;
+    public Integer getDni() {
+        return this.dni;
     }
 
-    public void setDni_profesor(Integer dni_profesor) {
-        this.dni_profesor = dni_profesor;
+    public void setDni(Integer dni) {
+        this.dni = dni;
     }
 
-    public Integer getTelefono_profesor() {
-        return this.telefono_profesor;
+    public Integer getTelefono() {
+        return this.telefono;
     }
 
-    public void setTelefono_profesor(Integer telefono_profesor) {
-        this.telefono_profesor = telefono_profesor;
+    public void setTelefono(Integer telefono) {
+        this.telefono = telefono;
     }
 
-    public String getDireccion_profesor() {
-        return this.direccion_profesor;
+    public String getDireccion() {
+        return this.direccion;
     }
 
-    public void setDireccion_profesor(String direccion_profesor) {
-        this.direccion_profesor = direccion_profesor;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getCorreo_profesor() {
-        return this.correo_profesor;
+    public String getCorreo() {
+        return this.correo;
     }
 
-    public void setCorreo_profesor(String correo_profesor) {
-        this.correo_profesor = correo_profesor;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
-    public String getGenero_profesor() {
-        return this.genero_profesor;
+    public String getGenero() {
+        return this.genero;
     }
 
-    public void setGenero_profesor(String genero_profesor) {
-        this.genero_profesor = genero_profesor;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
-    public String getNacionalidad_profesor() {
-        return this.nacionalidad_profesor;
+    public String getNacionalidad() {
+        return this.nacionalidad;
     }
 
-    public void setNacionalidad_profesor(String nacionalidad_profesor) {
-        this.nacionalidad_profesor = nacionalidad_profesor;
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
     }
 
-    public Integer getEdad_profesor() {
-        return this.edad_profesor;
+    public Integer getEdad() {
+        return this.edad;
     }
 
-    public void setEdad_profesor(Integer edad_profesor) {
-        this.edad_profesor = edad_profesor;
+    public void setEdad(Integer edad) {
+        this.edad = edad;
     }
 
-    public String getFecha_nacimiento_profesor() {
-        return this.fecha_nacimiento_profesor;
+    public String getFecha_nacimiento() {
+        return this.fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento_profesor(String fecha_nacimiento_profesor) {
-        this.fecha_nacimiento_profesor = fecha_nacimiento_profesor;
+    public void setFecha_nacimiento(String fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public String getReligion_profesor() {
-        return this.religion_profesor;
+    public String getReligion() {
+        return this.religion;
     }
 
-    public void setReligion_profesor(String religion_profesor) {
-        this.religion_profesor = religion_profesor;
+    public void setReligion(String religion) {
+        this.religion = religion;
     }
 
-    public String getGrado_academico_profesor() {
-        return this.grado_academico_profesor;
-
+    public String getGrado_academico() {
+        return this.grado_academico;
     }
 
-    public void setGrado_academico_profesor(String grado_academico_profesor) {
-        this.grado_academico_profesor = grado_academico_profesor;
+    public void setGrado_academico(String grado_academico) {
+        this.grado_academico = grado_academico;
     }
 
-    public String getCertificado_profesor() {
-        return this.certificado_profesor;
+    public String getCertificado() {
+        return this.certificado;
     }
 
-    public void setCertificado_profesor(String certificado_profesor) {
-        this.certificado_profesor = certificado_profesor;
+    public void setCertificado(String certificado) {
+        this.certificado = certificado;
     }
 
-    public String getCv_profesor() {
-        return this.cv_profesor;
+    public String getCv() {
+        return this.cv;
     }
 
-    public void setCv_profesor(String cv_profesor) {
-        this.cv_profesor = cv_profesor;
+    public void setCv(String cv) {
+        this.cv = cv;
     }
 
-    public String getContrasena_profesor() {
-        return this.contrasena_profesor;
+    public String getContrasena() {
+        return this.contrasena;
     }
-    public void setContrasena_profesor(String contrasena_profesor) {
-        this.contrasena_profesor = contrasena_profesor;
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
+
 }

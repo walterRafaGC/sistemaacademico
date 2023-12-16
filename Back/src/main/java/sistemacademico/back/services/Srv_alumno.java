@@ -3,18 +3,16 @@ package sistemacademico.back.services;
 import java.util.ArrayList;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sistemacademico.back.entities.Alumno;
-import sistemacademico.back.repositories.Rps_alumno;
+import sistemacademico.back.repositories.AlumnoRepository;
 
 @Service
 public class Srv_alumno {
-    Rps_alumno rps_alumno;
+    AlumnoRepository rps_alumno;
 
-    @Autowired
-    public Srv_alumno(Rps_alumno rps_alumno){
+    public Srv_alumno(AlumnoRepository rps_alumno){
         this.rps_alumno = rps_alumno;
     }
 

@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sistemacademico.back.entities.Padres;
-import sistemacademico.back.repositories.Rps_Padres;
+import sistemacademico.back.repositories.PadresRepository;
 
 @Service
 public class RegistroPadreServicelmpl implements RegistroPadreService {
     @Autowired
-    public final Rps_Padres rps_Padres;
+    public final PadresRepository rps_Padres;
 
-    public RegistroPadreServicelmpl(Rps_Padres rps_Padres) {
+    public RegistroPadreServicelmpl(PadresRepository rps_Padres) {
         this.rps_Padres = rps_Padres;
     }
 

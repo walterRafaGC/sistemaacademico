@@ -12,59 +12,59 @@ import javax.persistence.Table;
 public class Alumno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_alumno")
-    private Long id_alumno;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name = "nombre_alumno")
-    private String nombre_alumno;
+    @Column(name = "nombre")
+    private String nombre;
 
-    @Column(name = "apellido_alumno")
-    private String apellido_alumno;
+    @Column(name = "apellido")
+    private String apellido;
 
-    @Column(name = "tipo_documento_alumno")
-    private String tipo_documento_alumno;
+    @Column(name = "tipo_documento")
+    private String tipo_documento;
 
-    @Column(name = "numero_documento_alumno")
-    private Integer numero_documento_alumno;
+    @Column(name = "numero_documento")
+    private Integer numero_documento;
 
-    @Column(name = "codigo_alumno")
-    private String codigo_alumno;
+    @Column(name = "codigo")
+    private String codigo;
 
     @Column(name = "colegio_procedencia")
     private String colegio_procedencia;
 
-    @Column(name = "grado_academico_alumno")
-    private String grado_academico_alumno;
+    @Column(name = "grado_academico")
+    private String grado_academico;
 
-    @Column(name = "certificados_alumno")
-    private String certificados_alumno;
+    @Column(name = "certificados")
+    private String certificados;
 
-    @Column(name = "genero_alumno")
-    private String genero_alumno;
+    @Column(name = "genero")
+    private String genero;
 
-    @Column(name = "nacionalidad_alumno")
-    private String nacionalidad_alumno;
+    @Column(name = "nacionalidad")
+    private String nacionalidad;
 
-    @Column(name = "edad_alumno")
-    private String edad_alumno;
+    @Column(name = "edad")
+    private String edad;
 
-    @Column(name = "fecha_nacimiento_alumno")
-    private String fecha_nacimiento_alumno;
+    @Column(name = "fecha_nacimiento")
+    private String fecha_nacimiento;
 
-    @Column(name = "direccion_alumno")
-    private String direccion_alumno;
+    @Column(name = "direccion")
+    private String direccion;
 
-    @Column(name = "religion_alumno")
-    private String religion_alumno;
+    @Column(name = "religion")
+    private String religion;
 
-    @Column(name = "habilidades_alumno")
-    private String habilidades_alumno;
+    @Column(name = "habilidades")
+    private String habilidades;
 
-    @Column(name = "sangre_alumno")
-    private String sangre_alumno;
+    @Column(name = "sangre")
+    private String sangre;
 
-    @Column(name = "alergias_alumno")
-    private String alergias_alumno;
+    @Column(name = "alergias")
+    private String alergias;
 
     @Column(name = "enfermedades_hereditarias")
     private String enfermedades_hereditarias;
@@ -72,105 +72,108 @@ public class Alumno {
     @Column(name = "enfermedades_cronicas")
     private String enfermedades_cronicas;
 
-
-   public Alumno() {
+    public Alumno() {
     }
 
-
-    public Alumno(Long id_alumno, String nombre_alumno, String apellido_alumno, String tipo_documento_alumno, Integer numero_documento_alumno, String codigo_alumno, String colegio_procedencia, String grado_academico_alumno, String certificados_alumno, String genero_alumno, String nacionalidad_alumno, String edad_alumno, String fecha_nacimiento_alumno, String direccion_alumno, String religion_alumno, String habilidades_alumno, String sangre_alumno, String alergias_alumno, String enfermedades_hereditarias, String enfermedades_cronicas) {
-        this.id_alumno = id_alumno;
-        this.nombre_alumno = nombre_alumno;
-        this.apellido_alumno = apellido_alumno;
-        this.tipo_documento_alumno = tipo_documento_alumno;
-        this.numero_documento_alumno = numero_documento_alumno;
-        this.codigo_alumno = codigo_alumno;
+    public Alumno(Long id, String nombre, String apellido, String tipo_documento, Integer numero_documento,
+            String codigo, String colegio_procedencia, String grado_academico, String certificados, String genero,
+            String nacionalidad, String edad, String fecha_nacimiento, String direccion, String religion,
+            String habilidades, String sangre, String alergias, String enfermedades_hereditarias,
+            String enfermedades_cronicas) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.tipo_documento = tipo_documento;
+        this.numero_documento = numero_documento;
+        this.codigo = codigo;
         this.colegio_procedencia = colegio_procedencia;
-        this.grado_academico_alumno = grado_academico_alumno;
-        this.certificados_alumno = certificados_alumno;
-        this.genero_alumno = genero_alumno;
-        this.nacionalidad_alumno = nacionalidad_alumno;
-        this.edad_alumno = edad_alumno;
-        this.fecha_nacimiento_alumno = fecha_nacimiento_alumno;
-        this.direccion_alumno = direccion_alumno;
-        this.religion_alumno = religion_alumno;
-        this.habilidades_alumno = habilidades_alumno;
-        this.sangre_alumno = sangre_alumno;
-        this.alergias_alumno = alergias_alumno;
+        this.grado_academico = grado_academico;
+        this.certificados = certificados;
+        this.genero = genero;
+        this.nacionalidad = nacionalidad;
+        this.edad = edad;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.direccion = direccion;
+        this.religion = religion;
+        this.habilidades = habilidades;
+        this.sangre = sangre;
+        this.alergias = alergias;
         this.enfermedades_hereditarias = enfermedades_hereditarias;
         this.enfermedades_cronicas = enfermedades_cronicas;
     }
-   
-public Alumno(String nombre_alumno, String apellido_alumno, String tipo_documento_alumno, Integer numero_documento_alumno, String codigo_alumno, String colegio_procedencia, String grado_academico_alumno, String certificados_alumno, String genero_alumno, String nacionalidad_alumno, String edad_alumno, String fecha_nacimiento_alumno, String direccion_alumno, String religion_alumno, String habilidades_alumno, String sangre_alumno, String alergias_alumno, String enfermedades_hereditarias, String enfermedades_cronicas) {
-      
-        this.nombre_alumno = nombre_alumno;
-        this.apellido_alumno = apellido_alumno;
-        this.tipo_documento_alumno = tipo_documento_alumno;
-        this.numero_documento_alumno = numero_documento_alumno;
-        this.codigo_alumno = codigo_alumno;
+
+    public Alumno(String nombre, String apellido, String tipo_documento, Integer numero_documento,
+            String codigo, String colegio_procedencia, String grado_academico, String certificados, String genero,
+            String nacionalidad, String edad, String fecha_nacimiento, String direccion, String religion,
+            String habilidades, String sangre, String alergias, String enfermedades_hereditarias,
+            String enfermedades_cronicas) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.tipo_documento = tipo_documento;
+        this.numero_documento = numero_documento;
+        this.codigo = codigo;
         this.colegio_procedencia = colegio_procedencia;
-        this.grado_academico_alumno = grado_academico_alumno;
-        this.certificados_alumno = certificados_alumno;
-        this.genero_alumno = genero_alumno;
-        this.nacionalidad_alumno = nacionalidad_alumno;
-        this.edad_alumno = edad_alumno;
-        this.fecha_nacimiento_alumno = fecha_nacimiento_alumno;
-        this.direccion_alumno = direccion_alumno;
-        this.religion_alumno = religion_alumno;
-        this.habilidades_alumno = habilidades_alumno;
-        this.sangre_alumno = sangre_alumno;
-        this.alergias_alumno = alergias_alumno;
+        this.grado_academico = grado_academico;
+        this.certificados = certificados;
+        this.genero = genero;
+        this.nacionalidad = nacionalidad;
+        this.edad = edad;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.direccion = direccion;
+        this.religion = religion;
+        this.habilidades = habilidades;
+        this.sangre = sangre;
+        this.alergias = alergias;
         this.enfermedades_hereditarias = enfermedades_hereditarias;
         this.enfermedades_cronicas = enfermedades_cronicas;
     }
-   
 
-
-    public Long getId_alumno() {
-        return this.id_alumno;
+    public Long getId() {
+        return this.id;
     }
 
-    public void setId_alumno(Long id_alumno) {
-        this.id_alumno = id_alumno;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNombre_alumno() {
-        return this.nombre_alumno;
+    public String getNombre() {
+        return this.nombre;
     }
 
-    public void setNombre_alumno(String nombre_alumno) {
-        this.nombre_alumno = nombre_alumno;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellido_alumno() {
-        return this.apellido_alumno;
+    public String getApellido() {
+        return this.apellido;
     }
 
-    public void setApellido_alumno(String apellido_alumno) {
-        this.apellido_alumno = apellido_alumno;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getTipo_documento_alumno() {
-        return this.tipo_documento_alumno;
+    public String getTipo_documento() {
+        return this.tipo_documento;
     }
 
-    public void setTipo_documento_alumno(String tipo_documento_alumno) {
-        this.tipo_documento_alumno = tipo_documento_alumno;
+    public void setTipo_documento(String tipo_documento) {
+        this.tipo_documento = tipo_documento;
     }
 
-    public Integer getNumero_documento_alumno() {
-        return this.numero_documento_alumno;
+    public Integer getNumero_documento() {
+        return this.numero_documento;
     }
 
-    public void setNumero_documento_alumno(Integer numero_documento_alumno) {
-        this.numero_documento_alumno = numero_documento_alumno;
+    public void setNumero_documento(Integer numero_documento) {
+        this.numero_documento = numero_documento;
     }
 
-    public String getCodigo_alumno() {
-        return this.codigo_alumno;
+    public String getCodigo() {
+        return this.codigo;
     }
 
-    public void setCodigo_alumno(String codigo_alumno) {
-        this.codigo_alumno = codigo_alumno;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getColegio_procedencia() {
@@ -181,92 +184,92 @@ public Alumno(String nombre_alumno, String apellido_alumno, String tipo_document
         this.colegio_procedencia = colegio_procedencia;
     }
 
-    public String getGrado_academico_alumno() {
-        return this.grado_academico_alumno;
+    public String getGrado_academico() {
+        return this.grado_academico;
     }
 
-    public void setGrado_academico_alumno(String grado_academico_alumno) {
-        this.grado_academico_alumno = grado_academico_alumno;
+    public void setGrado_academico(String grado_academico) {
+        this.grado_academico = grado_academico;
     }
 
-    public String getCertificados_alumno() {
-        return this.certificados_alumno;
+    public String getCertificados() {
+        return this.certificados;
     }
 
-    public void setCertificados_alumno(String certificados_alumno) {
-        this.certificados_alumno = certificados_alumno;
+    public void setCertificados(String certificados) {
+        this.certificados = certificados;
     }
 
-    public String getGenero_alumno() {
-        return this.genero_alumno;
+    public String getGenero() {
+        return this.genero;
     }
 
-    public void setGenero_alumno(String genero_alumno) {
-        this.genero_alumno = genero_alumno;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
-    public String getNacionalidad_alumno() {
-        return this.nacionalidad_alumno;
+    public String getNacionalidad() {
+        return this.nacionalidad;
     }
 
-    public void setNacionalidad_alumno(String nacionalidad_alumno) {
-        this.nacionalidad_alumno = nacionalidad_alumno;
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
     }
 
-    public String getEdad_alumno() {
-        return this.edad_alumno;
+    public String getEdad() {
+        return this.edad;
     }
 
-    public void setEdad_alumno(String edad_alumno) {
-        this.edad_alumno = edad_alumno;
+    public void setEdad(String edad) {
+        this.edad = edad;
     }
 
-    public String getFecha_nacimiento_alumno() {
-        return this.fecha_nacimiento_alumno;
+    public String getFecha_nacimiento() {
+        return this.fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento_alumno(String fecha_nacimiento_alumno) {
-        this.fecha_nacimiento_alumno = fecha_nacimiento_alumno;
+    public void setFecha_nacimiento(String fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public String getDireccion_alumno() {
-        return this.direccion_alumno;
+    public String getDireccion() {
+        return this.direccion;
     }
 
-    public void setDireccion_alumno(String direccion_alumno) {
-        this.direccion_alumno = direccion_alumno;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getReligion_alumno() {
-        return this.religion_alumno;
+    public String getReligion() {
+        return this.religion;
     }
 
-    public void setReligion_alumno(String religion_alumno) {
-        this.religion_alumno = religion_alumno;
+    public void setReligion(String religion) {
+        this.religion = religion;
     }
 
-    public String getHabilidades_alumno() {
-        return this.habilidades_alumno;
+    public String getHabilidades() {
+        return this.habilidades;
     }
 
-    public void setHabilidades_alumno(String hablidades_alumno) {
-        this.habilidades_alumno = hablidades_alumno;
+    public void setHabilidades(String habilidades) {
+        this.habilidades = habilidades;
     }
 
-    public String getSangre_alumno() {
-        return this.sangre_alumno;
+    public String getSangre() {
+        return this.sangre;
     }
 
-    public void setSangre_alumno(String sangre_alumno) {
-        this.sangre_alumno = sangre_alumno;
+    public void setSangre(String sangre) {
+        this.sangre = sangre;
     }
 
-    public String getAlergias_alumno() {
-        return this.alergias_alumno;
+    public String getAlergias() {
+        return this.alergias;
     }
 
-    public void setAlergias_alumno(String alergias_alumno) {
-        this.alergias_alumno = alergias_alumno;
+    public void setAlergias(String alergias) {
+        this.alergias = alergias;
     }
 
     public String getEnfermedades_hereditarias() {
@@ -284,5 +287,5 @@ public Alumno(String nombre_alumno, String apellido_alumno, String tipo_document
     public void setEnfermedades_cronicas(String enfermedades_cronicas) {
         this.enfermedades_cronicas = enfermedades_cronicas;
     }
-    
+
 }

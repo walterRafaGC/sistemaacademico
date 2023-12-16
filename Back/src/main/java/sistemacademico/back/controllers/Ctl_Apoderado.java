@@ -12,7 +12,6 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.ArrayList;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +28,6 @@ public class Ctl_Apoderado {
     Srv_Apoderado srv_Apoderado;
     private final RegistroApoderadoService registroApoderadoService;
 
-    @Autowired
     public Ctl_Apoderado(Srv_Apoderado srv_apoderado, RegistroApoderadoService registroApoderadoService) {
         this.srv_Apoderado = srv_apoderado;
         this.registroApoderadoService = registroApoderadoService;
@@ -63,8 +61,8 @@ public class Ctl_Apoderado {
         return this.srv_Apoderado.obtenerApoderadoPorID(id_apoderado);
     }
 
-    @GetMapping(path = "/login/{dni_apoderado}")
-    public Optional<Apoderado> obtenerApoderadoPorDNI(@PathVariable("dni_apoderado") int dni_apoderado){
-        return this.srv_Apoderado.obtenerApoderadoPorDNI(dni_apoderado);
-    }
+   // @GetMapping(path = "/login/{dni_apoderado}")
+   // public Optional<Apoderado> obtenerApoderadoPorDNI(@PathVariable("dni_apoderado") int dni_apoderado){
+     //   return this.srv_Apoderado.obtenerApoderadoPorDNI(dni_apoderado);
+//    }
 }

@@ -12,240 +12,252 @@ import javax.persistence.Table;
 public class PersonalAdministrativo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_Personal_administrativo")
-    private Long id_PersonalAdministrativo;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name = "Nombres_Personal_adminis")
-    private String Nombres_PersonalAdminis;
+    @Column(name = "nombre")
+    private String Nombres;
 
-    @Column(name = "Apellidos")
-    private String Apellido;
+    @Column(name = "apellido")
+    private String apellido;
 
-    @Column(name = "Fecha_Nacimiento")
-    private String Fecha_Nacimiento;
+    @Column(name = "fecha_nacimiento")
+    private String fecha_nacimiento;
 
-    @Column(name = "Genero")
-    private String Genero;
+    @Column(name = "genero")
+    private String genero;
 
-    @Column(name = "Tipo_Documento_Personal_administrativo")
-    private String Tipo_Documento_PersonalAdministrativo;
+    @Column(name = "tipo_documento")
+    private String tipo_documento;
 
-    @Column(name = "Numero_Identificacion")
-    private Integer Numero_Identificacion;
+    @Column(name = "dni")
+    private Integer dni;
 
-    @Column(name = "Fotografia")
-    private String Fotografia;
+    @Column(name = "fotografia")
+    private String fotografia;
 
-    @Column(name = "Direccion_Domicilio")
-    private String Direccion_Domicilio;
+    @Column(name = "direccion")
+    private String direccion;
 
-    @Column(name = "Numero_Telefono")
-    private String Numero_Telefono;
+    @Column(name = "telefono")
+    private String telefono;
 
-    @Column(name = "Email")
-    private String Email;
+    @Column(name = "email")
+    private String email;
 
-    @Column(name = "Puesto_Cargo")
-    private String Puesto_Cargo;
+    @Column(name = "puesto")
+    private String puesto;
 
-    @Column(name = "Fecha_Inicio_Empleo")
-    private String Fecha_Inicio_Empleo;
+    @Column(name = "fecha_inicio")
+    private String fecha_inicio;
 
-    @Column(name = "Departamento_Area")
-    private String Departamento_Area;
+    @Column(name = "area")
+    private String area;
 
-    @Column(name = "Salario")
-    private Double Salario;
+    @Column(name = "salario")
+    private Double salario;
 
-    @Column(name = "Tipo_Contrato")
-    private String Tipo_Contrato;
+    @Column(name = "tipo_contrato")
+    private String tipo_contrato;
 
-    @Column(name = "Turno_Horario")
-    private String Turno_Horario;
+    @Column(name = "turno_horario")
+    private String turno_horario;
+
+    @Column(name="contrasena")
+    private String contrasena;
 
     public PersonalAdministrativo() {
     }
 
-    public PersonalAdministrativo(String Nombres_PersonalAdminis, String Apellido, String Fecha_Nacimiento,
-            String Genero, String Tipo_Documento_PersonalAdministrativo, Integer Numero_Identificacion,
-            String Fotografia, String Direccion_Domicilio, String Numero_Telefono, String Email, String Puesto_Cargo,
-            String Fecha_Inicio_Empleo, String Departamento_Area, Double Salario, String Tipo_Contrato,
-            String Turno_Horario) {
-        this.Nombres_PersonalAdminis = Nombres_PersonalAdminis;
-        this.Apellido = Apellido;
-        this.Fecha_Nacimiento = Fecha_Nacimiento;
-        this.Genero = Genero;
-        this.Tipo_Documento_PersonalAdministrativo = Tipo_Documento_PersonalAdministrativo;
-        this.Numero_Identificacion = Numero_Identificacion;
-        this.Fotografia = Fotografia;
-        this.Direccion_Domicilio = Direccion_Domicilio;
-        this.Numero_Telefono = Numero_Telefono;
-        this.Email = Email;
-        this.Puesto_Cargo = Puesto_Cargo;
-        this.Fecha_Inicio_Empleo = Fecha_Inicio_Empleo;
-        this.Departamento_Area = Departamento_Area;
-        this.Salario = Salario;
-        this.Tipo_Contrato = Tipo_Contrato;
-        this.Turno_Horario = Turno_Horario;
+    public PersonalAdministrativo(Long id, String Nombres, String apellido, String fecha_nacimiento, String genero,
+            String tipo_documento, Integer dni, String fotografia, String direccion, String telefono,
+            String email, String puesto, String fecha_inicio, String area, Double salario, String tipo_contrato,
+            String turno_horario, String contrasena) {
+        this.id = id;
+        this.Nombres = Nombres;
+        this.apellido = apellido;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.genero = genero;
+        this.tipo_documento = tipo_documento;
+        this.dni = dni;
+        this.fotografia = fotografia;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+        this.puesto = puesto;
+        this.fecha_inicio = fecha_inicio;
+        this.area = area;
+        this.salario = salario;
+        this.tipo_contrato = tipo_contrato;
+        this.turno_horario = turno_horario;
+        this.contrasena=contrasena;
     }
 
-    public PersonalAdministrativo(Long id_PersonalAdministrativo, String Nombres_PersonalAdminis, String Apellido,
-            String Fecha_Nacimiento, String Genero, String Tipo_Documento_PersonalAdministrativo,
-            Integer Numero_Identificacion, String Fotografia, String Direccion_Domicilio, String Numero_Telefono,
-            String Email, String Puesto_Cargo, String Fecha_Inicio_Empleo, String Departamento_Area, Double Salario,
-            String Tipo_Contrato, String Turno_Horario) {
-        this.id_PersonalAdministrativo = id_PersonalAdministrativo;
-        this.Nombres_PersonalAdminis = Nombres_PersonalAdminis;
-        this.Apellido = Apellido;
-        this.Fecha_Nacimiento = Fecha_Nacimiento;
-        this.Genero = Genero;
-        this.Tipo_Documento_PersonalAdministrativo = Tipo_Documento_PersonalAdministrativo;
-        this.Numero_Identificacion = Numero_Identificacion;
-        this.Fotografia = Fotografia;
-        this.Direccion_Domicilio = Direccion_Domicilio;
-        this.Numero_Telefono = Numero_Telefono;
-        this.Email = Email;
-        this.Puesto_Cargo = Puesto_Cargo;
-        this.Fecha_Inicio_Empleo = Fecha_Inicio_Empleo;
-        this.Departamento_Area = Departamento_Area;
-        this.Salario = Salario;
-        this.Tipo_Contrato = Tipo_Contrato;
-        this.Turno_Horario = Turno_Horario;
+    public PersonalAdministrativo(String Nombres, String apellido, String fecha_nacimiento, String genero,
+            String tipo_documento, Integer dni, String fotografia, String direccion, String telefono,
+            String email, String puesto, String fecha_inicio, String area, Double salario, String tipo_contrato,
+            String turno_horario, String contrasena) {
+
+        this.Nombres = Nombres;
+        this.apellido = apellido;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.genero = genero;
+        this.tipo_documento = tipo_documento;
+        this.dni = dni;
+        this.fotografia = fotografia;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+        this.puesto = puesto;
+        this.fecha_inicio = fecha_inicio;
+        this.area = area;
+        this.salario = salario;
+        this.tipo_contrato = tipo_contrato;
+        this.turno_horario = turno_horario;
+        this.contrasena=contrasena;
     }
 
-    public Long getId_PersonalAdministrativo() {
-        return id_PersonalAdministrativo;
+    public Long getId() {
+        return this.id;
     }
 
-    public void setId_PersonalAdministrativo(Long id_PersonalAdministrativo) {
-        this.id_PersonalAdministrativo = id_PersonalAdministrativo;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNombres_PersonalAdminis() {
-        return Nombres_PersonalAdminis;
+    public String getNombres() {
+        return this.Nombres;
     }
 
-    public void setNombres_PersonalAdminis(String nombres_PersonalAdminis) {
-        Nombres_PersonalAdminis = nombres_PersonalAdminis;
+    public void setNombres(String Nombres) {
+        this.Nombres = Nombres;
     }
 
     public String getApellido() {
-        return Apellido;
+        return this.apellido;
     }
 
     public void setApellido(String apellido) {
-        Apellido = apellido;
+        this.apellido = apellido;
     }
 
-    public String getFecha_Nacimiento() {
-        return Fecha_Nacimiento;
+    public String getFecha_nacimiento() {
+        return this.fecha_nacimiento;
     }
 
-    public void setFecha_Nacimiento(String fecha_Nacimiento) {
-        Fecha_Nacimiento = fecha_Nacimiento;
+    public void setFecha_nacimiento(String fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
 
     public String getGenero() {
-        return Genero;
+        return this.genero;
     }
 
     public void setGenero(String genero) {
-        Genero = genero;
+        this.genero = genero;
     }
 
-    public String getTipo_Documento_PersonalAdministrativo() {
-        return Tipo_Documento_PersonalAdministrativo;
+    public String getTipo_documento() {
+        return this.tipo_documento;
     }
 
-    public void setTipo_Documento_PersonalAdministrativo(String tipo_Documento_PersonalAdministrativo) {
-        Tipo_Documento_PersonalAdministrativo = tipo_Documento_PersonalAdministrativo;
+    public void setTipo_documento(String tipo_documento) {
+        this.tipo_documento = tipo_documento;
     }
 
-    public Integer getNumero_Identificacion() {
-        return Numero_Identificacion;
+    public Integer getdni() {
+        return this.dni;
     }
 
-    public void setNumero_Identificacion(Integer numero_Identificacion) {
-        Numero_Identificacion = numero_Identificacion;
+    public void setdni(Integer dni) {
+        this.dni = dni;
     }
 
     public String getFotografia() {
-        return Fotografia;
+        return this.fotografia;
     }
 
     public void setFotografia(String fotografia) {
-        Fotografia = fotografia;
+        this.fotografia = fotografia;
     }
 
-    public String getDireccion_Domicilio() {
-        return Direccion_Domicilio;
+    public String getDireccion() {
+        return this.direccion;
     }
 
-    public void setDireccion_Domicilio(String direccion_Domicilio) {
-        Direccion_Domicilio = direccion_Domicilio;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getNumero_Telefono() {
-        return Numero_Telefono;
+    public String getTelefono() {
+        return this.telefono;
     }
 
-    public void setNumero_Telefono(String numero_Telefono) {
-        Numero_Telefono = numero_Telefono;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getEmail() {
-        return Email;
+        return this.email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
-    public String getPuesto_Cargo() {
-        return Puesto_Cargo;
+    public String getPuesto() {
+        return this.puesto;
     }
 
-    public void setPuesto_Cargo(String puesto_Cargo) {
-        Puesto_Cargo = puesto_Cargo;
+    public void setPuesto(String puesto) {
+        this.puesto = puesto;
     }
 
-    public String getFecha_Inicio_Empleo() {
-        return Fecha_Inicio_Empleo;
+    public String getFecha_inicio() {
+        return this.fecha_inicio;
     }
 
-    public void setFecha_Inicio_Empleo(String fecha_Inicio_Empleo) {
-        Fecha_Inicio_Empleo = fecha_Inicio_Empleo;
+    public void setFecha_inicio(String fecha_inicio) {
+        this.fecha_inicio = fecha_inicio;
     }
 
-    public String getDepartamento_Area() {
-        return Departamento_Area;
+    public String getArea() {
+        return this.area;
     }
 
-    public void setDepartamento_Area(String departamento_Area) {
-        Departamento_Area = departamento_Area;
+    public void setArea(String area) {
+        this.area = area;
     }
 
     public Double getSalario() {
-        return Salario;
+        return this.salario;
     }
 
     public void setSalario(Double salario) {
-        Salario = salario;
+        this.salario = salario;
     }
 
-    public String getTipo_Contrato() {
-        return Tipo_Contrato;
+    public String getTipo_contrato() {
+        return this.tipo_contrato;
     }
 
-    public void setTipo_Contrato(String tipo_Contrato) {
-        Tipo_Contrato = tipo_Contrato;
+    public void setTipo_contrato(String tipo_contrato) {
+        this.tipo_contrato = tipo_contrato;
     }
 
-    public String getTurno_Horario() {
-        return Turno_Horario;
+    public String getTurno_horario() {
+        return this.turno_horario;
     }
 
-    public void setTurno_Horario(String turno_Horario) {
-        Turno_Horario = turno_Horario;
+    public void setTurno_horario(String turno_horario) {
+        this.turno_horario = turno_horario;
+    }
+
+    public String getContrasena(){
+        return this.contrasena;
+    }
+
+    public void setContrasena(String contrasena){
+        this.contrasena=contrasena;
     }
 }

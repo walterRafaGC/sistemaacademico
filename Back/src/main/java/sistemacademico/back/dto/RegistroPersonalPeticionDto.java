@@ -7,8 +7,7 @@ public class RegistroPersonalPeticionDto {
     private String Fecha_Nacimiento;
     private String Genero;
     private String Tipo_Documento_PersonalAdministrativo;
-
-    private Integer Numero_Identificacion;
+    private Integer dni;
     private String Fotografia;
     private String Direccion_Domicilio;
     private String Numero_Telefono;
@@ -19,18 +18,22 @@ public class RegistroPersonalPeticionDto {
     private Double Salario;
     private String Tipo_Contrato;
     private String Turno_Horario;
+    private String Contrasena;
 
     public RegistroPersonalPeticionDto() {
     }
 
-
-    public RegistroPersonalPeticionDto(String Nombres_PersonalAdminis, String Apellido, String Fecha_Nacimiento, String Genero, String Tipo_Documento_PersonalAdministrativo, Integer Numero_Identificacion, String Fotografia, String Direccion_Domicilio, String Numero_Telefono, String Email, String Puesto_Cargo, String Fecha_Inicio_Empleo, String Departamento_Area, Double Salario, String Tipo_Contrato, String Turno_Horario) {
+    public RegistroPersonalPeticionDto(String Nombres_PersonalAdminis, String Apellido, String Fecha_Nacimiento,
+            String Genero, String Tipo_Documento_PersonalAdministrativo, Integer dni, String Fotografia,
+            String Direccion_Domicilio, String Numero_Telefono, String Email, String Puesto_Cargo,
+            String Fecha_Inicio_Empleo, String Departamento_Area, Double Salario, String Tipo_Contrato,
+            String Turno_Horario, String Contrasena) {
         this.Nombres_PersonalAdminis = Nombres_PersonalAdminis;
         this.Apellido = Apellido;
         this.Fecha_Nacimiento = Fecha_Nacimiento;
         this.Genero = Genero;
         this.Tipo_Documento_PersonalAdministrativo = Tipo_Documento_PersonalAdministrativo;
-        this.Numero_Identificacion = Numero_Identificacion;
+        this.dni = dni;
         this.Fotografia = Fotografia;
         this.Direccion_Domicilio = Direccion_Domicilio;
         this.Numero_Telefono = Numero_Telefono;
@@ -41,8 +44,8 @@ public class RegistroPersonalPeticionDto {
         this.Salario = Salario;
         this.Tipo_Contrato = Tipo_Contrato;
         this.Turno_Horario = Turno_Horario;
+        this.Contrasena = Contrasena;
     }
-
 
     public String getNombres_PersonalAdminis() {
         return this.Nombres_PersonalAdminis;
@@ -84,12 +87,12 @@ public class RegistroPersonalPeticionDto {
         this.Tipo_Documento_PersonalAdministrativo = Tipo_Documento_PersonalAdministrativo;
     }
 
-    public Integer getNumero_Identificacion() {
-        return this.Numero_Identificacion;
+    public Integer getdni() {
+        return this.dni;
     }
 
-    public void setNumero_Identificacion(Integer Numero_Identificacion) {
-        this.Numero_Identificacion = Numero_Identificacion;
+    public void setdni(Integer dni) {
+        this.dni = dni;
     }
 
     public String getFotografia() {
@@ -170,6 +173,14 @@ public class RegistroPersonalPeticionDto {
 
     public void setTurno_Horario(String Turno_Horario) {
         this.Turno_Horario = Turno_Horario;
+    }
+
+    public String getContrasena() {
+        return this.Contrasena;
+    }
+
+    public void setContrasena(String Contrasena) {
+        this.Contrasena = Contrasena;
     }
 
 }

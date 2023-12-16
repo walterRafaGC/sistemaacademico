@@ -12,46 +12,65 @@ import javax.persistence.Table;
 public class Padres {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_padres")
-    private Long id_padres;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name="nombre_padre")
+    @Column(name = "nombre_padre")
     private String nombre_padre;
 
-    @Column(name="tipo_documento_padre")
+    @Column(name = "tipo_documento_padre")
     private String tipo_documento_padre;
 
-    @Column(name="numero_documento_padre")
+    @Column(name = "numero_documento_padre")
     private Integer numero_documento_padre;
 
-    @Column(name="telefono_padre")
+    @Column(name = "telefono_padre")
     private String telefono_padre;
 
-    @Column(name="correo_padre")
+    @Column(name = "correo_padre")
     private String correo_padre;
 
-    @Column(name="nombre_madre")
+    @Column(name = "nombre_madre")
     private String nombre_madre;
 
-    @Column(name="tipo_documento_madre")
+    @Column(name = "tipo_documento_madre")
     private String tipo_documento_madre;
 
-    @Column(name="numero_documento_madre")
+    @Column(name = "numero_documento_madre")
     private Integer numero_documento_madre;
 
-    @Column(name="telefono_madre")
+    @Column(name = "telefono_madre")
     private String telefono_madre;
 
-    @Column(name="correo_madre")
+    @Column(name = "correo_madre")
     private String correo_madre;
 
-    @Column(name="id_apoderado_padres")
+    @Column(name = "id_apoderado_padres")
     private Integer id_apoderado_padres;
 
-    @Column(name="id_hijo_padres")
+    @Column(name = "id_hijo_padres")
     private Integer id_hijo_padres;
 
     public Padres() {
+    }
+
+    public Padres(Long id, String nombre_padre, String tipo_documento_padre, Integer numero_documento_padre,
+            String telefono_padre, String correo_padre, String nombre_madre, String tipo_documento_madre,
+            Integer numero_documento_madre, String telefono_madre, String correo_madre, Integer id_apoderado_padres,
+            Integer id_hijo_padres) {
+        this.id = id;
+        this.nombre_padre = nombre_padre;
+        this.tipo_documento_padre = tipo_documento_padre;
+        this.numero_documento_padre = numero_documento_padre;
+        this.telefono_padre = telefono_padre;
+        this.correo_padre = correo_padre;
+        this.nombre_madre = nombre_madre;
+        this.tipo_documento_madre = tipo_documento_madre;
+        this.numero_documento_madre = numero_documento_madre;
+        this.telefono_madre = telefono_madre;
+        this.correo_madre = correo_madre;
+        this.id_apoderado_padres = id_apoderado_padres;
+        this.id_hijo_padres = id_hijo_padres;
     }
 
     public Padres(String nombre_padre, String tipo_documento_padre, Integer numero_documento_padre,
@@ -72,32 +91,12 @@ public class Padres {
         this.id_hijo_padres = id_hijo_padres;
     }
 
-    public Padres(Long id_padres, String nombre_padre, String tipo_documento_padre, Integer numero_documento_padre,
-            String telefono_padre, String correo_padre, String nombre_madre, String tipo_documento_madre,
-            Integer numero_documento_madre, String telefono_madre, String correo_madre, Integer id_apoderado_padres,
-            Integer id_hijo_padres) {
-        this.id_padres = id_padres;
-        this.nombre_padre = nombre_padre;
-        this.tipo_documento_padre = tipo_documento_padre;
-        this.numero_documento_padre = numero_documento_padre;
-        this.telefono_padre = telefono_padre;
-        this.correo_padre = correo_padre;
-        this.nombre_madre = nombre_madre;
-        this.tipo_documento_madre = tipo_documento_madre;
-        this.numero_documento_madre = numero_documento_madre;
-        this.telefono_madre = telefono_madre;
-        this.correo_madre = correo_madre;
-        this.id_apoderado_padres = id_apoderado_padres;
-        this.id_hijo_padres = id_hijo_padres;
+    public Long getId() {
+        return this.id;
     }
 
-
-    public Long getId_padres() {
-        return this.id_padres;
-    }
-
-    public void setId_padres(Long id_padres) {
-        this.id_padres = id_padres;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre_padre() {
@@ -195,4 +194,5 @@ public class Padres {
     public void setId_hijo_padres(Integer id_hijo_padres) {
         this.id_hijo_padres = id_hijo_padres;
     }
+
 }

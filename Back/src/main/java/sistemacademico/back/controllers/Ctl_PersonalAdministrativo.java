@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +28,6 @@ public class Ctl_PersonalAdministrativo {
     Srv_PersonalAdministrativo srv_PersonalAdministrativo;
     private final RegistroPersonalService registroPersonalService;
 
-    @Autowired
     public Ctl_PersonalAdministrativo(Srv_PersonalAdministrativo srv_PersonalAdministrativo,
             RegistroPersonalService registroPersonalService) {
         this.srv_PersonalAdministrativo = srv_PersonalAdministrativo;
@@ -49,7 +47,7 @@ public class Ctl_PersonalAdministrativo {
                 personalAdministrativo.getFecha_Nacimiento(),
                 personalAdministrativo.getGenero(),
                 personalAdministrativo.getTipo_Documento_PersonalAdministrativo(),
-                personalAdministrativo.getNumero_Identificacion(),
+                personalAdministrativo.getdni(),
                 personalAdministrativo.getFotografia(),
                 personalAdministrativo.getDireccion_Domicilio(),
                 personalAdministrativo.getNumero_Telefono(),
@@ -59,7 +57,8 @@ public class Ctl_PersonalAdministrativo {
                 personalAdministrativo.getDepartamento_Area(),
                 personalAdministrativo.getSalario(),
                 personalAdministrativo.getTipo_Contrato(),
-                personalAdministrativo.getTurno_Horario());
+                personalAdministrativo.getTurno_Horario(),
+                personalAdministrativo.getContrasena());
         Map<String, Object> response = new HashMap<>();
         response.put("success", errorMessages.isEmpty());
         response.put("errorMessages", errorMessages);
@@ -72,8 +71,8 @@ public class Ctl_PersonalAdministrativo {
         return this.srv_PersonalAdministrativo.obtenerPersonalPorID(id_PersonalAdministrativo);
     }
 
-    @GetMapping(path = "/login/{Numero_Identificacion}")
-    public Optional<PersonalAdministrativo> obtenerPersonalPorDNI (@PathVariable("Numero_Identificacion") int Numero_Identificacion){
-        return this.srv_PersonalAdministrativo.obtenerPersonalPorDNI(Numero_Identificacion);
-    }
+   // @GetMapping(path = "/login/{Numero_Identificacion}")
+  //  public Optional<PersonalAdministrativo> obtenerPersonalPorDNI (@PathVariable("Numero_Identificacion") int Numero_Identificacion){
+   //     return this.srv_PersonalAdministrativo.obtenerPersonalPorDNI(Numero_Identificacion);
+   // }
 }

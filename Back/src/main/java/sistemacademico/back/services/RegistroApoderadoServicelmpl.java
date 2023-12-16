@@ -6,26 +6,25 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import sistemacademico.back.repositories.Rps_Apoderado;
+import sistemacademico.back.repositories.ApoderadoRepository;
 import sistemacademico.back.entities.Apoderado;
 
 @Service
 public class RegistroApoderadoServicelmpl implements RegistroApoderadoService {
     @Autowired
-    private final Rps_Apoderado rps_Apoderado;
+    private final ApoderadoRepository rps_Apoderado;
 
-    public RegistroApoderadoServicelmpl(Rps_Apoderado rps_Apoderado) {
+    public RegistroApoderadoServicelmpl(ApoderadoRepository rps_Apoderado) {
         this.rps_Apoderado = rps_Apoderado;
     }
 
     @Override
-    public Map<String, String> register(String nombre_apoderado, String apellido_apoderado,
-            String tipo_documento_apoderado, Integer dni_apoderado, Integer telefono_apoderado,
-            String direccion_apoderado, String correo_apoderado, String contrasena, String id_hijo_apoderado) {
+    public Map<String, String> register(String nombre, String apellido, String tipo_documento, Integer dni,
+            Integer telefono,
+            String direccion, String correo, String contrasena, String id_hijos) {
         Map<String, String> errorMessages = new HashMap<>();
-        Apoderado apoderado = new Apoderado(nombre_apoderado, apellido_apoderado, tipo_documento_apoderado,
-                dni_apoderado, telefono_apoderado, direccion_apoderado, correo_apoderado, contrasena,
-                id_hijo_apoderado);
+        Apoderado apoderado = new Apoderado(nombre, apellido, tipo_documento,
+                dni, telefono, direccion, correo, contrasena, id_hijos);
         rps_Apoderado.save(apoderado);
         return errorMessages;
     }
